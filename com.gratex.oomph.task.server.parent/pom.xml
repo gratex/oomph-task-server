@@ -1,0 +1,104 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.gratex.eclipse</groupId>
+	<artifactId>com.gratex.oomph.task.server.parent</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<organization>
+		<name>Gratex International, a. s.</name>
+		<url>http://www.gratex.com</url>
+	</organization>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.8</java.version>
+		<tycho-version>0.25.0</tycho-version>
+		<mars-repo.url>http://download.eclipse.org/releases/mars</mars-repo.url>
+		<mars-updates-repo.url>http://download.eclipse.org/eclipse/updates/4.5</mars-updates-repo.url>
+		<oepe-mars-repo.url>http://download.oracle.com/otn_software/oepe/mars</oepe-mars-repo.url>
+		<oepe-mars-12.2.1-deps-repo.url>http://download.oracle.com/otn_software/oepe/12.2.1/mars/repository/dependencies</oepe-mars-12.2.1-deps-repo.url>
+		<oepe-mars-12.2.1.1.1-deps-repo.url>http://download.oracle.com/otn_software/oepe/12.2.1.1.1/mars/repository/dependencies</oepe-mars-12.2.1.1.1-deps-repo.url>
+		<sapphire-repo.url>http://download.eclipse.org/sapphire/9.0.5/repository/</sapphire-repo.url>
+	</properties>
+
+	<modules>
+		<module>../com.gratex.oomph.task.server</module>
+		<module>../com.gratex.oomph.task.server.feature</module>
+		<module>../com.gratex.oomph.task.server.edit</module>
+		<module>../com.gratex.oomph.task.server.site</module>
+	</modules>
+
+	<repositories>
+		<repository>
+			<id>mars</id>
+			<url>${mars-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>mars-updates</id>
+			<url>${mars-updates-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>oepe-mars</id>
+			<url>${oepe-mars-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>oepe-mars-12.2.1</id>
+			<url>${oepe-mars-12.2.1-deps-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>oepe-mars-12.2.1.1.1</id>
+			<url>${oepe-mars-12.2.1.1.1-deps-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+		<repository>
+			<id>sapphire</id>
+			<url>${sapphire-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
+
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho.extras</groupId>
+				<artifactId>tycho-p2-extras-plugin</artifactId>
+				<version>${tycho-version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho-version}</version>
+			</plugin>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-publisher-plugin</artifactId>
+				<version>${tycho-version}</version>
+			</plugin>
+			<plugin>
+				<!-- enable the Tycho build extension -->
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

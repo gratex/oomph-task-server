@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/com.gratex.oomph.task.server.feature_1.0.0.qualifier.jar" id="com.gratex.oomph.task.server.feature" version="1.0.0.qualifier">
+      <category name="gti_oomph"/>
+   </feature>
+   <category-def name="gti_oomph" label="Oomph Setup Tasks"/>
+</site>
