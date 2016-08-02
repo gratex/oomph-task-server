@@ -2,7 +2,7 @@
 [Eclipse Oomph](https://projects.eclipse.org/projects/tools.oomph) extension tasks for creating Weblogic 12.1.3 and Tomcat 7 servers during setup.
 
 ## Installation
-Update site: https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip
+Update site: https://gratex.github.io/oomph-task-server/repository/
 
 ## Build
 Execute the `./run` script which mounts hosts $HOME/.m2 folder and builds whole project in docker container. The result update site is located at `com.gratex.oomph.task.server.site/target/*.zip`
