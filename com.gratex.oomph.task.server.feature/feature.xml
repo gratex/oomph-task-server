@@ -27,11 +27,6 @@
       %license
    </license>
 
-   <url>
-      <update label="%updateSiteName" url="http://download.gratex.com/oomph/task/server/updates"/>
-      <discovery label="%updateSiteName" url="http://download.gratex.com/oomph/task/server/updates"/>
-   </url>
-
    <plugin
          id="com.gratex.oomph.task.server"
          download-size="0"

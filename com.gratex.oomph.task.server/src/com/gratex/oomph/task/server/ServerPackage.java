@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EPackage;
  * <!-- end-user-doc -->
  * @see com.gratex.oomph.task.server.ServerFactory
  * @model kind="package"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='http://www.gratex.com/oomph/task/server/schemas/Server-1.0.ecore'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore schemaLocation='https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore'"
  * @generated
  */
 public interface ServerPackage extends EPackage

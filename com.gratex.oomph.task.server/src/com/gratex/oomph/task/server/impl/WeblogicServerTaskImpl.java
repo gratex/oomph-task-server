@@ -265,6 +265,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getServerName()
   {
     return serverName;
@@ -275,6 +276,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setServerName(String newServerName)
   {
     String oldServerName = serverName;
@@ -290,6 +292,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getLocation()
   {
     return location;
@@ -300,6 +303,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setLocation(String newLocation)
   {
     String oldLocation = location;
@@ -315,6 +319,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getRuntimeName()
   {
     return runtimeName;
@@ -325,6 +330,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setRuntimeName(String newRuntimeName)
   {
     String oldRuntimeName = runtimeName;
@@ -340,6 +346,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getJreVersion()
   {
     return jreVersion;
@@ -350,6 +357,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setJreVersion(String newJreVersion)
   {
     String oldJreVersion = jreVersion;
@@ -365,6 +373,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public int getPort()
   {
     return port;
@@ -375,6 +384,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setPort(int newPort)
   {
     int oldPort = port;
@@ -390,6 +400,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public int getHttpsPort()
   {
     return httpsPort;
@@ -400,6 +411,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setHttpsPort(int newHttpsPort)
   {
     int oldHttpsPort = httpsPort;
@@ -415,6 +427,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public int getDebugPort()
   {
     return debugPort;
@@ -425,6 +438,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setDebugPort(int newDebugPort)
   {
     int oldDebugPort = debugPort;
@@ -440,6 +454,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getUsername()
   {
     return username;
@@ -450,6 +465,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setUsername(String newUsername)
   {
     String oldUsername = username;
@@ -465,6 +481,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getPassword()
   {
     return password;
@@ -475,6 +492,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setPassword(String newPassword)
   {
     String oldPassword = password;
@@ -490,6 +508,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getHostname()
   {
     return hostname;
@@ -500,6 +519,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setHostname(String newHostname)
   {
     String oldHostname = hostname;
@@ -704,12 +724,14 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
     return result.toString();
   }
 
+  @Override
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
     serverCreator = new Weblogic12c13ServerCreator(context, this);
     return !serverCreator.exists();
   }
 
+  @Override
   public void perform(SetupTaskContext context) throws Exception
   {
     serverCreator.createServerInstance();

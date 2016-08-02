@@ -26,7 +26,7 @@ import org.eclipse.oomph.setup.SetupTask;
  * </ul>
  *
  * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask()
- * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.server' repository='http://download.gratex.com/oomph/task/server/updates' installableUnits='com.gratex.oomph.task.server.feature.group'"
+ * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.server' repository='https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip' installableUnits='com.gratex.oomph.task.server.feature.group'"
  *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='BOOTSTRAP STARTUP MANUAL'"
  * @generated
  */

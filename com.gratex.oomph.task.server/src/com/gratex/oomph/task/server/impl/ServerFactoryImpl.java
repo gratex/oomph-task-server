@@ -79,6 +79,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public ServerTask createServerTask()
   {
     ServerTaskImpl serverTask = new ServerTaskImpl();
@@ -90,6 +91,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public WeblogicServerTask createWeblogicServerTask()
   {
     WeblogicServerTaskImpl weblogicServerTask = new WeblogicServerTaskImpl();
@@ -101,6 +103,7 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public ServerPackage getServerPackage()
   {
     return (ServerPackage)getEPackage();

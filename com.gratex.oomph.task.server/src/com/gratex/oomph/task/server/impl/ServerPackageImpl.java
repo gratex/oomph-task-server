@@ -110,6 +110,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EClass getServerTask()
   {
     return serverTaskEClass;
@@ -120,6 +121,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getServerTask_ServerName()
   {
     return (EAttribute)serverTaskEClass.getEStructuralFeatures().get(0);
@@ -130,6 +132,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getServerTask_Location()
   {
     return (EAttribute)serverTaskEClass.getEStructuralFeatures().get(1);
@@ -140,6 +143,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getServerTask_RuntimeName()
   {
     return (EAttribute)serverTaskEClass.getEStructuralFeatures().get(2);
@@ -150,6 +154,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getServerTask_JreVersion()
   {
     return (EAttribute)serverTaskEClass.getEStructuralFeatures().get(3);
@@ -160,6 +165,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getServerTask_Port()
   {
     return (EAttribute)serverTaskEClass.getEStructuralFeatures().get(5);
@@ -170,6 +176,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getServerTask_HttpsPort()
   {
     return (EAttribute)serverTaskEClass.getEStructuralFeatures().get(6);
@@ -180,6 +187,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getServerTask_Hostname()
   {
     return (EAttribute)serverTaskEClass.getEStructuralFeatures().get(4);
@@ -190,6 +198,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EClass getWeblogicServerTask()
   {
     return weblogicServerTaskEClass;
@@ -200,6 +209,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_ServerName()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(0);
@@ -210,6 +220,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_Location()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(1);
@@ -220,6 +231,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_RuntimeName()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(2);
@@ -230,6 +242,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_JreVersion()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(3);
@@ -240,6 +253,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_Port()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(5);
@@ -250,6 +264,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_HttpsPort()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(6);
@@ -260,6 +275,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_DebugPort()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(7);
@@ -270,6 +286,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_Username()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(8);
@@ -280,6 +297,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_Password()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(9);
@@ -290,6 +308,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public EAttribute getWeblogicServerTask_Hostname()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(4);
@@ -300,6 +319,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public ServerFactory getServerFactory()
   {
     return (ServerFactory)getEFactoryInstance();
@@ -428,7 +448,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
-    createResource("http://www.gratex.com/oomph/task/server/schemas/Server-1.0.ecore");
+    createResource("https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore");
 
     // Create annotations
     // http://www.eclipse.org/emf/2002/Ecore
@@ -448,7 +468,8 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
   protected void createEcoreAnnotations()
   {
     String source = "http://www.eclipse.org/emf/2002/Ecore";
-    addAnnotation(this, source, new String[] { "schemaLocation", "http://www.gratex.com/oomph/task/server/schemas/Server-1.0.ecore" });
+    addAnnotation(this, source, new String[] { "schemaLocation",
+        "https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore" });
   }
 
   /**
@@ -460,10 +481,14 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
   protected void createEnablementAnnotations()
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
-    addAnnotation(serverTaskEClass, source, new String[] { "variableName", "p2.server", "repository", "http://download.gratex.com/oomph/task/server/updates",
-        "installableUnits", "com.gratex.oomph.task.server.feature.group" });
-    addAnnotation(weblogicServerTaskEClass, source, new String[] { "variableName", "p2.server", "repository",
-        "http://download.gratex.com/oomph/task/server/updates", "installableUnits", "com.gratex.oomph.task.server.feature.group" });
+    addAnnotation(serverTaskEClass, source,
+        new String[] { "variableName", "p2.server", "repository",
+            "https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip", "installableUnits",
+            "com.gratex.oomph.task.server.feature.group" });
+    addAnnotation(weblogicServerTaskEClass, source,
+        new String[] { "variableName", "p2.server", "repository",
+            "https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip", "installableUnits",
+            "com.gratex.oomph.task.server.feature.group" });
   }
 
   /**

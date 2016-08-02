@@ -3,12 +3,12 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="server" nsURI="http://www.gratex.com/oomph/task/server/1.0"
     nsPrefix="server">
   <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-    <details key="schemaLocation" value="http://www.gratex.com/oomph/task/server/schemas/Server-1.0.ecore"/>
+    <details key="schemaLocation" value="https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ServerTask" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.server"/>
-      <details key="repository" value="http://download.gratex.com/oomph/task/server/updates"/>
+      <details key="repository" value="https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip"/>
       <details key="installableUnits" value="com.gratex.oomph.task.server.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
@@ -32,7 +32,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="WeblogicServerTask" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.server"/>
-      <details key="repository" value="http://download.gratex.com/oomph/task/server/updates"/>
+      <details key="repository" value="https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip"/>
       <details key="installableUnits" value="com.gratex.oomph.task.server.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">

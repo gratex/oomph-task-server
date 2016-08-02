@@ -4,6 +4,9 @@
 ## Installation
 Update site: [TODO]
 
+## Build
+Execute the `./run` script which mounts hosts $HOME/.m2 folder and builds whole project in docker container. The result update site is located at `com.gratex.oomph.task.server.site/target/*.zip`
+
 ## Usage
 To use the server task in your oomph setup file define a namespace `xmlns:server="http://www.gratex.com/oomph/task/server/1.0"` and add a schema location for the namespace (`xsi:schemaLocation`) pointing to `http://www.gratex.com/oomph/task/server/1.0 [TODO]/Server-1.0.ecore`.  
 
