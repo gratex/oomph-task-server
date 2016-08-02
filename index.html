@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Oomph-task-server by gratex</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Oomph-task-server</h1>
+        <p>Eclipse oomph task for creating Weblogic and Tomcat servers</p>
+
+        <p class="view"><a href="https://github.com/gratex/oomph-task-server">View the Project on GitHub <small>gratex/oomph-task-server</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/gratex/oomph-task-server/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/gratex/oomph-task-server/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/gratex/oomph-task-server">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="oomph-task-server" class="anchor" href="#oomph-task-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>oomph-task-server</h1>
+
+<p><a href="https://projects.eclipse.org/projects/tools.oomph">Eclipse Oomph</a> extension tasks for creating Weblogic 12.1.3 and Tomcat 7 servers during setup.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p>Update site: <a href="https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip">https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip</a></p>
+
+<h2>
+<a id="build" class="anchor" href="#build" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build</h2>
+
+<p>Execute the <code>./run</code> script which mounts hosts $HOME/.m2 folder and builds whole project in docker container. The result update site is located at <code>com.gratex.oomph.task.server.site/target/*.zip</code></p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>To use the server task in your oomph setup file define a namespace <code>xmlns:server="http://www.gratex.com/oomph/task/server/1.0"</code> and add a schema location for the namespace (<code>xsi:schemaLocation</code>) pointing to <code>http://www.gratex.com/oomph/task/server/1.0 https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore</code>.  </p>
+
+<h3>
+<a id="tomcat-server" class="anchor" href="#tomcat-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Tomcat server</h3>
+
+<p>Sample Tomcat 7 server definition</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">setupTask</span>
+    <span class="pl-e">xsi</span><span class="pl-e">:</span><span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>server:ServerTask<span class="pl-pds">"</span></span>
+    <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>tomcat7<span class="pl-pds">"</span></span>
+    <span class="pl-e">serverName</span>=<span class="pl-s"><span class="pl-pds">"</span>Tomcat v7.0 Server at localhost<span class="pl-pds">"</span></span>
+    <span class="pl-e">location</span>=<span class="pl-s"><span class="pl-pds">"</span>/opt/apache-tomcat-7.0.53<span class="pl-pds">"</span></span>
+    <span class="pl-e">runtimeName</span>=<span class="pl-s"><span class="pl-pds">"</span>Tomcat v7.0 Server<span class="pl-pds">"</span></span>
+    <span class="pl-e">jreVersion</span>=<span class="pl-s"><span class="pl-pds">"</span>${jdk1.8.0.version}<span class="pl-pds">"</span></span>
+    <span class="pl-e">port</span>=<span class="pl-s"><span class="pl-pds">"</span>9080<span class="pl-pds">"</span></span>
+    <span class="pl-e">httpsPort</span>=<span class="pl-s"><span class="pl-pds">"</span>9443<span class="pl-pds">"</span></span>/&gt;</pre></div>
+
+<ul>
+<li>serverName - tomcat server instance name</li>
+<li>runtimeName - eclipse runtime name for tomcat server</li>
+<li>location - tomcat server installation location</li>
+<li>jreVersion - eclipse java runtime version identifier</li>
+<li>hostname - server host name</li>
+<li>port - http port</li>
+<li>httpsPort - https port</li>
+</ul>
+
+<h3>
+<a id="weblogic-server" class="anchor" href="#weblogic-server" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Weblogic server</h3>
+
+<p>Sample Weblogic remote server definition</p>
+
+<div class="highlight highlight-text-xml"><pre>&lt;<span class="pl-ent">setupTask</span>
+    <span class="pl-e">xsi</span><span class="pl-e">:</span><span class="pl-e">type</span>=<span class="pl-s"><span class="pl-pds">"</span>server:WeblogicServerTask<span class="pl-pds">"</span></span>
+    <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>weblogic12c13<span class="pl-pds">"</span></span>
+    <span class="pl-e">serverName</span>=<span class="pl-s"><span class="pl-pds">"</span>Oracle WebLogic Server 12c (12.1.3) at localhost<span class="pl-pds">"</span></span>
+    <span class="pl-e">location</span>=<span class="pl-s"><span class="pl-pds">"</span>/opt/runtimes/wls/wls1213<span class="pl-pds">"</span></span>
+    <span class="pl-e">runtimeName</span>=<span class="pl-s"><span class="pl-pds">"</span>Oracle WebLogic Server 12c (12.1.3)<span class="pl-pds">"</span></span>
+    <span class="pl-e">jreVersion</span>=<span class="pl-s"><span class="pl-pds">"</span>${jdk1.8.0.version}<span class="pl-pds">"</span></span>
+    <span class="pl-e">port</span>=<span class="pl-s"><span class="pl-pds">"</span>17001<span class="pl-pds">"</span></span>
+    <span class="pl-e">httpsPort</span>=<span class="pl-s"><span class="pl-pds">"</span>27002<span class="pl-pds">"</span></span>
+    <span class="pl-e">debugPort</span>=<span class="pl-s"><span class="pl-pds">"</span>28453<span class="pl-pds">"</span></span>
+    <span class="pl-e">username</span>=<span class="pl-s"><span class="pl-pds">"</span>username<span class="pl-pds">"</span></span>
+    <span class="pl-e">password</span>=<span class="pl-s"><span class="pl-pds">"</span>password<span class="pl-pds">"</span></span>/&gt;</pre></div>
+
+<ul>
+<li>serverName - weblogic server instance name</li>
+<li>runtimeName - eclipse runtime name for weblogic server</li>
+<li>location - weblogic server installation location</li>
+<li>jreVersion - eclipse java runtime version identifier</li>
+<li>hostname - server host name</li>
+<li>port - http port</li>
+<li>httpsPort - https port</li>
+<li>debugPort - debug port</li>
+<li>username - username to access server</li>
+<li>password - username password</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/gratex">gratex</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
