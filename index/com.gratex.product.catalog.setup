@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<setup:ProductCatalog
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    name="com.gratex"
+    label="Gratex products">
+  <setupTask
+      xsi:type="setup:ResourceCreationTask"
+      content="secret"
+      targetURL="${user.home|uri}/.eclipse/master"
+      encoding="UTF-8">
+    <description></description>
+  </setupTask>
+  <product href="com.gratex.oompheclipse.product.setup#/"/>
+</setup:ProductCatalog>
