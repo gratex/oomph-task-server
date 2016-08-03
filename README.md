@@ -4,6 +4,9 @@
 ## Installation
 Update site: https://gratex.github.io/oomph-task-server/repository/
 
+## Eclipse dev
+Start [Eclipse installer](https://wiki.eclipse.org/Eclipse_Installer) with arguments `-vmargs "-Doomph.redirection.setups=index:/->https://raw.githubusercontent.com/gratex/oomph-task-server/master/index/"` and choose Eclipse IDE for Oomph Dev and project Oomph task server
+
 ## Build
 Execute the `./run` script which mounts hosts $HOME/.m2 folder and builds whole project in docker container. The result update site is located at `com.gratex.oomph.task.server.site/target/*.zip`
 
