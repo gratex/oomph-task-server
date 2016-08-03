@@ -7,22 +7,6 @@
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     name="OomphEclipse"
     label="Eclipse IDE for Oomph Dev">
-  <setupTask
-      xsi:type="setup:InstallationTask"
-      id="installation"
-      location="${user.home}/opt/eclipse"
-      relativeProductFolder="OomphEclipse"/>
-  <setupTask
-      xsi:type="setup:EclipseIniTask"
-      option="-Doomph.redirection.setups"
-      value="index:/->https://raw.githubusercontent.com/gratex/oomph-task-server/master/index/"
-      vm="true">
-    <description>Company index</description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:EclipseIniTask"
-      option="-eclipse.password"
-      value="${user.home}/.eclipse/master"/>
   <version name="latest"
       label="Latest (Neon)"
       requiredJavaVersion="1.8">

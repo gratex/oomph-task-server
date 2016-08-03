@@ -13,5 +13,21 @@
       encoding="UTF-8">
     <description></description>
   </setupTask>
+  <setupTask
+      xsi:type="setup:InstallationTask"
+      id="installation"
+      location="${user.home}/opt/eclipse"
+      relativeProductFolder="OomphEclipse"/>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      option="-Doomph.redirection.setups"
+      value="index:/->https://raw.githubusercontent.com/gratex/oomph-task-server/master/index/"
+      vm="true">
+    <description>Company index</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      option="-eclipse.password"
+      value="${user.home}/.eclipse/master"/>
   <product href="com.gratex.oompheclipse.product.setup#/"/>
 </setup:ProductCatalog>
