@@ -13,6 +13,11 @@
         source="http://www.eclipse.org/oomph/setup/UserPreferences"/>
   </setupTask>
   <setupTask
+      xsi:type="setup:WorkspaceTask"
+      id="workspace"
+      filter=""
+      location="${user.home}/workspaces/${scope.project.stream.name.qualified}"/>
+  <setupTask
       xsi:type="setup:ResourceCreationTask"
       content="MAX_RECENT_WORKSPACES=5&#xD;&#xA;RECENT_WORKSPACES=${workspace.location|property}&#xD;&#xA;RECENT_WORKSPACES_PROTOCOL=3&#xD;&#xA;SHOW_WORKSPACE_SELECTION_DIALOG=true&#xD;&#xA;eclipse.preferences.version=1"
       targetURL="configuration:/.settings/org.eclipse.ui.ide.prefs"/>
