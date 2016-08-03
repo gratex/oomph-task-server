@@ -15,9 +15,7 @@
   </setupTask>
   <setupTask
       xsi:type="setup:InstallationTask"
-      id="installation"
-      location="${user.home}/opt/eclipse"
-      relativeProductFolder="OomphEclipse"/>
+      id="installation"/>
   <setupTask
       xsi:type="setup:EclipseIniTask"
       option="-Doomph.redirection.setups"
@@ -29,5 +27,10 @@
       xsi:type="setup:EclipseIniTask"
       option="-eclipse.password"
       value="${user.home}/.eclipse/master"/>
+  <setupTask
+      xsi:type="setup:VariableTask"
+      name="installation.id"
+      value="${scope.product.name}"
+      label="Installation id"/>
   <product href="com.gratex.oompheclipse.product.setup#/"/>
 </setup:ProductCatalog>
