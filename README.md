@@ -1,5 +1,5 @@
 # oomph-task-server
-[Eclipse Oomph](https://projects.eclipse.org/projects/tools.oomph) extension tasks for creating Weblogic 12.1.3 and Tomcat 7 servers during setup.
+[Eclipse Oomph](https://projects.eclipse.org/projects/tools.oomph) extension tasks for creating Weblogic 12.1.3, Websphere 7.0 and Tomcat 7 servers during setup.
 
 ## Installation
 Update site: https://gratex.github.io/oomph-task-server/repository/

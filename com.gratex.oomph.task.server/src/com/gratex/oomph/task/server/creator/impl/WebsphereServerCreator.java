@@ -11,7 +11,6 @@ import org.eclipse.core.runtime.Path;
 import org.eclipse.wst.server.core.IRuntime;
 import org.eclipse.wst.server.core.IRuntimeType;
 import org.eclipse.wst.server.core.IRuntimeWorkingCopy;
-import org.eclipse.wst.server.core.IServer;
 import org.eclipse.wst.server.core.IServerType;
 import org.eclipse.wst.server.core.IServerWorkingCopy;
 import org.eclipse.wst.server.core.ServerCore;
@@ -88,8 +87,7 @@ public class WebsphereServerCreator extends ServerCreator
     IServerWorkingCopy swc = serverType.createServer(serverTask.getServerName(), null, runtime, monitor);
     swc.setHost(serverTask.getHostname());
 
-    IServer server = swc.save(false, monitor);
-    WASServer wasServer = (WASServer)server.loadAdapter(WASServer.class, null);
+    WASServer wasServer = (WASServer)swc.loadAdapter(WASServer.class, null);
     wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName
     wasServer.setIsRemoteServerStartEnabled(true);
     wasServer.setRemoteServerStartPlatform(ServerOs.Linux.id);
@@ -112,6 +110,7 @@ public class WebsphereServerCreator extends ServerCreator
     wasServer.updateServerSelectedConnectionTypes(ConnectionType.RMI.name(), true);
 
     wasServer.saveConfiguration(monitor);
+    swc.save(false, monitor);
     monitor.worked(1);
 
   }
