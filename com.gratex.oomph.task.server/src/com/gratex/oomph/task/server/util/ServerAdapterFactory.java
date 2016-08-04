@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
 import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.ServerTask;
 import com.gratex.oomph.task.server.WeblogicServerTask;
+import com.gratex.oomph.task.server.WebsphereServerTask;
 
 /**
  * <!-- begin-user-doc -->
@@ -89,6 +90,12 @@ public class ServerAdapterFactory extends AdapterFactoryImpl
     }
 
     @Override
+    public Adapter caseWebsphereServerTask(WebsphereServerTask object)
+    {
+      return createWebsphereServerTaskAdapter();
+    }
+
+    @Override
     public Adapter caseModelElement(ModelElement object)
     {
       return createModelElementAdapter();
@@ -147,6 +154,21 @@ public class ServerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createWeblogicServerTaskAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.gratex.oomph.task.server.WebsphereServerTask <em>Websphere Server Task</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.gratex.oomph.task.server.WebsphereServerTask
+   * @generated
+   */
+  public Adapter createWebsphereServerTaskAdapter()
   {
     return null;
   }

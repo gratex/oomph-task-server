@@ -15,12 +15,13 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
 		<tycho-version>0.25.0</tycho-version>
-		<mars-repo.url>http://download.eclipse.org/releases/mars</mars-repo.url>
-		<mars-updates-repo.url>http://download.eclipse.org/eclipse/updates/4.5</mars-updates-repo.url>
-		<oepe-mars-repo.url>http://download.oracle.com/otn_software/oepe/mars</oepe-mars-repo.url>
-		<oepe-mars-12.2.1-deps-repo.url>http://download.oracle.com/otn_software/oepe/12.2.1/mars/repository/dependencies</oepe-mars-12.2.1-deps-repo.url>
-		<oepe-mars-12.2.1.1.1-deps-repo.url>http://download.oracle.com/otn_software/oepe/12.2.1.1.1/mars/repository/dependencies</oepe-mars-12.2.1.1.1-deps-repo.url>
+		<neon-repo.url>http://download.eclipse.org/releases/neon/</neon-repo.url>
+		<neon-updates-repo.url>http://download.eclipse.org/eclipse/updates/4.6/</neon-updates-repo.url>
+		<oepe-neon-repo.url>http://download.oracle.com/otn_software/oepe/neon/</oepe-neon-repo.url>
+		<oepe-neon-12.2.1.3.1-repo.url>http://download.oracle.com/otn_software/oepe/12.2.1.3.1/neon/repository/</oepe-neon-12.2.1.3.1-repo.url>
+		<oepe-neon-12.2.1.3.1-deps-repo.url>http://download.oracle.com/otn_software/oepe/12.2.1.3.1/neon/repository/dependencies</oepe-neon-12.2.1.3.1-deps-repo.url>
 		<sapphire-repo.url>http://download.eclipse.org/sapphire/9.0.5/repository/</sapphire-repo.url>
+		<ibm-wasdev-neon-repo.url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/updates/wdt/neon/</ibm-wasdev-neon-repo.url>
 	</properties>
 
 	<modules>
@@ -32,28 +33,28 @@
 
 	<repositories>
 		<repository>
-			<id>mars</id>
-			<url>${mars-repo.url}</url>
+			<id>neon</id>
+			<url>${neon-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
-			<id>mars-updates</id>
-			<url>${mars-updates-repo.url}</url>
+			<id>neon-updates</id>
+			<url>${neon-updates-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
-			<id>oepe-mars</id>
-			<url>${oepe-mars-repo.url}</url>
+			<id>oepe-neon</id>
+			<url>${oepe-neon-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
-			<id>oepe-mars-12.2.1</id>
-			<url>${oepe-mars-12.2.1-deps-repo.url}</url>
+			<id>oepe-neon-12.2.1.3.1</id>
+			<url>${oepe-neon-12.2.1.3.1-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
-			<id>oepe-mars-12.2.1.1.1</id>
-			<url>${oepe-mars-12.2.1.1.1-deps-repo.url}</url>
+			<id>oepe-neon-12.2.1.3.1-deps</id>
+			<url>${oepe-neon-12.2.1.3.1-deps-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
 		<repository>
@@ -61,7 +62,11 @@
 			<url>${sapphire-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
-
+		<repository>
+			<id>ibm-wasdev-neon</id>
+			<url>${ibm-wasdev-neon-repo.url}</url>
+			<layout>p2</layout>
+		</repository>
 	</repositories>
 
 	<build>

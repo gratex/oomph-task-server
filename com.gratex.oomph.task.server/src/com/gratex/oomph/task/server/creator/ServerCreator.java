@@ -35,6 +35,14 @@ public abstract class ServerCreator
 
   protected String jreVersion;
 
+  public ServerCreator(SetupTaskContext context, String runtimeName, String serverName)
+  {
+    this.context = context;
+    this.runtimeName = runtimeName;
+    this.serverName = serverName;
+    jreVersion = null;
+  }
+
   public ServerCreator(SetupTaskContext context, String runtimeName, String serverName, String jreVersion)
   {
     this.context = context;
@@ -72,6 +80,11 @@ public abstract class ServerCreator
 
   protected IVMInstall getVMInstall() throws ServerTaskException
   {
+    if (jreVersion == null)
+    {
+      throw new ServerTaskException("No JRE version provided ");
+    }
+
     IVMInstallType vmInstallType = JavaRuntime.getVMInstallType(StandardVMType.ID_STANDARD_VM_TYPE);
     if (vmInstallType == null)
     {

@@ -148,11 +148,37 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
   }
 
   /**
+   * This keeps track of the one adapter used for all {@link com.gratex.oomph.task.server.WebsphereServerTask} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected WebsphereServerTaskItemProvider websphereServerTaskItemProvider;
+
+  /**
+   * This creates an adapter for a {@link com.gratex.oomph.task.server.WebsphereServerTask}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createWebsphereServerTaskAdapter()
+  {
+    if (websphereServerTaskItemProvider == null)
+    {
+      websphereServerTaskItemProvider = new WebsphereServerTaskItemProvider(this);
+    }
+
+    return websphereServerTaskItemProvider;
+  }
+
+  /**
    * This returns the root adapter factory that contains this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public ComposeableAdapterFactory getRootAdapterFactory()
   {
     return parentAdapterFactory == null ? this : parentAdapterFactory.getRootAdapterFactory();
@@ -164,6 +190,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void setParentAdapterFactory(ComposedAdapterFactory parentAdapterFactory)
   {
     this.parentAdapterFactory = parentAdapterFactory;
@@ -227,6 +254,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public Collection<?> getNewChildDescriptors(Object object, EditingDomain editingDomain)
   {
     return childCreationExtenderManager.getNewChildDescriptors(object, editingDomain);
@@ -237,6 +265,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public ResourceLocator getResourceLocator()
   {
     return childCreationExtenderManager;
@@ -248,6 +277,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void addListener(INotifyChangedListener notifyChangedListener)
   {
     changeNotifier.addListener(notifyChangedListener);
@@ -259,6 +289,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void removeListener(INotifyChangedListener notifyChangedListener)
   {
     changeNotifier.removeListener(notifyChangedListener);
@@ -270,6 +301,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void fireNotifyChanged(Notification notification)
   {
     changeNotifier.fireNotifyChanged(notification);
@@ -286,6 +318,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public void dispose()
   {
     if (serverTaskItemProvider != null)
@@ -295,6 +328,10 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
     if (weblogicServerTaskItemProvider != null)
     {
       weblogicServerTaskItemProvider.dispose();
+    }
+    if (websphereServerTaskItemProvider != null)
+    {
+      websphereServerTaskItemProvider.dispose();
     }
   }
 
@@ -354,6 +391,8 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
 
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createWeblogicServerTask()));
 
+        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createWebsphereServerTask()));
+
         return null;
       }
 
@@ -374,6 +413,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain)
     {
       ArrayList<Object> result = new ArrayList<Object>();
@@ -386,6 +426,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ResourceLocator getResourceLocator()
     {
       return ServerEditPlugin.INSTANCE;
@@ -449,6 +490,9 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
         newChildDescriptors
             .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createWeblogicServerTask()));
 
+        newChildDescriptors
+            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createWebsphereServerTask()));
+
         return null;
       }
 
@@ -469,6 +513,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public Collection<Object> getNewChildDescriptors(Object object, EditingDomain editingDomain)
     {
       ArrayList<Object> result = new ArrayList<Object>();
@@ -481,6 +526,7 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
      * <!-- end-user-doc -->
      * @generated
      */
+    @Override
     public ResourceLocator getResourceLocator()
     {
       return ServerEditPlugin.INSTANCE;

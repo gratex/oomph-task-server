@@ -195,6 +195,8 @@
           name="org.eclipse.oomph.setup.targlets.feature.group"/>
       <requirement
           name="org.eclipse.oomph.setup.sdk.feature.group"/>
+      <requirement
+          name="jd.ide.eclipse.feature.feature.group"/>
       <repository
           url="http://download.eclipse.org/eclipse/updates/4.6/"/>
       <repository
@@ -211,6 +213,8 @@
           url="http://download.eclipse.org/oomph/products/repository"/>
       <repository
           url="http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/LATEST/"/>
+      <repository
+          url="http://jd.benow.ca/jd-eclipse/update"/>
     </setupTask>
   </version>
   <description></description>

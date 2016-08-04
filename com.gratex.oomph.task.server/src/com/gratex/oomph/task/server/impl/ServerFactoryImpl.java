@@ -12,6 +12,7 @@ import com.gratex.oomph.task.server.ServerFactory;
 import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.ServerTask;
 import com.gratex.oomph.task.server.WeblogicServerTask;
+import com.gratex.oomph.task.server.WebsphereServerTask;
 
 /**
  * <!-- begin-user-doc -->
@@ -69,6 +70,8 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
       return createServerTask();
     case ServerPackage.WEBLOGIC_SERVER_TASK:
       return createWeblogicServerTask();
+    case ServerPackage.WEBSPHERE_SERVER_TASK:
+      return createWebsphereServerTask();
     default:
       throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -96,6 +99,18 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
   {
     WeblogicServerTaskImpl weblogicServerTask = new WeblogicServerTaskImpl();
     return weblogicServerTask;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public WebsphereServerTask createWebsphereServerTask()
+  {
+    WebsphereServerTaskImpl websphereServerTask = new WebsphereServerTaskImpl();
+    return websphereServerTask;
   }
 
   /**

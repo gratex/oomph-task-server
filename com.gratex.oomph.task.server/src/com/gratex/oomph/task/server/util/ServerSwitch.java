@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.ServerTask;
 import com.gratex.oomph.task.server.WeblogicServerTask;
+import com.gratex.oomph.task.server.WebsphereServerTask;
 
 /**
  * <!-- begin-user-doc -->
@@ -112,6 +113,24 @@ public class ServerSwitch<T> extends Switch<T>
       }
       return result;
     }
+    case ServerPackage.WEBSPHERE_SERVER_TASK:
+    {
+      WebsphereServerTask websphereServerTask = (WebsphereServerTask)theEObject;
+      T result = caseWebsphereServerTask(websphereServerTask);
+      if (result == null)
+      {
+        result = caseSetupTask(websphereServerTask);
+      }
+      if (result == null)
+      {
+        result = caseModelElement(websphereServerTask);
+      }
+      if (result == null)
+      {
+        result = defaultCase(theEObject);
+      }
+      return result;
+    }
     default:
       return defaultCase(theEObject);
     }
@@ -145,6 +164,22 @@ public class ServerSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWeblogicServerTask(WeblogicServerTask object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Websphere Server Task</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Websphere Server Task</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWebsphereServerTask(WebsphereServerTask object)
   {
     return null;
   }

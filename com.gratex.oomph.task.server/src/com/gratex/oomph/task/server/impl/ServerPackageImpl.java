@@ -13,6 +13,7 @@ import com.gratex.oomph.task.server.ServerFactory;
 import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.ServerTask;
 import com.gratex.oomph.task.server.WeblogicServerTask;
+import com.gratex.oomph.task.server.WebsphereServerTask;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,6 +36,13 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   private EClass weblogicServerTaskEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass websphereServerTaskEClass = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -309,6 +317,138 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
+  public EClass getWebsphereServerTask()
+  {
+    return websphereServerTaskEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_ServerName()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_BaseServerName()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_Location()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_ProfilePath()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_RuntimeName()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_Hostname()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_BootstrapPort()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_IcpPort()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_SoapPort()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_RemoteOsUser()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_RemoteOsPassword()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(10);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EAttribute getWeblogicServerTask_Hostname()
   {
     return (EAttribute)weblogicServerTaskEClass.getEStructuralFeatures().get(4);
@@ -368,6 +508,19 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     createEAttribute(weblogicServerTaskEClass, WEBLOGIC_SERVER_TASK__DEBUG_PORT);
     createEAttribute(weblogicServerTaskEClass, WEBLOGIC_SERVER_TASK__USERNAME);
     createEAttribute(weblogicServerTaskEClass, WEBLOGIC_SERVER_TASK__PASSWORD);
+
+    websphereServerTaskEClass = createEClass(WEBSPHERE_SERVER_TASK);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__SERVER_NAME);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__BASE_SERVER_NAME);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__LOCATION);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__PROFILE_PATH);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__RUNTIME_NAME);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__HOSTNAME);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__ICP_PORT);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__SOAP_PORT);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__REMOTE_OS_USER);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD);
   }
 
   /**
@@ -407,6 +560,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     // Add supertypes to classes
     serverTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
     weblogicServerTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
+    websphereServerTaskEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
 
     // Initialize classes and features; add operations and parameters
     initEClass(serverTaskEClass, ServerTask.class, "ServerTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -447,6 +601,30 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     initEAttribute(getWeblogicServerTask_Password(), ecorePackage.getEString(), "password", null, 0, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(websphereServerTaskEClass, WebsphereServerTask.class, "WebsphereServerTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWebsphereServerTask_ServerName(), ecorePackage.getEString(), "serverName", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_BaseServerName(), ecorePackage.getEString(), "baseServerName", "server1", 1, 1, WebsphereServerTask.class,
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_Location(), ecorePackage.getEString(), "location", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_ProfilePath(), ecorePackage.getEString(), "profilePath", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_RuntimeName(), ecorePackage.getEString(), "runtimeName", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_Hostname(), ecorePackage.getEString(), "hostname", "localhost", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_BootstrapPort(), ecorePackage.getEInt(), "bootstrapPort", "2806", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_IcpPort(), ecorePackage.getEInt(), "icpPort", "9633", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_SoapPort(), ecorePackage.getEInt(), "soapPort", "8880", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_RemoteOsUser(), ecorePackage.getEString(), "remoteOsUser", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_RemoteOsPassword(), ecorePackage.getEString(), "remoteOsPassword", null, 1, 1, WebsphereServerTask.class,
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     // Create resource
     createResource("https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore");
 
@@ -481,14 +659,12 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
   protected void createEnablementAnnotations()
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
-    addAnnotation(serverTaskEClass, source,
-        new String[] { "variableName", "p2.server", "repository",
-            "https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip", "installableUnits",
-            "com.gratex.oomph.task.server.feature.group" });
-    addAnnotation(weblogicServerTaskEClass, source,
-        new String[] { "variableName", "p2.server", "repository",
-            "https://github.com/gratex/oomph-task-server/releases/download/v1.0.0/com.gratex.oomph.task.server.site-1.0.0-SNAPSHOT.zip", "installableUnits",
-            "com.gratex.oomph.task.server.feature.group" });
+    addAnnotation(serverTaskEClass, source, new String[] { "variableName", "p2.server", "repository", "https://gratex.github.io/oomph-task-server/repository/",
+        "installableUnits", "com.gratex.oomph.task.server.feature.group" });
+    addAnnotation(weblogicServerTaskEClass, source, new String[] { "variableName", "p2.server", "repository",
+        "https://gratex.github.io/oomph-task-server/repository/", "installableUnits", "com.gratex.oomph.task.server.feature.group" });
+    addAnnotation(websphereServerTaskEClass, source, new String[] { "variableName", "p2.server", "repository",
+        "https://gratex.github.io/oomph-task-server/repository/", "installableUnits", "com.gratex.oomph.task.server.feature.group" });
   }
 
   /**
@@ -502,6 +678,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     String source = "http://www.eclipse.org/oomph/setup/ValidTriggers";
     addAnnotation(serverTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
     addAnnotation(weblogicServerTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
+    addAnnotation(websphereServerTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
   }
 
 } // ServerPackageImpl
