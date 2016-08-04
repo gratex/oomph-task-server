@@ -38,7 +38,7 @@ Sample Tomcat 7 server definition
 
 
 ### Weblogic server
-Sample Weblogic remote server definition
+Sample Oracle Weblogic remote server definition
 
 ```xml
 <setupTask
@@ -65,3 +65,30 @@ Sample Weblogic remote server definition
  * debugPort - debug port
  * username - username to access server
  * password - username password
+
+### Websphere
+Sample IBM Websphere remote server instance
+
+```xml
+<setupTask
+          xsi:type="server:WebsphereServerTask"
+          id="websphere70"
+          serverName="WebSphere Application Server traditional V7.0 at waslxc"
+          location="/home/was/IBM/WebSphere/AppServer"
+          profilePath="/home/was/profiles/conv/"
+          runtimeName="WebSphere Application Server traditional V7.0"
+          hostname="waslxc"
+          remoteOsUser="was"
+          remoteOsPassword="waslxc."/>
+```
+
+* serverName - webspher server instance name
+* runtimeName - eclipse runtime name for websphere server
+* baseServerName - server bas name (server1)
+* location - websphere server installation location
+* hostname - server host name
+* bootstrapPort - bootstrap port
+* icpPort - ICP port
+* soapPort - SOAP port
+* remoteOsUsername - username to access server os
+* remoteOsPassword - username password
