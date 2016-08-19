@@ -660,11 +660,11 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
   {
     String source = "http://www.eclipse.org/oomph/setup/Enablement";
     addAnnotation(serverTaskEClass, source, new String[] { "variableName", "p2.server", "repository", "https://gratex.github.io/oomph-task-server/repository/",
-        "installableUnits", "com.gratex.oomph.task.server.feature.group" });
+        "installableUnits", "com.gratex.oomph.task.server.feature.feature.group" });
     addAnnotation(weblogicServerTaskEClass, source, new String[] { "variableName", "p2.server", "repository",
-        "https://gratex.github.io/oomph-task-server/repository/", "installableUnits", "com.gratex.oomph.task.server.feature.group" });
+        "https://gratex.github.io/oomph-task-server/repository/", "installableUnits", "com.gratex.oomph.task.server.feature.feature.group" });
     addAnnotation(websphereServerTaskEClass, source, new String[] { "variableName", "p2.server", "repository",
-        "https://gratex.github.io/oomph-task-server/repository/", "installableUnits", "com.gratex.oomph.task.server.feature.group" });
+        "https://gratex.github.io/oomph-task-server/repository/", "installableUnits", "com.gratex.oomph.task.server.feature.feature.group" });
   }
 
   /**

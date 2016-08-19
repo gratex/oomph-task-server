@@ -9,7 +9,7 @@
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.server"/>
       <details key="repository" value="https://gratex.github.io/oomph-task-server/repository/"/>
-      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.group"/>
+      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
       <details key="triggers" value="BOOTSTRAP STARTUP MANUAL"/>
@@ -33,7 +33,7 @@
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.server"/>
       <details key="repository" value="https://gratex.github.io/oomph-task-server/repository/"/>
-      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.group"/>
+      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
       <details key="triggers" value="BOOTSTRAP STARTUP MANUAL"/>
@@ -61,7 +61,7 @@
     <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
       <details key="variableName" value="p2.server"/>
       <details key="repository" value="https://gratex.github.io/oomph-task-server/repository/"/>
-      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.group"/>
+      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.feature.group"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
       <details key="triggers" value="BOOTSTRAP STARTUP MANUAL"/>
