@@ -4,6 +4,8 @@ package com.gratex.oomph.task.server;
 
 import org.eclipse.oomph.setup.SetupTask;
 
+import com.gratex.oomph.task.server.exception.ServerTaskException;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Websphere Server Task</b></em>'.
@@ -201,12 +203,14 @@ public interface WebsphereServerTask extends SetupTask
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Bootstrap Port</em>' attribute.
-   * @see #setBootstrapPort(int)
+   * @see #setBootstrapPort(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_BootstrapPort()
    * @model default="2806" required="true"
    * @generated
    */
-  int getBootstrapPort();
+  String getBootstrapPort();
+
+  Integer bootstrapPort() throws ServerTaskException;
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getBootstrapPort <em>Bootstrap Port</em>}' attribute.
@@ -216,7 +220,7 @@ public interface WebsphereServerTask extends SetupTask
    * @see #getBootstrapPort()
    * @generated
    */
-  void setBootstrapPort(int value);
+  void setBootstrapPort(String value);
 
   /**
    * Returns the value of the '<em><b>Icp Port</b></em>' attribute.
@@ -228,12 +232,14 @@ public interface WebsphereServerTask extends SetupTask
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Icp Port</em>' attribute.
-   * @see #setIcpPort(int)
+   * @see #setIcpPort(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_IcpPort()
    * @model default="9633" required="true"
    * @generated
    */
-  int getIcpPort();
+  String getIcpPort();
+
+  Integer icpPort() throws ServerTaskException;
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getIcpPort <em>Icp Port</em>}' attribute.
@@ -243,7 +249,7 @@ public interface WebsphereServerTask extends SetupTask
    * @see #getIcpPort()
    * @generated
    */
-  void setIcpPort(int value);
+  void setIcpPort(String value);
 
   /**
    * Returns the value of the '<em><b>Soap Port</b></em>' attribute.
@@ -255,12 +261,14 @@ public interface WebsphereServerTask extends SetupTask
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Soap Port</em>' attribute.
-   * @see #setSoapPort(int)
+   * @see #setSoapPort(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SoapPort()
    * @model default="8880" required="true"
    * @generated
    */
-  int getSoapPort();
+  String getSoapPort();
+
+  Integer soapPort() throws ServerTaskException;
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getSoapPort <em>Soap Port</em>}' attribute.
@@ -270,7 +278,7 @@ public interface WebsphereServerTask extends SetupTask
    * @see #getSoapPort()
    * @generated
    */
-  void setSoapPort(int value);
+  void setSoapPort(String value);
 
   /**
    * Returns the value of the '<em><b>Remote Os User</b></em>' attribute.

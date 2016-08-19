@@ -133,7 +133,7 @@ public class ServerTaskItemProvider extends SetupTaskItemProvider
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
         getString("_UI_ServerTask_port_feature"), getString("_UI_PropertyDescriptor_description", "_UI_ServerTask_port_feature", "_UI_ServerTask_type"),
-        ServerPackage.Literals.SERVER_TASK__PORT, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+        ServerPackage.Literals.SERVER_TASK__PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -147,7 +147,7 @@ public class ServerTaskItemProvider extends SetupTaskItemProvider
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
         getString("_UI_ServerTask_httpsPort_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_ServerTask_httpsPort_feature", "_UI_ServerTask_type"),
-        ServerPackage.Literals.SERVER_TASK__HTTPS_PORT, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+        ServerPackage.Literals.SERVER_TASK__HTTPS_PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**

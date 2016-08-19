@@ -130,7 +130,7 @@ public class WeblogicServerTaskItemProvider extends SetupTaskItemProvider
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
         getString("_UI_WeblogicServerTask_port_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_WeblogicServerTask_port_feature", "_UI_WeblogicServerTask_type"),
-        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__PORT, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -144,7 +144,7 @@ public class WeblogicServerTaskItemProvider extends SetupTaskItemProvider
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
         getString("_UI_WeblogicServerTask_httpsPort_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_WeblogicServerTask_httpsPort_feature", "_UI_WeblogicServerTask_type"),
-        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__HTTPS_PORT, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__HTTPS_PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -158,7 +158,7 @@ public class WeblogicServerTaskItemProvider extends SetupTaskItemProvider
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
         getString("_UI_WeblogicServerTask_debugPort_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_WeblogicServerTask_debugPort_feature", "_UI_WeblogicServerTask_type"),
-        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__DEBUG_PORT, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__DEBUG_PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**

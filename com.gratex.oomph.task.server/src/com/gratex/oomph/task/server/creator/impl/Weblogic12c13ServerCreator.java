@@ -76,9 +76,9 @@ public class Weblogic12c13ServerCreator extends ServerCreator
 
     WeblogicServer wlServerWC = (WeblogicServer)swc.loadAdapter(WeblogicServer.class, null);
     wlServerWC.setRemote(true);
-    wlServerWC.setPort(serverTask.getPort());
-    wlServerWC.setHttpsPort(serverTask.getHttpsPort());
-    int debugPort = serverTask.getDebugPort();
+    wlServerWC.setPort(serverTask.port());
+    wlServerWC.setHttpsPort(serverTask.httpsPort());
+    int debugPort = serverTask.debugPort();
     if (debugPort > 0)
     {
       wlServerWC.setDebugPort(debugPort);

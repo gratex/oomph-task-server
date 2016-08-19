@@ -21,6 +21,7 @@ import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.ServerTask;
 import com.gratex.oomph.task.server.creator.ServerCreator;
 import com.gratex.oomph.task.server.creator.impl.Tomcat7ServerCreator;
+import com.gratex.oomph.task.server.exception.ServerTaskException;
 
 /**
  * <!-- begin-user-doc -->
@@ -151,7 +152,7 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
    * @generated
    * @ordered
    */
-  protected static final int PORT_EDEFAULT = 8080;
+  protected static final String PORT_EDEFAULT = "8080";
 
   /**
    * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
@@ -161,7 +162,7 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
    * @generated
    * @ordered
    */
-  protected int port = PORT_EDEFAULT;
+  protected String port = PORT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getHttpsPort() <em>Https Port</em>}' attribute.
@@ -171,7 +172,7 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
    * @generated
    * @ordered
    */
-  protected static final int HTTPS_PORT_EDEFAULT = 8443;
+  protected static final String HTTPS_PORT_EDEFAULT = "8443";
 
   /**
    * The cached value of the '{@link #getHttpsPort() <em>Https Port</em>}' attribute.
@@ -181,7 +182,7 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
    * @generated
    * @ordered
    */
-  protected int httpsPort = HTTPS_PORT_EDEFAULT;
+  protected String httpsPort = HTTPS_PORT_EDEFAULT;
 
   private static final int PRIORITY = PRIORITY_DEFAULT;
 
@@ -322,9 +323,22 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
    * @generated
    */
   @Override
-  public int getPort()
+  public String getPort()
   {
     return port;
+  }
+
+  @Override
+  public Integer port() throws ServerTaskException
+  {
+    try
+    {
+      return Integer.parseInt(port);
+    }
+    catch (NumberFormatException e)
+    {
+      throw new ServerTaskException("Unable to parse port number.", e);
+    }
   }
 
   /**
@@ -333,9 +347,9 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
    * @generated
    */
   @Override
-  public void setPort(int newPort)
+  public void setPort(String newPort)
   {
-    int oldPort = port;
+    String oldPort = port;
     port = newPort;
     if (eNotificationRequired())
     {
@@ -349,9 +363,26 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
    * @generated
    */
   @Override
-  public int getHttpsPort()
+  public String getHttpsPort()
   {
     return httpsPort;
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.ServerTask#httpsPort()
+   */
+  @Override
+  public Integer httpsPort() throws ServerTaskException
+  {
+    try
+    {
+      return Integer.parseInt(httpsPort);
+    }
+    catch (NumberFormatException e)
+    {
+      throw new ServerTaskException("Unable to parse httpsPort number.", e);
+    }
   }
 
   /**
@@ -360,9 +391,9 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
    * @generated
    */
   @Override
-  public void setHttpsPort(int newHttpsPort)
+  public void setHttpsPort(String newHttpsPort)
   {
-    int oldHttpsPort = httpsPort;
+    String oldHttpsPort = httpsPort;
     httpsPort = newHttpsPort;
     if (eNotificationRequired())
     {
@@ -451,10 +482,10 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
       setHostname((String)newValue);
       return;
     case ServerPackage.SERVER_TASK__PORT:
-      setPort((Integer)newValue);
+      setPort((String)newValue);
       return;
     case ServerPackage.SERVER_TASK__HTTPS_PORT:
-      setHttpsPort((Integer)newValue);
+      setHttpsPort((String)newValue);
       return;
     }
     super.eSet(featureID, newValue);
@@ -516,9 +547,9 @@ public class ServerTaskImpl extends SetupTaskImpl implements ServerTask
     case ServerPackage.SERVER_TASK__HOSTNAME:
       return HOSTNAME_EDEFAULT == null ? hostname != null : !HOSTNAME_EDEFAULT.equals(hostname);
     case ServerPackage.SERVER_TASK__PORT:
-      return port != PORT_EDEFAULT;
+      return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
     case ServerPackage.SERVER_TASK__HTTPS_PORT:
-      return httpsPort != HTTPS_PORT_EDEFAULT;
+      return HTTPS_PORT_EDEFAULT == null ? httpsPort != null : !HTTPS_PORT_EDEFAULT.equals(httpsPort);
     }
     return super.eIsSet(featureID);
   }

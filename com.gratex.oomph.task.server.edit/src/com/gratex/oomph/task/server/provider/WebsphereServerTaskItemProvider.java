@@ -159,7 +159,7 @@ public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
         getString("_UI_WebsphereServerTask_bootstrapPort_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_bootstrapPort_feature", "_UI_WebsphereServerTask_type"),
-        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -173,7 +173,7 @@ public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
         getString("_UI_WebsphereServerTask_icpPort_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_icpPort_feature", "_UI_WebsphereServerTask_type"),
-        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__ICP_PORT, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__ICP_PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -187,7 +187,7 @@ public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
         getString("_UI_WebsphereServerTask_soapPort_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_soapPort_feature", "_UI_WebsphereServerTask_type"),
-        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__SOAP_PORT, true, false, false, ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__SOAP_PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**

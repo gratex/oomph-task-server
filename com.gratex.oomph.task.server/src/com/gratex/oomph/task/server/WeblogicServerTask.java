@@ -4,6 +4,8 @@ package com.gratex.oomph.task.server;
 
 import org.eclipse.oomph.setup.SetupTask;
 
+import com.gratex.oomph.task.server.exception.ServerTaskException;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Weblogic Server Task</b></em>'.
@@ -146,12 +148,14 @@ public interface WeblogicServerTask extends SetupTask
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Port</em>' attribute.
-   * @see #setPort(int)
+   * @see #setPort(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_Port()
    * @model default="7001" required="true"
    * @generated
    */
-  int getPort();
+  String getPort();
+
+  Integer port() throws ServerTaskException;
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WeblogicServerTask#getPort <em>Port</em>}' attribute.
@@ -161,7 +165,7 @@ public interface WeblogicServerTask extends SetupTask
    * @see #getPort()
    * @generated
    */
-  void setPort(int value);
+  void setPort(String value);
 
   /**
    * Returns the value of the '<em><b>Https Port</b></em>' attribute.
@@ -173,12 +177,14 @@ public interface WeblogicServerTask extends SetupTask
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Https Port</em>' attribute.
-   * @see #setHttpsPort(int)
+   * @see #setHttpsPort(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_HttpsPort()
    * @model default="7002" required="true"
    * @generated
    */
-  int getHttpsPort();
+  String getHttpsPort();
+
+  Integer httpsPort() throws ServerTaskException;
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WeblogicServerTask#getHttpsPort <em>Https Port</em>}' attribute.
@@ -188,7 +194,7 @@ public interface WeblogicServerTask extends SetupTask
    * @see #getHttpsPort()
    * @generated
    */
-  void setHttpsPort(int value);
+  void setHttpsPort(String value);
 
   /**
    * Returns the value of the '<em><b>Debug Port</b></em>' attribute.
@@ -200,12 +206,14 @@ public interface WeblogicServerTask extends SetupTask
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Debug Port</em>' attribute.
-   * @see #setDebugPort(int)
+   * @see #setDebugPort(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_DebugPort()
    * @model default="8453"
    * @generated
    */
-  int getDebugPort();
+  String getDebugPort();
+
+  Integer debugPort() throws ServerTaskException;
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WeblogicServerTask#getDebugPort <em>Debug Port</em>}' attribute.
@@ -215,7 +223,7 @@ public interface WeblogicServerTask extends SetupTask
    * @see #getDebugPort()
    * @generated
    */
-  void setDebugPort(int value);
+  void setDebugPort(String value);
 
   /**
    * Returns the value of the '<em><b>Username</b></em>' attribute.

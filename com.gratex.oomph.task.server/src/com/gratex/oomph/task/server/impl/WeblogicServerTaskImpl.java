@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.WeblogicServerTask;
 import com.gratex.oomph.task.server.creator.impl.Weblogic12c13ServerCreator;
+import com.gratex.oomph.task.server.exception.ServerTaskException;
 
 /**
  * <!-- begin-user-doc -->
@@ -145,7 +146,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    * @ordered
    */
-  protected static final int PORT_EDEFAULT = 7001;
+  protected static final String PORT_EDEFAULT = "7001";
 
   /**
    * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
@@ -155,7 +156,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    * @ordered
    */
-  protected int port = PORT_EDEFAULT;
+  protected String port = PORT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getHttpsPort() <em>Https Port</em>}' attribute.
@@ -165,7 +166,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    * @ordered
    */
-  protected static final int HTTPS_PORT_EDEFAULT = 7002;
+  protected static final String HTTPS_PORT_EDEFAULT = "7002";
 
   /**
    * The cached value of the '{@link #getHttpsPort() <em>Https Port</em>}' attribute.
@@ -175,7 +176,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    * @ordered
    */
-  protected int httpsPort = HTTPS_PORT_EDEFAULT;
+  protected String httpsPort = HTTPS_PORT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getDebugPort() <em>Debug Port</em>}' attribute.
@@ -185,7 +186,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    * @ordered
    */
-  protected static final int DEBUG_PORT_EDEFAULT = 8453;
+  protected static final String DEBUG_PORT_EDEFAULT = "8453";
 
   /**
    * The cached value of the '{@link #getDebugPort() <em>Debug Port</em>}' attribute.
@@ -195,7 +196,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    * @ordered
    */
-  protected int debugPort = DEBUG_PORT_EDEFAULT;
+  protected String debugPort = DEBUG_PORT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getUsername() <em>Username</em>}' attribute.
@@ -374,7 +375,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    */
   @Override
-  public int getPort()
+  public String getPort()
   {
     return port;
   }
@@ -385,9 +386,9 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    */
   @Override
-  public void setPort(int newPort)
+  public void setPort(String newPort)
   {
-    int oldPort = port;
+    String oldPort = port;
     port = newPort;
     if (eNotificationRequired())
     {
@@ -401,7 +402,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    */
   @Override
-  public int getHttpsPort()
+  public String getHttpsPort()
   {
     return httpsPort;
   }
@@ -412,9 +413,9 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    */
   @Override
-  public void setHttpsPort(int newHttpsPort)
+  public void setHttpsPort(String newHttpsPort)
   {
-    int oldHttpsPort = httpsPort;
+    String oldHttpsPort = httpsPort;
     httpsPort = newHttpsPort;
     if (eNotificationRequired())
     {
@@ -428,7 +429,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    */
   @Override
-  public int getDebugPort()
+  public String getDebugPort()
   {
     return debugPort;
   }
@@ -439,9 +440,9 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
    * @generated
    */
   @Override
-  public void setDebugPort(int newDebugPort)
+  public void setDebugPort(String newDebugPort)
   {
-    int oldDebugPort = debugPort;
+    String oldDebugPort = debugPort;
     debugPort = newDebugPort;
     if (eNotificationRequired())
     {
@@ -590,13 +591,13 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
       setHostname((String)newValue);
       return;
     case ServerPackage.WEBLOGIC_SERVER_TASK__PORT:
-      setPort((Integer)newValue);
+      setPort((String)newValue);
       return;
     case ServerPackage.WEBLOGIC_SERVER_TASK__HTTPS_PORT:
-      setHttpsPort((Integer)newValue);
+      setHttpsPort((String)newValue);
       return;
     case ServerPackage.WEBLOGIC_SERVER_TASK__DEBUG_PORT:
-      setDebugPort((Integer)newValue);
+      setDebugPort((String)newValue);
       return;
     case ServerPackage.WEBLOGIC_SERVER_TASK__USERNAME:
       setUsername((String)newValue);
@@ -673,11 +674,11 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
     case ServerPackage.WEBLOGIC_SERVER_TASK__HOSTNAME:
       return HOSTNAME_EDEFAULT == null ? hostname != null : !HOSTNAME_EDEFAULT.equals(hostname);
     case ServerPackage.WEBLOGIC_SERVER_TASK__PORT:
-      return port != PORT_EDEFAULT;
+      return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
     case ServerPackage.WEBLOGIC_SERVER_TASK__HTTPS_PORT:
-      return httpsPort != HTTPS_PORT_EDEFAULT;
+      return HTTPS_PORT_EDEFAULT == null ? httpsPort != null : !HTTPS_PORT_EDEFAULT.equals(httpsPort);
     case ServerPackage.WEBLOGIC_SERVER_TASK__DEBUG_PORT:
-      return debugPort != DEBUG_PORT_EDEFAULT;
+      return DEBUG_PORT_EDEFAULT == null ? debugPort != null : !DEBUG_PORT_EDEFAULT.equals(debugPort);
     case ServerPackage.WEBLOGIC_SERVER_TASK__USERNAME:
       return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
     case ServerPackage.WEBLOGIC_SERVER_TASK__PASSWORD:
@@ -740,6 +741,57 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
   @Override
   public void dispose()
   {
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WeblogicServerTask#port()
+   */
+  @Override
+  public Integer port() throws ServerTaskException
+  {
+    try
+    {
+      return Integer.parseInt(port);
+    }
+    catch (NumberFormatException e)
+    {
+      throw new ServerTaskException("Unable to parse port number.", e);
+    }
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WeblogicServerTask#httpsPort()
+   */
+  @Override
+  public Integer httpsPort() throws ServerTaskException
+  {
+    try
+    {
+      return Integer.parseInt(port);
+    }
+    catch (NumberFormatException e)
+    {
+      throw new ServerTaskException("Unable to parse https port number.", e);
+    }
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WeblogicServerTask#debugPort()
+   */
+  @Override
+  public Integer debugPort() throws ServerTaskException
+  {
+    try
+    {
+      return Integer.parseInt(port);
+    }
+    catch (NumberFormatException e)
+    {
+      throw new ServerTaskException("Unable to parse debug port number.", e);
+    }
   }
 
 } // WeblogicServerTaskImpl

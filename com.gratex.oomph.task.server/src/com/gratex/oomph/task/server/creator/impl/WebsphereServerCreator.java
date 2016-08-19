@@ -95,9 +95,9 @@ public class WebsphereServerCreator extends ServerCreator
     wasServer.setRemoteServerStartOSId(serverTask.getRemoteOsUser()); // remoteUser
     wasServer.setRemoteServerStartOSPassword(serverTask.getRemoteOsPassword()); // remotePassword
     wasServer.setIsQuickBatchServerStart(true);
-    wasServer.setOrbBootstrapPortNum(serverTask.getBootstrapPort()); // bootstrapPort
-    wasServer.setIPCConnectorPortNum(serverTask.getIcpPort()); // icpPort
-    wasServer.setSoapConnectorPortNum(serverTask.getSoapPort()); // soapPort
+    wasServer.setOrbBootstrapPortNum(serverTask.bootstrapPort()); // bootstrapPort
+    wasServer.setIPCConnectorPortNum(serverTask.icpPort()); // icpPort
+    wasServer.setSoapConnectorPortNum(serverTask.soapPort()); // soapPort
     wasServer.setServerConnectionType(ConnectionType.SOAP.name());
     wasServer.setIsRunServerWithWorkspaceResources(false);
     wasServer.setIsAutoConnectionTypeEnabled(false);

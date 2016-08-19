@@ -574,10 +574,10 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getServerTask_Hostname(), ecorePackage.getEString(), "hostname", "localhost", 1, 1, ServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getServerTask_Port(), ecorePackage.getEInt(), "port", "8080", 1, 1, ServerTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+    initEAttribute(getServerTask_Port(), ecorePackage.getEString(), "port", "8080", 1, 1, ServerTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
         !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getServerTask_HttpsPort(), ecorePackage.getEInt(), "httpsPort", "8443", 1, 1, ServerTask.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
-        !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getServerTask_HttpsPort(), ecorePackage.getEString(), "httpsPort", "8443", 1, 1, ServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(weblogicServerTaskEClass, WeblogicServerTask.class, "WeblogicServerTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWeblogicServerTask_ServerName(), ecorePackage.getEString(), "serverName", null, 1, 1, WeblogicServerTask.class, !IS_TRANSIENT,
@@ -590,12 +590,12 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWeblogicServerTask_Hostname(), ecorePackage.getEString(), "hostname", "localhost", 1, 1, WeblogicServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWeblogicServerTask_Port(), ecorePackage.getEInt(), "port", "7001", 1, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+    initEAttribute(getWeblogicServerTask_Port(), ecorePackage.getEString(), "port", "7001", 1, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWeblogicServerTask_HttpsPort(), ecorePackage.getEInt(), "httpsPort", "7002", 1, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
-        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWeblogicServerTask_DebugPort(), ecorePackage.getEInt(), "debugPort", "8453", 0, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
-        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeblogicServerTask_HttpsPort(), ecorePackage.getEString(), "httpsPort", "7002", 1, 1, WeblogicServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeblogicServerTask_DebugPort(), ecorePackage.getEString(), "debugPort", "8453", 0, 1, WeblogicServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWeblogicServerTask_Username(), ecorePackage.getEString(), "username", null, 0, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWeblogicServerTask_Password(), ecorePackage.getEString(), "password", null, 0, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
@@ -614,12 +614,12 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWebsphereServerTask_Hostname(), ecorePackage.getEString(), "hostname", "localhost", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_BootstrapPort(), ecorePackage.getEInt(), "bootstrapPort", "2806", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+    initEAttribute(getWebsphereServerTask_BootstrapPort(), ecorePackage.getEString(), "bootstrapPort", "2806", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_IcpPort(), ecorePackage.getEInt(), "icpPort", "9633", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+    initEAttribute(getWebsphereServerTask_IcpPort(), ecorePackage.getEString(), "icpPort", "9633", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_SoapPort(), ecorePackage.getEInt(), "soapPort", "8880", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
-        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_SoapPort(), ecorePackage.getEString(), "soapPort", "8880", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWebsphereServerTask_RemoteOsUser(), ecorePackage.getEString(), "remoteOsUser", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWebsphereServerTask_RemoteOsPassword(), ecorePackage.getEString(), "remoteOsPassword", null, 1, 1, WebsphereServerTask.class,
