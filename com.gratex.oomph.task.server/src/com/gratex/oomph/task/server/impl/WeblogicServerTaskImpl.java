@@ -769,7 +769,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
   {
     try
     {
-      return Integer.parseInt(port);
+      return Integer.parseInt(httpsPort);
     }
     catch (NumberFormatException e)
     {
@@ -786,7 +786,7 @@ public class WeblogicServerTaskImpl extends SetupTaskImpl implements WeblogicSer
   {
     try
     {
-      return Integer.parseInt(port);
+      return Integer.parseInt(debugPort);
     }
     catch (NumberFormatException e)
     {

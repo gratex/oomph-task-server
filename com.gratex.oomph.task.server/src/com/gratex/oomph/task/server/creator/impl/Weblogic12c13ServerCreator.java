@@ -75,6 +75,7 @@ public class Weblogic12c13ServerCreator extends ServerCreator
     swc.setHost(serverTask.getHostname());
 
     WeblogicServer wlServerWC = (WeblogicServer)swc.loadAdapter(WeblogicServer.class, null);
+    wlServerWC.setHostname(serverTask.getHostname());
     wlServerWC.setRemote(true);
     wlServerWC.setPort(serverTask.port());
     wlServerWC.setHttpsPort(serverTask.httpsPort());
