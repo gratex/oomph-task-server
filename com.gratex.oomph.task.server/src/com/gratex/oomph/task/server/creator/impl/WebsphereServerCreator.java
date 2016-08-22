@@ -86,6 +86,7 @@ public class WebsphereServerCreator extends ServerCreator
     IServerType serverType = ServerCore.findServerType(WAS_V7_SERVER_ID);
     IServerWorkingCopy swc = serverType.createServer(serverTask.getServerName(), null, runtime, monitor);
     swc.setHost(serverTask.getHostname());
+    swc.setName(serverTask.getServerName());
 
     WASServer wasServer = (WASServer)swc.loadAdapter(WASServer.class, null);
     wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName

@@ -76,6 +76,7 @@ public class Tomcat7ServerCreator extends ServerCreator
     IServerType serverType = ServerCore.findServerType(SERVER_ID);
     IServerWorkingCopy swc = serverType.createServer(serverTask.getServerName(), null, runtime, monitor);
     swc.setHost(serverTask.getHostname());
+    swc.setName(serverTask.getServerName());
 
     IServer server = swc.save(false, monitor);
     TomcatServer tServer = (TomcatServer)server.loadAdapter(TomcatServer.class, monitor);

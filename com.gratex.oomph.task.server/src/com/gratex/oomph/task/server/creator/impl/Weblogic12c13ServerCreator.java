@@ -73,6 +73,7 @@ public class Weblogic12c13ServerCreator extends ServerCreator
 
     IServerWorkingCopy swc = serverType.createServer(serverTask.getServerName(), null, runtime, monitor);
     swc.setHost(serverTask.getHostname());
+    swc.setName(serverTask.getServerName());
 
     WeblogicServer wlServerWC = (WeblogicServer)swc.loadAdapter(WeblogicServer.class, null);
     wlServerWC.setHostname(serverTask.getHostname());
