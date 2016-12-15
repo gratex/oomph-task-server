@@ -9,7 +9,7 @@ Bundle-ActivationPolicy: lazy
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.5.0,4.0.0)",
- org.eclipse.oomph.setup;bundle-version="[1.1.0,2.0.0)";visibility:=reexport,
+ org.eclipse.oomph.setup;bundle-version="[1.1.0,2.0.0)",
  oracle.eclipse.tools.weblogic;bundle-version="15.7.1";resolution:=optional,
  org.eclipse.jst.server.tomcat.core;bundle-version="1.1.701";resolution:=optional,
  com.ibm.websphere.v7.core;bundle-version="7.0.300";resolution:=optional,
