@@ -10,18 +10,18 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import com.gratex.oomph.task.server.ServerPackage;
-import com.gratex.oomph.task.server.WeblogicServerTask;
+import com.gratex.oomph.task.server.TomcatServerTask;
 
 import java.util.Collection;
 import java.util.List;
 
 /**
- * This is the item provider adapter for a {@link com.gratex.oomph.task.server.WeblogicServerTask} object.
+ * This is the item provider adapter for a {@link com.gratex.oomph.task.server.TomcatServerTask} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class WeblogicServerTaskItemProvider extends ServerItemProvider
+public class TomcatServerTaskItemProvider extends ServerItemProvider
 {
   /**
    * This constructs an instance from a factory and a notifier.
@@ -29,7 +29,7 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  public WeblogicServerTaskItemProvider(AdapterFactory adapterFactory)
+  public TomcatServerTaskItemProvider(AdapterFactory adapterFactory)
   {
     super(adapterFactory);
   }
@@ -50,9 +50,9 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
       addJreVersionPropertyDescriptor(object);
       addPortPropertyDescriptor(object);
       addHttpsPortPropertyDescriptor(object);
-      addDebugPortPropertyDescriptor(object);
-      addUsernamePropertyDescriptor(object);
-      addPasswordPropertyDescriptor(object);
+      addServerVersionPropertyDescriptor(object);
+      addLaunchProgramArgsPropertyDescriptor(object);
+      addLaunchVmArgsPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -66,9 +66,9 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
   protected void addJreVersionPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WeblogicServerTask_jreVersion_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WeblogicServerTask_jreVersion_feature", "_UI_WeblogicServerTask_type"),
-        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__JRE_VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        getString("_UI_TomcatServerTask_jreVersion_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_TomcatServerTask_jreVersion_feature", "_UI_TomcatServerTask_type"),
+        ServerPackage.Literals.TOMCAT_SERVER_TASK__JRE_VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -80,9 +80,9 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
   protected void addPortPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WeblogicServerTask_port_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WeblogicServerTask_port_feature", "_UI_WeblogicServerTask_type"),
-        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        getString("_UI_TomcatServerTask_port_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_TomcatServerTask_port_feature", "_UI_TomcatServerTask_type"),
+        ServerPackage.Literals.TOMCAT_SERVER_TASK__PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -94,55 +94,55 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
   protected void addHttpsPortPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WeblogicServerTask_httpsPort_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WeblogicServerTask_httpsPort_feature", "_UI_WeblogicServerTask_type"),
-        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__HTTPS_PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        getString("_UI_TomcatServerTask_httpsPort_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_TomcatServerTask_httpsPort_feature", "_UI_TomcatServerTask_type"),
+        ServerPackage.Literals.TOMCAT_SERVER_TASK__HTTPS_PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
-   * This adds a property descriptor for the Debug Port feature.
+   * This adds a property descriptor for the Server Version feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addDebugPortPropertyDescriptor(Object object)
+  protected void addServerVersionPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WeblogicServerTask_debugPort_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WeblogicServerTask_debugPort_feature", "_UI_WeblogicServerTask_type"),
-        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__DEBUG_PORT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        getString("_UI_TomcatServerTask_serverVersion_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_TomcatServerTask_serverVersion_feature", "_UI_TomcatServerTask_type"),
+        ServerPackage.Literals.TOMCAT_SERVER_TASK__SERVER_VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
-   * This adds a property descriptor for the Username feature.
+   * This adds a property descriptor for the Launch Program Args feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addUsernamePropertyDescriptor(Object object)
+  protected void addLaunchProgramArgsPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WeblogicServerTask_username_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WeblogicServerTask_username_feature", "_UI_WeblogicServerTask_type"),
-        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__USERNAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        getString("_UI_TomcatServerTask_launchProgramArgs_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_TomcatServerTask_launchProgramArgs_feature", "_UI_TomcatServerTask_type"),
+        ServerPackage.Literals.TOMCAT_SERVER_TASK__LAUNCH_PROGRAM_ARGS, true, true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
-   * This adds a property descriptor for the Password feature.
+   * This adds a property descriptor for the Launch Vm Args feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected void addPasswordPropertyDescriptor(Object object)
+  protected void addLaunchVmArgsPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WeblogicServerTask_password_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WeblogicServerTask_password_feature", "_UI_WeblogicServerTask_type"),
-        ServerPackage.Literals.WEBLOGIC_SERVER_TASK__PASSWORD, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+        getString("_UI_TomcatServerTask_launchVmArgs_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_TomcatServerTask_launchVmArgs_feature", "_UI_TomcatServerTask_type"),
+        ServerPackage.Literals.TOMCAT_SERVER_TASK__LAUNCH_VM_ARGS, true, true, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
-   * This returns WeblogicServerTask.gif.
+   * This returns TomcatServerTask.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -150,7 +150,7 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
   @Override
   public Object getImage(Object object)
   {
-    return overlayImage(object, getResourceLocator().getImage("full/obj16/WeblogicServerTask"));
+    return overlayImage(object, getResourceLocator().getImage("full/obj16/TomcatServerTask"));
   }
 
   /**
@@ -173,8 +173,8 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
   @Override
   public String getTextGen(Object object)
   {
-    String label = ((WeblogicServerTask)object).getID();
-    return label == null || label.length() == 0 ? getString("_UI_WeblogicServerTask_type") : getString("_UI_WeblogicServerTask_type") + " " + label;
+    String label = ((TomcatServerTask)object).getID();
+    return label == null || label.length() == 0 ? getString("_UI_TomcatServerTask_type") : getString("_UI_TomcatServerTask_type") + " " + label;
   }
 
   @Override
@@ -182,7 +182,7 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
   {
     String label = getTextGen(object);
 
-    String type = getString("_UI_WeblogicServerTask_type");
+    String type = getString("_UI_TomcatServerTask_type");
     return label.startsWith(type + " ") && !label.equals(type) ? label.substring(type.length()).trim() : label;
   }
 
@@ -198,14 +198,14 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
   {
     updateChildren(notification);
 
-    switch (notification.getFeatureID(WeblogicServerTask.class))
+    switch (notification.getFeatureID(TomcatServerTask.class))
     {
-    case ServerPackage.WEBLOGIC_SERVER_TASK__JRE_VERSION:
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PORT:
-    case ServerPackage.WEBLOGIC_SERVER_TASK__HTTPS_PORT:
-    case ServerPackage.WEBLOGIC_SERVER_TASK__DEBUG_PORT:
-    case ServerPackage.WEBLOGIC_SERVER_TASK__USERNAME:
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PASSWORD:
+    case ServerPackage.TOMCAT_SERVER_TASK__JRE_VERSION:
+    case ServerPackage.TOMCAT_SERVER_TASK__PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__HTTPS_PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__SERVER_VERSION:
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_PROGRAM_ARGS:
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_VM_ARGS:
       fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
       return;
     }

@@ -40,7 +40,12 @@ public final class ServerEditPlugin extends EMFPlugin
    */
   public ServerEditPlugin()
   {
-    super(new ResourceLocator[] { BaseEditPlugin.INSTANCE, SetupEditPlugin.INSTANCE, });
+    super
+      (new ResourceLocator [] 
+       {
+         BaseEditPlugin.INSTANCE,
+         SetupEditPlugin.INSTANCE,
+       });
   }
 
   /**

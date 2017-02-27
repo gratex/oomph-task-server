@@ -23,13 +23,13 @@ public interface ServerFactory extends EFactory
   ServerFactory eINSTANCE = com.gratex.oomph.task.server.impl.ServerFactoryImpl.init();
 
   /**
-   * Returns a new object of class '<em>Task</em>'.
+   * Returns a new object of class '<em>Tomcat Server Task</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Task</em>'.
+   * @return a new object of class '<em>Tomcat Server Task</em>'.
    * @generated
    */
-  ServerTask createServerTask();
+  TomcatServerTask createTomcatServerTask();
 
   /**
    * Returns a new object of class '<em>Weblogic Server Task</em>'.
@@ -48,6 +48,15 @@ public interface ServerFactory extends EFactory
    * @generated
    */
   WebsphereServerTask createWebsphereServerTask();
+
+  /**
+   * Returns a new object of class '<em>Task Container</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Task Container</em>'.
+   * @generated
+   */
+  ServerTaskContainer createServerTaskContainer();
 
   /**
    * Returns the package supported by this factory.

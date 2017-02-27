@@ -9,29 +9,30 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import com.gratex.oomph.task.server.ServerPackage;
-import com.gratex.oomph.task.server.WeblogicServerTask;
-import com.gratex.oomph.task.server.creator.impl.Weblogic12c13ServerCreator;
+import com.gratex.oomph.task.server.TomcatServerTask;
+import com.gratex.oomph.task.server.TomcatServerVersion;
+import com.gratex.oomph.task.server.creator.impl.TomcatServerCreator;
 import com.gratex.oomph.task.server.exception.ServerTaskException;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Weblogic Server Task</b></em>'.
+ * An implementation of the model object '<em><b>Tomcat Server Task</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link com.gratex.oomph.task.server.impl.WeblogicServerTaskImpl#getJreVersion <em>Jre Version</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.impl.WeblogicServerTaskImpl#getPort <em>Port</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.impl.WeblogicServerTaskImpl#getHttpsPort <em>Https Port</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.impl.WeblogicServerTaskImpl#getDebugPort <em>Debug Port</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.impl.WeblogicServerTaskImpl#getUsername <em>Username</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.impl.WeblogicServerTaskImpl#getPassword <em>Password</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.TomcatServerTaskImpl#getJreVersion <em>Jre Version</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.TomcatServerTaskImpl#getPort <em>Port</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.TomcatServerTaskImpl#getHttpsPort <em>Https Port</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.TomcatServerTaskImpl#getServerVersion <em>Server Version</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.TomcatServerTaskImpl#getLaunchProgramArgs <em>Launch Program Args</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.TomcatServerTaskImpl#getLaunchVmArgs <em>Launch Vm Args</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServerTask
+public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
 {
   /**
    * The default value of the '{@link #getJreVersion() <em>Jre Version</em>}' attribute.
@@ -61,7 +62,7 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
    * @generated
    * @ordered
    */
-  protected static final String PORT_EDEFAULT = "7001";
+  protected static final String PORT_EDEFAULT = "8080";
 
   /**
    * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
@@ -81,7 +82,7 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
    * @generated
    * @ordered
    */
-  protected static final String HTTPS_PORT_EDEFAULT = "7002";
+  protected static final String HTTPS_PORT_EDEFAULT = "8443";
 
   /**
    * The cached value of the '{@link #getHttpsPort() <em>Https Port</em>}' attribute.
@@ -94,73 +95,73 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   protected String httpsPort = HTTPS_PORT_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getDebugPort() <em>Debug Port</em>}' attribute.
+   * The default value of the '{@link #getServerVersion() <em>Server Version</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDebugPort()
+   * @see #getServerVersion()
    * @generated
    * @ordered
    */
-  protected static final String DEBUG_PORT_EDEFAULT = "8453";
+  protected static final TomcatServerVersion SERVER_VERSION_EDEFAULT = TomcatServerVersion.TOMCAT70;
 
   /**
-   * The cached value of the '{@link #getDebugPort() <em>Debug Port</em>}' attribute.
+   * The cached value of the '{@link #getServerVersion() <em>Server Version</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getDebugPort()
+   * @see #getServerVersion()
    * @generated
    * @ordered
    */
-  protected String debugPort = DEBUG_PORT_EDEFAULT;
+  protected TomcatServerVersion serverVersion = SERVER_VERSION_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getUsername() <em>Username</em>}' attribute.
+   * The default value of the '{@link #getLaunchProgramArgs() <em>Launch Program Args</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsername()
+   * @see #getLaunchProgramArgs()
    * @generated
    * @ordered
    */
-  protected static final String USERNAME_EDEFAULT = null;
+  protected static final String LAUNCH_PROGRAM_ARGS_EDEFAULT = "";
 
   /**
-   * The cached value of the '{@link #getUsername() <em>Username</em>}' attribute.
+   * The cached value of the '{@link #getLaunchProgramArgs() <em>Launch Program Args</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getUsername()
+   * @see #getLaunchProgramArgs()
    * @generated
    * @ordered
    */
-  protected String username = USERNAME_EDEFAULT;
+  protected String launchProgramArgs = LAUNCH_PROGRAM_ARGS_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
+   * The default value of the '{@link #getLaunchVmArgs() <em>Launch Vm Args</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPassword()
+   * @see #getLaunchVmArgs()
    * @generated
    * @ordered
    */
-  protected static final String PASSWORD_EDEFAULT = null;
+  protected static final String LAUNCH_VM_ARGS_EDEFAULT = "";
 
   /**
-   * The cached value of the '{@link #getPassword() <em>Password</em>}' attribute.
+   * The cached value of the '{@link #getLaunchVmArgs() <em>Launch Vm Args</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getPassword()
+   * @see #getLaunchVmArgs()
    * @generated
    * @ordered
    */
-  protected String password = PASSWORD_EDEFAULT;
+  protected String launchVmArgs = LAUNCH_VM_ARGS_EDEFAULT;
 
-  private Weblogic12c13ServerCreator serverCreator;
+  private TomcatServerCreator serverCreator;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected WeblogicServerTaskImpl()
+  protected TomcatServerTaskImpl()
   {
     super();
   }
@@ -173,7 +174,7 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   @Override
   protected EClass eStaticClass()
   {
-    return ServerPackage.Literals.WEBLOGIC_SERVER_TASK;
+    return ServerPackage.Literals.TOMCAT_SERVER_TASK;
   }
 
   /**
@@ -199,7 +200,7 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
     jreVersion = newJreVersion;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBLOGIC_SERVER_TASK__JRE_VERSION, oldJreVersion, jreVersion));
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.TOMCAT_SERVER_TASK__JRE_VERSION, oldJreVersion, jreVersion));
     }
   }
 
@@ -214,6 +215,23 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
     return port;
   }
 
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WeblogicServerTask#port()
+   */
+  @Override
+  public Integer port() throws ServerTaskException
+  {
+    try
+    {
+      return Integer.parseInt(port);
+    }
+    catch (NumberFormatException e)
+    {
+      throw new ServerTaskException("Unable to parse port number.", e);
+    }
+  }
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -226,7 +244,7 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
     port = newPort;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBLOGIC_SERVER_TASK__PORT, oldPort, port));
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.TOMCAT_SERVER_TASK__PORT, oldPort, port));
     }
   }
 
@@ -241,6 +259,23 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
     return httpsPort;
   }
 
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WeblogicServerTask#port()
+   */
+  @Override
+  public Integer httpsPort() throws ServerTaskException
+  {
+    try
+    {
+      return Integer.parseInt(httpsPort);
+    }
+    catch (NumberFormatException e)
+    {
+      throw new ServerTaskException("Unable to parse httpsPort number.", e);
+    }
+  }
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -253,7 +288,7 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
     httpsPort = newHttpsPort;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBLOGIC_SERVER_TASK__HTTPS_PORT, oldHttpsPort, httpsPort));
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.TOMCAT_SERVER_TASK__HTTPS_PORT, oldHttpsPort, httpsPort));
     }
   }
 
@@ -263,9 +298,9 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
    * @generated
    */
   @Override
-  public String getDebugPort()
+  public TomcatServerVersion getServerVersion()
   {
-    return debugPort;
+    return serverVersion;
   }
 
   /**
@@ -274,13 +309,13 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
    * @generated
    */
   @Override
-  public void setDebugPort(String newDebugPort)
+  public void setServerVersion(TomcatServerVersion newServerVersion)
   {
-    String oldDebugPort = debugPort;
-    debugPort = newDebugPort;
+    TomcatServerVersion oldServerVersion = serverVersion;
+    serverVersion = newServerVersion == null ? SERVER_VERSION_EDEFAULT : newServerVersion;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBLOGIC_SERVER_TASK__DEBUG_PORT, oldDebugPort, debugPort));
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.TOMCAT_SERVER_TASK__SERVER_VERSION, oldServerVersion, serverVersion));
     }
   }
 
@@ -290,9 +325,9 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
    * @generated
    */
   @Override
-  public String getUsername()
+  public String getLaunchProgramArgs()
   {
-    return username;
+    return launchProgramArgs;
   }
 
   /**
@@ -301,13 +336,13 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
    * @generated
    */
   @Override
-  public void setUsername(String newUsername)
+  public void setLaunchProgramArgs(String newLaunchProgramArgs)
   {
-    String oldUsername = username;
-    username = newUsername;
+    String oldLaunchProgramArgs = launchProgramArgs;
+    launchProgramArgs = newLaunchProgramArgs;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBLOGIC_SERVER_TASK__USERNAME, oldUsername, username));
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_PROGRAM_ARGS, oldLaunchProgramArgs, launchProgramArgs));
     }
   }
 
@@ -317,9 +352,9 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
    * @generated
    */
   @Override
-  public String getPassword()
+  public String getLaunchVmArgs()
   {
-    return password;
+    return launchVmArgs;
   }
 
   /**
@@ -328,13 +363,13 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
    * @generated
    */
   @Override
-  public void setPassword(String newPassword)
+  public void setLaunchVmArgs(String newLaunchVmArgs)
   {
-    String oldPassword = password;
-    password = newPassword;
+    String oldLaunchVmArgs = launchVmArgs;
+    launchVmArgs = newLaunchVmArgs;
     if (eNotificationRequired())
     {
-      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBLOGIC_SERVER_TASK__PASSWORD, oldPassword, password));
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_VM_ARGS, oldLaunchVmArgs, launchVmArgs));
     }
   }
 
@@ -348,18 +383,18 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   {
     switch (featureID)
     {
-    case ServerPackage.WEBLOGIC_SERVER_TASK__JRE_VERSION:
+    case ServerPackage.TOMCAT_SERVER_TASK__JRE_VERSION:
       return getJreVersion();
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__PORT:
       return getPort();
-    case ServerPackage.WEBLOGIC_SERVER_TASK__HTTPS_PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__HTTPS_PORT:
       return getHttpsPort();
-    case ServerPackage.WEBLOGIC_SERVER_TASK__DEBUG_PORT:
-      return getDebugPort();
-    case ServerPackage.WEBLOGIC_SERVER_TASK__USERNAME:
-      return getUsername();
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PASSWORD:
-      return getPassword();
+    case ServerPackage.TOMCAT_SERVER_TASK__SERVER_VERSION:
+      return getServerVersion();
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_PROGRAM_ARGS:
+      return getLaunchProgramArgs();
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_VM_ARGS:
+      return getLaunchVmArgs();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -374,23 +409,23 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   {
     switch (featureID)
     {
-    case ServerPackage.WEBLOGIC_SERVER_TASK__JRE_VERSION:
+    case ServerPackage.TOMCAT_SERVER_TASK__JRE_VERSION:
       setJreVersion((String)newValue);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__PORT:
       setPort((String)newValue);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__HTTPS_PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__HTTPS_PORT:
       setHttpsPort((String)newValue);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__DEBUG_PORT:
-      setDebugPort((String)newValue);
+    case ServerPackage.TOMCAT_SERVER_TASK__SERVER_VERSION:
+      setServerVersion((TomcatServerVersion)newValue);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__USERNAME:
-      setUsername((String)newValue);
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_PROGRAM_ARGS:
+      setLaunchProgramArgs((String)newValue);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PASSWORD:
-      setPassword((String)newValue);
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_VM_ARGS:
+      setLaunchVmArgs((String)newValue);
       return;
     }
     super.eSet(featureID, newValue);
@@ -406,23 +441,23 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   {
     switch (featureID)
     {
-    case ServerPackage.WEBLOGIC_SERVER_TASK__JRE_VERSION:
+    case ServerPackage.TOMCAT_SERVER_TASK__JRE_VERSION:
       setJreVersion(JRE_VERSION_EDEFAULT);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__PORT:
       setPort(PORT_EDEFAULT);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__HTTPS_PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__HTTPS_PORT:
       setHttpsPort(HTTPS_PORT_EDEFAULT);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__DEBUG_PORT:
-      setDebugPort(DEBUG_PORT_EDEFAULT);
+    case ServerPackage.TOMCAT_SERVER_TASK__SERVER_VERSION:
+      setServerVersion(SERVER_VERSION_EDEFAULT);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__USERNAME:
-      setUsername(USERNAME_EDEFAULT);
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_PROGRAM_ARGS:
+      setLaunchProgramArgs(LAUNCH_PROGRAM_ARGS_EDEFAULT);
       return;
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PASSWORD:
-      setPassword(PASSWORD_EDEFAULT);
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_VM_ARGS:
+      setLaunchVmArgs(LAUNCH_VM_ARGS_EDEFAULT);
       return;
     }
     super.eUnset(featureID);
@@ -438,18 +473,18 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   {
     switch (featureID)
     {
-    case ServerPackage.WEBLOGIC_SERVER_TASK__JRE_VERSION:
+    case ServerPackage.TOMCAT_SERVER_TASK__JRE_VERSION:
       return JRE_VERSION_EDEFAULT == null ? jreVersion != null : !JRE_VERSION_EDEFAULT.equals(jreVersion);
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__PORT:
       return PORT_EDEFAULT == null ? port != null : !PORT_EDEFAULT.equals(port);
-    case ServerPackage.WEBLOGIC_SERVER_TASK__HTTPS_PORT:
+    case ServerPackage.TOMCAT_SERVER_TASK__HTTPS_PORT:
       return HTTPS_PORT_EDEFAULT == null ? httpsPort != null : !HTTPS_PORT_EDEFAULT.equals(httpsPort);
-    case ServerPackage.WEBLOGIC_SERVER_TASK__DEBUG_PORT:
-      return DEBUG_PORT_EDEFAULT == null ? debugPort != null : !DEBUG_PORT_EDEFAULT.equals(debugPort);
-    case ServerPackage.WEBLOGIC_SERVER_TASK__USERNAME:
-      return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
-    case ServerPackage.WEBLOGIC_SERVER_TASK__PASSWORD:
-      return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
+    case ServerPackage.TOMCAT_SERVER_TASK__SERVER_VERSION:
+      return serverVersion != SERVER_VERSION_EDEFAULT;
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_PROGRAM_ARGS:
+      return LAUNCH_PROGRAM_ARGS_EDEFAULT == null ? launchProgramArgs != null : !LAUNCH_PROGRAM_ARGS_EDEFAULT.equals(launchProgramArgs);
+    case ServerPackage.TOMCAT_SERVER_TASK__LAUNCH_VM_ARGS:
+      return LAUNCH_VM_ARGS_EDEFAULT == null ? launchVmArgs != null : !LAUNCH_VM_ARGS_EDEFAULT.equals(launchVmArgs);
     }
     return super.eIsSet(featureID);
   }
@@ -474,12 +509,12 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
     result.append(port);
     result.append(", httpsPort: ");
     result.append(httpsPort);
-    result.append(", debugPort: ");
-    result.append(debugPort);
-    result.append(", username: ");
-    result.append(username);
-    result.append(", password: ");
-    result.append(password);
+    result.append(", serverVersion: ");
+    result.append(serverVersion);
+    result.append(", launchProgramArgs: ");
+    result.append(launchProgramArgs);
+    result.append(", launchVmArgs: ");
+    result.append(launchVmArgs);
     result.append(')');
     return result.toString();
   }
@@ -487,7 +522,7 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   @Override
   public boolean isNeeded(SetupTaskContext context) throws Exception
   {
-    serverCreator = new Weblogic12c13ServerCreator(context, this);
+    serverCreator = new TomcatServerCreator(context, this);
     return !serverCreator.exists();
   }
 
@@ -502,55 +537,4 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   {
   }
 
-  /*
-   * (non-Javadoc)
-   * @see com.gratex.oomph.task.server.WeblogicServerTask#port()
-   */
-  @Override
-  public Integer port() throws ServerTaskException
-  {
-    try
-    {
-      return Integer.parseInt(port);
-    }
-    catch (NumberFormatException e)
-    {
-      throw new ServerTaskException("Unable to parse port number.", e);
-    }
-  }
-
-  /*
-   * (non-Javadoc)
-   * @see com.gratex.oomph.task.server.WeblogicServerTask#httpsPort()
-   */
-  @Override
-  public Integer httpsPort() throws ServerTaskException
-  {
-    try
-    {
-      return Integer.parseInt(httpsPort);
-    }
-    catch (NumberFormatException e)
-    {
-      throw new ServerTaskException("Unable to parse https port number.", e);
-    }
-  }
-
-  /*
-   * (non-Javadoc)
-   * @see com.gratex.oomph.task.server.WeblogicServerTask#debugPort()
-   */
-  @Override
-  public Integer debugPort() throws ServerTaskException
-  {
-    try
-    {
-      return Integer.parseInt(debugPort);
-    }
-    catch (NumberFormatException e)
-    {
-      throw new ServerTaskException("Unable to parse debug port number.", e);
-    }
-  }
-
-} // WeblogicServerTaskImpl
+} // TomcatServerTaskImpl

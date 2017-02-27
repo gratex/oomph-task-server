@@ -10,94 +10,119 @@ import java.util.List;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the literals of the enumeration '<em><b>Type</b></em>',
+ * A representation of the literals of the enumeration '<em><b>Tomcat Server Version</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
- * @see com.gratex.oomph.task.server.ServerPackage#getServerType()
+ * @see com.gratex.oomph.task.server.ServerPackage#getTomcatServerVersion()
  * @model
  * @generated
  */
-public enum ServerType implements Enumerator
+public enum TomcatServerVersion implements Enumerator
 {
   /**
-   * The '<em><b>Tomcat70</b></em>' literal object.
+   * The '<em><b>TOMCAT70</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #TOMCAT70_VALUE
    * @generated
    * @ordered
    */
-  TOMCAT70(0, "Tomcat70", "Tomcat70"),
+  TOMCAT70(0, "TOMCAT70", "Tomcat 7.0"),
 
   /**
-   * The '<em><b>Weblogic12c13</b></em>' literal object.
+   * The '<em><b>TOMCAT80</b></em>' literal object.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #WEBLOGIC12C13_VALUE
+   * @see #TOMCAT80_VALUE
    * @generated
    * @ordered
    */
-  WEBLOGIC12C13(1, "Weblogic12c13", "Weblogic12c13");
+  TOMCAT80(1, "TOMCAT80", "Tomcat 8.0"),
 
   /**
-   * The '<em><b>Tomcat70</b></em>' literal value.
+   * The '<em><b>TOMCAT85</b></em>' literal object.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #TOMCAT85_VALUE
+   * @generated
+   * @ordered
+   */
+  TOMCAT85(2, "TOMCAT85", "Tomcat 8.5");
+
+  /**
+   * The '<em><b>TOMCAT70</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>Tomcat70</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>TOMCAT70</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
    * @see #TOMCAT70
-   * @model name="Tomcat70"
+   * @model literal="Tomcat 7.0"
    * @generated
    * @ordered
    */
   public static final int TOMCAT70_VALUE = 0;
 
   /**
-   * The '<em><b>Weblogic12c13</b></em>' literal value.
+   * The '<em><b>TOMCAT80</b></em>' literal value.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of '<em><b>Weblogic12c13</b></em>' literal object isn't clear,
+   * If the meaning of '<em><b>TOMCAT80</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @see #WEBLOGIC12C13
-   * @model name="Weblogic12c13"
+   * @see #TOMCAT80
+   * @model literal="Tomcat 8.0"
    * @generated
    * @ordered
    */
-  public static final int WEBLOGIC12C13_VALUE = 1;
+  public static final int TOMCAT80_VALUE = 1;
 
   /**
-   * An array of all the '<em><b>Type</b></em>' enumerators.
+   * The '<em><b>TOMCAT85</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>TOMCAT85</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #TOMCAT85
+   * @model literal="Tomcat 8.5"
+   * @generated
+   * @ordered
+   */
+  public static final int TOMCAT85_VALUE = 2;
+
+  /**
+   * An array of all the '<em><b>Tomcat Server Version</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final ServerType[] VALUES_ARRAY = new ServerType[] { TOMCAT70, WEBLOGIC12C13, };
+  private static final TomcatServerVersion[] VALUES_ARRAY = new TomcatServerVersion[] { TOMCAT70, TOMCAT80, TOMCAT85, };
 
   /**
-   * A public read-only list of all the '<em><b>Type</b></em>' enumerators.
+   * A public read-only list of all the '<em><b>Tomcat Server Version</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  public static final List<ServerType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
+  public static final List<TomcatServerVersion> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified literal value.
+   * Returns the '<em><b>Tomcat Server Version</b></em>' literal with the specified literal value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param literal the literal.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static ServerType get(String literal)
+  public static TomcatServerVersion get(String literal)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      ServerType result = VALUES_ARRAY[i];
+      TomcatServerVersion result = VALUES_ARRAY[i];
       if (result.toString().equals(literal))
       {
         return result;
@@ -107,18 +132,18 @@ public enum ServerType implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified name.
+   * Returns the '<em><b>Tomcat Server Version</b></em>' literal with the specified name.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param name the name.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static ServerType getByName(String name)
+  public static TomcatServerVersion getByName(String name)
   {
     for (int i = 0; i < VALUES_ARRAY.length; ++i)
     {
-      ServerType result = VALUES_ARRAY[i];
+      TomcatServerVersion result = VALUES_ARRAY[i];
       if (result.getName().equals(name))
       {
         return result;
@@ -128,21 +153,23 @@ public enum ServerType implements Enumerator
   }
 
   /**
-   * Returns the '<em><b>Type</b></em>' literal with the specified integer value.
+   * Returns the '<em><b>Tomcat Server Version</b></em>' literal with the specified integer value.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the integer value.
    * @return the matching enumerator or <code>null</code>.
    * @generated
    */
-  public static ServerType get(int value)
+  public static TomcatServerVersion get(int value)
   {
     switch (value)
     {
     case TOMCAT70_VALUE:
       return TOMCAT70;
-    case WEBLOGIC12C13_VALUE:
-      return WEBLOGIC12C13;
+    case TOMCAT80_VALUE:
+      return TOMCAT80;
+    case TOMCAT85_VALUE:
+      return TOMCAT85;
     }
     return null;
   }
@@ -174,7 +201,7 @@ public enum ServerType implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
-  private ServerType(int value, String name, String literal)
+  private TomcatServerVersion(int value, String name, String literal)
   {
     this.value = value;
     this.name = name;
@@ -186,6 +213,7 @@ public enum ServerType implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public int getValue()
   {
     return value;
@@ -196,6 +224,7 @@ public enum ServerType implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getName()
   {
     return name;
@@ -206,6 +235,7 @@ public enum ServerType implements Enumerator
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getLiteral()
   {
     return literal;
@@ -223,4 +253,4 @@ public enum ServerType implements Enumerator
     return literal;
   }
 
-} // ServerType
+} // TomcatServerVersion

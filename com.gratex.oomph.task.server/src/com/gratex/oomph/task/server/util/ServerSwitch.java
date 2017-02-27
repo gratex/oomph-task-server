@@ -9,8 +9,10 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
 
+import com.gratex.oomph.task.server.Server;
 import com.gratex.oomph.task.server.ServerPackage;
-import com.gratex.oomph.task.server.ServerTask;
+import com.gratex.oomph.task.server.ServerTaskContainer;
+import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.WeblogicServerTask;
 import com.gratex.oomph.task.server.WebsphereServerTask;
 
@@ -77,17 +79,25 @@ public class ServerSwitch<T> extends Switch<T>
   {
     switch (classifierID)
     {
-    case ServerPackage.SERVER_TASK:
+    case ServerPackage.TOMCAT_SERVER_TASK:
     {
-      ServerTask serverTask = (ServerTask)theEObject;
-      T result = caseServerTask(serverTask);
+      TomcatServerTask tomcatServerTask = (TomcatServerTask)theEObject;
+      T result = caseTomcatServerTask(tomcatServerTask);
       if (result == null)
       {
-        result = caseSetupTask(serverTask);
+        result = caseServer(tomcatServerTask);
       }
       if (result == null)
       {
-        result = caseModelElement(serverTask);
+        result = caseServerTaskContainer(tomcatServerTask);
+      }
+      if (result == null)
+      {
+        result = caseSetupTask(tomcatServerTask);
+      }
+      if (result == null)
+      {
+        result = caseModelElement(tomcatServerTask);
       }
       if (result == null)
       {
@@ -99,6 +109,14 @@ public class ServerSwitch<T> extends Switch<T>
     {
       WeblogicServerTask weblogicServerTask = (WeblogicServerTask)theEObject;
       T result = caseWeblogicServerTask(weblogicServerTask);
+      if (result == null)
+      {
+        result = caseServer(weblogicServerTask);
+      }
+      if (result == null)
+      {
+        result = caseServerTaskContainer(weblogicServerTask);
+      }
       if (result == null)
       {
         result = caseSetupTask(weblogicServerTask);
@@ -119,11 +137,59 @@ public class ServerSwitch<T> extends Switch<T>
       T result = caseWebsphereServerTask(websphereServerTask);
       if (result == null)
       {
+        result = caseServer(websphereServerTask);
+      }
+      if (result == null)
+      {
+        result = caseServerTaskContainer(websphereServerTask);
+      }
+      if (result == null)
+      {
         result = caseSetupTask(websphereServerTask);
       }
       if (result == null)
       {
         result = caseModelElement(websphereServerTask);
+      }
+      if (result == null)
+      {
+        result = defaultCase(theEObject);
+      }
+      return result;
+    }
+    case ServerPackage.SERVER:
+    {
+      Server server = (Server)theEObject;
+      T result = caseServer(server);
+      if (result == null)
+      {
+        result = caseServerTaskContainer(server);
+      }
+      if (result == null)
+      {
+        result = caseSetupTask(server);
+      }
+      if (result == null)
+      {
+        result = caseModelElement(server);
+      }
+      if (result == null)
+      {
+        result = defaultCase(theEObject);
+      }
+      return result;
+    }
+    case ServerPackage.SERVER_TASK_CONTAINER:
+    {
+      ServerTaskContainer serverTaskContainer = (ServerTaskContainer)theEObject;
+      T result = caseServerTaskContainer(serverTaskContainer);
+      if (result == null)
+      {
+        result = caseSetupTask(serverTaskContainer);
+      }
+      if (result == null)
+      {
+        result = caseModelElement(serverTaskContainer);
       }
       if (result == null)
       {
@@ -137,17 +203,17 @@ public class ServerSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Task</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Tomcat Server Task</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Task</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Tomcat Server Task</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseServerTask(ServerTask object)
+  public T caseTomcatServerTask(TomcatServerTask object)
   {
     return null;
   }
@@ -180,6 +246,38 @@ public class ServerSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseWebsphereServerTask(WebsphereServerTask object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Server</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Server</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseServer(Server object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Task Container</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Task Container</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseServerTaskContainer(ServerTaskContainer object)
   {
     return null;
   }

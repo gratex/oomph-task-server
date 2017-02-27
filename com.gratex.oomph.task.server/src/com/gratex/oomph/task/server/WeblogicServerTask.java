@@ -2,8 +2,6 @@
  */
 package com.gratex.oomph.task.server;
 
-import org.eclipse.oomph.setup.SetupTask;
-
 import com.gratex.oomph.task.server.exception.ServerTaskException;
 
 /**
@@ -15,11 +13,7 @@ import com.gratex.oomph.task.server.exception.ServerTaskException;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.gratex.oomph.task.server.WeblogicServerTask#getServerName <em>Server Name</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.WeblogicServerTask#getLocation <em>Location</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.WeblogicServerTask#getRuntimeName <em>Runtime Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WeblogicServerTask#getJreVersion <em>Jre Version</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.WeblogicServerTask#getHostname <em>Hostname</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WeblogicServerTask#getPort <em>Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WeblogicServerTask#getHttpsPort <em>Https Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WeblogicServerTask#getDebugPort <em>Debug Port</em>}</li>
@@ -32,86 +26,8 @@ import com.gratex.oomph.task.server.exception.ServerTaskException;
  *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='BOOTSTRAP STARTUP MANUAL'"
  * @generated
  */
-public interface WeblogicServerTask extends SetupTask
+public interface WeblogicServerTask extends Server
 {
-  /**
-   * Returns the value of the '<em><b>Server Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Server Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Server Name</em>' attribute.
-   * @see #setServerName(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_ServerName()
-   * @model required="true"
-   * @generated
-   */
-  String getServerName();
-
-  /**
-   * Sets the value of the '{@link com.gratex.oomph.task.server.WeblogicServerTask#getServerName <em>Server Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Server Name</em>' attribute.
-   * @see #getServerName()
-   * @generated
-   */
-  void setServerName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Location</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Location</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Location</em>' attribute.
-   * @see #setLocation(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_Location()
-   * @model required="true"
-   * @generated
-   */
-  String getLocation();
-
-  /**
-   * Sets the value of the '{@link com.gratex.oomph.task.server.WeblogicServerTask#getLocation <em>Location</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Location</em>' attribute.
-   * @see #getLocation()
-   * @generated
-   */
-  void setLocation(String value);
-
-  /**
-   * Returns the value of the '<em><b>Runtime Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Runtime Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Runtime Name</em>' attribute.
-   * @see #setRuntimeName(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_RuntimeName()
-   * @model required="true"
-   * @generated
-   */
-  String getRuntimeName();
-
-  /**
-   * Sets the value of the '{@link com.gratex.oomph.task.server.WeblogicServerTask#getRuntimeName <em>Runtime Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Runtime Name</em>' attribute.
-   * @see #getRuntimeName()
-   * @generated
-   */
-  void setRuntimeName(String value);
-
   /**
    * Returns the value of the '<em><b>Jre Version</b></em>' attribute.
    * <!-- begin-user-doc -->
@@ -276,32 +192,5 @@ public interface WeblogicServerTask extends SetupTask
    * @generated
    */
   void setPassword(String value);
-
-  /**
-   * Returns the value of the '<em><b>Hostname</b></em>' attribute.
-   * The default value is <code>"localhost"</code>.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Hostname</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Hostname</em>' attribute.
-   * @see #setHostname(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_Hostname()
-   * @model default="localhost" required="true"
-   * @generated
-   */
-  String getHostname();
-
-  /**
-   * Sets the value of the '{@link com.gratex.oomph.task.server.WeblogicServerTask#getHostname <em>Hostname</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Hostname</em>' attribute.
-   * @see #getHostname()
-   * @generated
-   */
-  void setHostname(String value);
 
 } // WeblogicServerTask

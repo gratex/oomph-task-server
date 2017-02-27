@@ -98,28 +98,28 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link com.gratex.oomph.task.server.ServerTask} instances.
+   * This keeps track of the one adapter used for all {@link com.gratex.oomph.task.server.TomcatServerTask} instances.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ServerTaskItemProvider serverTaskItemProvider;
+  protected TomcatServerTaskItemProvider tomcatServerTaskItemProvider;
 
   /**
-   * This creates an adapter for a {@link com.gratex.oomph.task.server.ServerTask}.
+   * This creates an adapter for a {@link com.gratex.oomph.task.server.TomcatServerTask}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
   @Override
-  public Adapter createServerTaskAdapter()
+  public Adapter createTomcatServerTaskAdapter()
   {
-    if (serverTaskItemProvider == null)
+    if (tomcatServerTaskItemProvider == null)
     {
-      serverTaskItemProvider = new ServerTaskItemProvider(this);
+      tomcatServerTaskItemProvider = new TomcatServerTaskItemProvider(this);
     }
 
-    return serverTaskItemProvider;
+    return tomcatServerTaskItemProvider;
   }
 
   /**
@@ -170,6 +170,31 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
     }
 
     return websphereServerTaskItemProvider;
+  }
+
+  /**
+   * This keeps track of the one adapter used for all {@link com.gratex.oomph.task.server.ServerTaskContainer} instances.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected ServerTaskContainerItemProvider serverTaskContainerItemProvider;
+
+  /**
+   * This creates an adapter for a {@link com.gratex.oomph.task.server.ServerTaskContainer}.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Adapter createServerTaskContainerAdapter()
+  {
+    if (serverTaskContainerItemProvider == null)
+    {
+      serverTaskContainerItemProvider = new ServerTaskContainerItemProvider(this);
+    }
+
+    return serverTaskContainerItemProvider;
   }
 
   /**
@@ -321,9 +346,9 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
   @Override
   public void dispose()
   {
-    if (serverTaskItemProvider != null)
+    if (tomcatServerTaskItemProvider != null)
     {
-      serverTaskItemProvider.dispose();
+      tomcatServerTaskItemProvider.dispose();
     }
     if (weblogicServerTaskItemProvider != null)
     {
@@ -332,6 +357,10 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
     if (websphereServerTaskItemProvider != null)
     {
       websphereServerTaskItemProvider.dispose();
+    }
+    if (serverTaskContainerItemProvider != null)
+    {
+      serverTaskContainerItemProvider.dispose();
     }
   }
 
@@ -387,7 +416,9 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
       @Override
       public Object caseAnnotation(Annotation object)
       {
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createServerTask()));
+        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createServerTaskContainer()));
+
+        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createTomcatServerTask()));
 
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createWeblogicServerTask()));
 
@@ -485,7 +516,11 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
       @Override
       public Object caseSetupTaskContainer(SetupTaskContainer object)
       {
-        newChildDescriptors.add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createServerTask()));
+        newChildDescriptors
+            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createServerTaskContainer()));
+
+        newChildDescriptors
+            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createTomcatServerTask()));
 
         newChildDescriptors
             .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createWeblogicServerTask()));

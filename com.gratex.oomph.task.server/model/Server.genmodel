@@ -11,11 +11,47 @@
       multipleEditorPages="false" generateModelWizard="false" extensibleProviderFactory="true"
       childCreationExtenders="true" fileExtensions="setup" ecorePackage="Server.ecore#/"
       publicationLocation="/com.gratex.oomph.task.server/model/Server-1.0.ecore">
-    <genClasses ecoreClass="Server.ecore#//ServerTask">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//ServerTask/serverName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//ServerTask/location"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//ServerTask/runtimeName"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//ServerTask/setverType"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Server.ecore#//TomcatServerVersion">
+      <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT70"/>
+      <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT80"/>
+      <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT85"/>
+    </genEnums>
+    <genClasses ecoreClass="Server.ecore#//TomcatServerTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//TomcatServerTask/jreVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//TomcatServerTask/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//TomcatServerTask/httpsPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//TomcatServerTask/serverVersion"/>
+      <genFeatures createChild="false" propertyMultiLine="true" ecoreFeature="ecore:EAttribute Server.ecore#//TomcatServerTask/launchProgramArgs"/>
+      <genFeatures createChild="false" propertyDescription="" propertyMultiLine="true"
+          ecoreFeature="ecore:EAttribute Server.ecore#//TomcatServerTask/launchVmArgs"/>
+    </genClasses>
+    <genClasses ecoreClass="Server.ecore#//WeblogicServerTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WeblogicServerTask/jreVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WeblogicServerTask/port"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WeblogicServerTask/httpsPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WeblogicServerTask/debugPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WeblogicServerTask/username"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WeblogicServerTask/password"/>
+    </genClasses>
+    <genClasses ecoreClass="Server.ecore#//WebsphereServerTask">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/baseServerName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/profilePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/bootstrapPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/icpPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/soapPort"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/remoteOsUser"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/remoteOsPassword"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="Server.ecore#//Server">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/serverName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/location"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/runtimeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/hostname"/>
+    </genClasses>
+    <genClasses ecoreClass="Server.ecore#//ServerTaskContainer">
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          propertyDescription="" ecoreFeature="ecore:EReference Server.ecore#//ServerTaskContainer/servers"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//ServerTaskContainer/cleanPreviousRuntimes"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

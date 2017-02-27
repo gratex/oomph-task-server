@@ -2,8 +2,6 @@
  */
 package com.gratex.oomph.task.server.provider;
 
-import org.eclipse.oomph.setup.provider.SetupTaskItemProvider;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -23,7 +21,7 @@ import java.util.List;
  * <!-- end-user-doc -->
  * @generated
  */
-public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
+public class WebsphereServerTaskItemProvider extends ServerItemProvider
 {
   /**
    * This constructs an instance from a factory and a notifier.
@@ -49,12 +47,8 @@ public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
     {
       super.getPropertyDescriptors(object);
 
-      addServerNamePropertyDescriptor(object);
       addBaseServerNamePropertyDescriptor(object);
-      addLocationPropertyDescriptor(object);
       addProfilePathPropertyDescriptor(object);
-      addRuntimeNamePropertyDescriptor(object);
-      addHostnamePropertyDescriptor(object);
       addBootstrapPortPropertyDescriptor(object);
       addIcpPortPropertyDescriptor(object);
       addSoapPortPropertyDescriptor(object);
@@ -62,20 +56,6 @@ public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
       addRemoteOsPasswordPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
-  }
-
-  /**
-   * This adds a property descriptor for the Server Name feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addServerNamePropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WebsphereServerTask_serverName_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_serverName_feature", "_UI_WebsphereServerTask_type"),
-        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__SERVER_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -93,20 +73,6 @@ public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
   }
 
   /**
-   * This adds a property descriptor for the Location feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addLocationPropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WebsphereServerTask_location_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_location_feature", "_UI_WebsphereServerTask_type"),
-        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__LOCATION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-  }
-
-  /**
    * This adds a property descriptor for the Profile Path feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -118,34 +84,6 @@ public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
         getString("_UI_WebsphereServerTask_profilePath_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_profilePath_feature", "_UI_WebsphereServerTask_type"),
         ServerPackage.Literals.WEBSPHERE_SERVER_TASK__PROFILE_PATH, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-  }
-
-  /**
-   * This adds a property descriptor for the Runtime Name feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addRuntimeNamePropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WebsphereServerTask_runtimeName_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_runtimeName_feature", "_UI_WebsphereServerTask_type"),
-        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__RUNTIME_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-  }
-
-  /**
-   * This adds a property descriptor for the Hostname feature.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void addHostnamePropertyDescriptor(Object object)
-  {
-    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-        getString("_UI_WebsphereServerTask_hostname_feature"),
-        getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_hostname_feature", "_UI_WebsphereServerTask_type"),
-        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__HOSTNAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -247,6 +185,7 @@ public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
   public String getTextGen(Object object)
   {
     String label = ((WebsphereServerTask)object).getID();
@@ -276,12 +215,8 @@ public class WebsphereServerTaskItemProvider extends SetupTaskItemProvider
 
     switch (notification.getFeatureID(WebsphereServerTask.class))
     {
-    case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_NAME:
     case ServerPackage.WEBSPHERE_SERVER_TASK__BASE_SERVER_NAME:
-    case ServerPackage.WEBSPHERE_SERVER_TASK__LOCATION:
     case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_PATH:
-    case ServerPackage.WEBSPHERE_SERVER_TASK__RUNTIME_NAME:
-    case ServerPackage.WEBSPHERE_SERVER_TASK__HOSTNAME:
     case ServerPackage.WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT:
     case ServerPackage.WEBSPHERE_SERVER_TASK__ICP_PORT:
     case ServerPackage.WEBSPHERE_SERVER_TASK__SOAP_PORT:

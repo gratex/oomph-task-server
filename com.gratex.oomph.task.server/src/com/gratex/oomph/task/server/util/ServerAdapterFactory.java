@@ -10,8 +10,10 @@ import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
 
+import com.gratex.oomph.task.server.Server;
 import com.gratex.oomph.task.server.ServerPackage;
-import com.gratex.oomph.task.server.ServerTask;
+import com.gratex.oomph.task.server.ServerTaskContainer;
+import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.WeblogicServerTask;
 import com.gratex.oomph.task.server.WebsphereServerTask;
 
@@ -78,9 +80,9 @@ public class ServerAdapterFactory extends AdapterFactoryImpl
   protected ServerSwitch<Adapter> modelSwitch = new ServerSwitch<Adapter>()
   {
     @Override
-    public Adapter caseServerTask(ServerTask object)
+    public Adapter caseTomcatServerTask(TomcatServerTask object)
     {
-      return createServerTaskAdapter();
+      return createTomcatServerTaskAdapter();
     }
 
     @Override
@@ -93,6 +95,18 @@ public class ServerAdapterFactory extends AdapterFactoryImpl
     public Adapter caseWebsphereServerTask(WebsphereServerTask object)
     {
       return createWebsphereServerTaskAdapter();
+    }
+
+    @Override
+    public Adapter caseServer(Server object)
+    {
+      return createServerAdapter();
+    }
+
+    @Override
+    public Adapter caseServerTaskContainer(ServerTaskContainer object)
+    {
+      return createServerTaskContainerAdapter();
     }
 
     @Override
@@ -129,16 +143,16 @@ public class ServerAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link com.gratex.oomph.task.server.ServerTask <em>Task</em>}'.
+   * Creates a new adapter for an object of class '{@link com.gratex.oomph.task.server.TomcatServerTask <em>Tomcat Server Task</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see com.gratex.oomph.task.server.ServerTask
+   * @see com.gratex.oomph.task.server.TomcatServerTask
    * @generated
    */
-  public Adapter createServerTaskAdapter()
+  public Adapter createTomcatServerTaskAdapter()
   {
     return null;
   }
@@ -169,6 +183,36 @@ public class ServerAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createWebsphereServerTaskAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.gratex.oomph.task.server.Server <em>Server</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.gratex.oomph.task.server.Server
+   * @generated
+   */
+  public Adapter createServerAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link com.gratex.oomph.task.server.ServerTaskContainer <em>Task Container</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see com.gratex.oomph.task.server.ServerTaskContainer
+   * @generated
+   */
+  public Adapter createServerTaskContainerAdapter()
   {
     return null;
   }

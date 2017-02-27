@@ -8,6 +8,9 @@ import org.eclipse.oomph.setup.SetupTaskContext;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.debug.core.ILaunchConfiguration;
+import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
+import org.eclipse.jdt.launching.IJavaLaunchConfigurationConstants;
 import org.eclipse.jdt.launching.IVMInstall;
 import org.eclipse.jst.server.core.IJavaRuntimeWorkingCopy;
 import org.eclipse.jst.server.tomcat.core.internal.TomcatConfiguration;
@@ -20,8 +23,10 @@ import org.eclipse.wst.server.core.IServerType;
 import org.eclipse.wst.server.core.IServerWorkingCopy;
 import org.eclipse.wst.server.core.ServerCore;
 import org.eclipse.wst.server.core.ServerPort;
+import org.eclipse.wst.server.core.internal.Server;
+import org.eclipse.wst.server.core.internal.ServerWorkingCopy;
 
-import com.gratex.oomph.task.server.ServerTask;
+import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.creator.ServerCreator;
 import com.gratex.oomph.task.server.exception.ServerTaskException;
 
@@ -30,18 +35,58 @@ import com.gratex.oomph.task.server.exception.ServerTaskException;
  *
  */
 @SuppressWarnings("restriction")
-public class Tomcat7ServerCreator extends ServerCreator
+public class TomcatServerCreator extends ServerCreator
 {
-  public static final String SERVER_RUNTIME_ID = "org.eclipse.jst.server.tomcat.runtime.70";
+  public static final String SERVER_RUNTIME_ID_70 = "org.eclipse.jst.server.tomcat.runtime.70";
 
-  public static final String SERVER_ID = "org.eclipse.jst.server.tomcat.70";
+  public static final String SERVER_RUNTIME_ID_80 = "org.eclipse.jst.server.tomcat.runtime.80";
 
-  private ServerTask serverTask;
+  public static final String SERVER_RUNTIME_ID_85 = "org.eclipse.jst.server.tomcat.runtime.85";
 
-  public Tomcat7ServerCreator(SetupTaskContext context, ServerTask serverTask)
+  public static final String SERVER_ID_70 = "org.eclipse.jst.server.tomcat.70";
+
+  public static final String SERVER_ID_80 = "org.eclipse.jst.server.tomcat.80";
+
+  public static final String SERVER_ID_85 = "org.eclipse.jst.server.tomcat.85";
+
+  private TomcatServerTask serverTask;
+
+  public TomcatServerCreator(SetupTaskContext context, TomcatServerTask serverTask)
   {
     super(context, serverTask.getRuntimeName(), serverTask.getServerName(), serverTask.getJreVersion());
     this.serverTask = serverTask;
+  }
+
+  private String serverRuntimeId() throws ServerTaskException
+  {
+    switch (serverTask.getServerVersion())
+    {
+    case TOMCAT70:
+      return SERVER_RUNTIME_ID_70;
+    case TOMCAT80:
+      return SERVER_RUNTIME_ID_80;
+    case TOMCAT85:
+      return SERVER_RUNTIME_ID_85;
+    default:
+      throw new ServerTaskException("Unsupported tomcat server type" + serverTask.getServerVersion().getName());
+
+    }
+  }
+
+  private String serverId() throws ServerTaskException
+  {
+    switch (serverTask.getServerVersion())
+    {
+    case TOMCAT70:
+      return SERVER_ID_70;
+    case TOMCAT80:
+      return SERVER_ID_80;
+    case TOMCAT85:
+      return SERVER_ID_85;
+    default:
+      throw new ServerTaskException("Unsupported tomcat server type" + serverTask.getServerVersion().getName());
+
+    }
   }
 
   /*
@@ -54,7 +99,7 @@ public class Tomcat7ServerCreator extends ServerCreator
 
     cleanPreviousRuntime(serverTask.getRuntimeName());
 
-    IRuntimeType runtimeType = ServerCore.findRuntimeType(SERVER_RUNTIME_ID);
+    IRuntimeType runtimeType = ServerCore.findRuntimeType(serverRuntimeId());
     IRuntimeWorkingCopy rwc = runtimeType.createRuntime(serverTask.getRuntimeName(), monitor);
 
     rwc.setLocation(Path.fromOSString(serverTask.getLocation()));
@@ -73,12 +118,36 @@ public class Tomcat7ServerCreator extends ServerCreator
 
     cleanPreviousServer(serverTask.getServerName());
 
-    IServerType serverType = ServerCore.findServerType(SERVER_ID);
+    IServerType serverType = ServerCore.findServerType(serverId());
     IServerWorkingCopy swc = serverType.createServer(serverTask.getServerName(), null, runtime, monitor);
     swc.setHost(serverTask.getHostname());
     swc.setName(serverTask.getServerName());
 
+    ServerWorkingCopy cswc = (ServerWorkingCopy)swc.loadAdapter(ServerWorkingCopy.class, monitor);
+    cswc.setAutoPublishSetting(Server.AUTO_PUBLISH_DISABLE);
+
     IServer server = swc.save(false, monitor);
+
+    String confVmArgs = serverTask.getLaunchVmArgs();
+    if (confVmArgs != null)
+    {
+
+      ILaunchConfiguration lc = server.getLaunchConfiguration(true, monitor);
+      String vmArgs = lc.getAttribute(IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS, (String)null);
+      StringBuilder newVmArgsSb = new StringBuilder();
+      if (vmArgs != null)
+      {
+        newVmArgsSb.append(vmArgs);
+        newVmArgsSb.append(" ");
+      }
+
+      newVmArgsSb.append(confVmArgs);
+
+      ILaunchConfigurationWorkingCopy lcw = lc.getWorkingCopy();
+      lcw.setAttribute(IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS, newVmArgsSb.toString());
+      lcw.doSave();
+    }
+
     TomcatServer tServer = (TomcatServer)server.loadAdapter(TomcatServer.class, monitor);
     TomcatConfiguration tConfig = tServer.getTomcatConfiguration();
     for (ServerPort port : swc.getServerPorts(monitor))

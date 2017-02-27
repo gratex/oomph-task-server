@@ -14,6 +14,8 @@ import org.eclipse.wst.server.core.IRuntimeType;
 import org.eclipse.wst.server.core.IRuntimeWorkingCopy;
 import org.eclipse.wst.server.core.IServerType;
 import org.eclipse.wst.server.core.IServerWorkingCopy;
+import org.eclipse.wst.server.core.internal.Server;
+import org.eclipse.wst.server.core.internal.ServerWorkingCopy;
 
 import com.gratex.oomph.task.server.WeblogicServerTask;
 import com.gratex.oomph.task.server.creator.ServerCreator;
@@ -74,6 +76,9 @@ public class Weblogic12c13ServerCreator extends ServerCreator
     IServerWorkingCopy swc = serverType.createServer(serverTask.getServerName(), null, runtime, monitor);
     swc.setHost(serverTask.getHostname());
     swc.setName(serverTask.getServerName());
+
+    ServerWorkingCopy cswc = (ServerWorkingCopy)swc.loadAdapter(ServerWorkingCopy.class, monitor);
+    cswc.setAutoPublishSetting(Server.AUTO_PUBLISH_DISABLE);
 
     WeblogicServer wlServerWC = (WeblogicServer)swc.loadAdapter(WeblogicServer.class, null);
     wlServerWC.setHostname(serverTask.getHostname());

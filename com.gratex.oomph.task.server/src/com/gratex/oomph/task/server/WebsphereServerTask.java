@@ -2,8 +2,6 @@
  */
 package com.gratex.oomph.task.server;
 
-import org.eclipse.oomph.setup.SetupTask;
-
 import com.gratex.oomph.task.server.exception.ServerTaskException;
 
 /**
@@ -15,12 +13,8 @@ import com.gratex.oomph.task.server.exception.ServerTaskException;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getServerName <em>Server Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getBaseServerName <em>Base Server Name</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getLocation <em>Location</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getProfilePath <em>Profile Path</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getRuntimeName <em>Runtime Name</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getHostname <em>Hostname</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getBootstrapPort <em>Bootstrap Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getIcpPort <em>Icp Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getSoapPort <em>Soap Port</em>}</li>
@@ -33,34 +27,8 @@ import com.gratex.oomph.task.server.exception.ServerTaskException;
  *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='BOOTSTRAP STARTUP MANUAL'"
  * @generated
  */
-public interface WebsphereServerTask extends SetupTask
+public interface WebsphereServerTask extends Server
 {
-  /**
-   * Returns the value of the '<em><b>Server Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Server Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Server Name</em>' attribute.
-   * @see #setServerName(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_ServerName()
-   * @model required="true"
-   * @generated
-   */
-  String getServerName();
-
-  /**
-   * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getServerName <em>Server Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Server Name</em>' attribute.
-   * @see #getServerName()
-   * @generated
-   */
-  void setServerName(String value);
-
   /**
    * Returns the value of the '<em><b>Base Server Name</b></em>' attribute.
    * The default value is <code>"server1"</code>.
@@ -89,32 +57,6 @@ public interface WebsphereServerTask extends SetupTask
   void setBaseServerName(String value);
 
   /**
-   * Returns the value of the '<em><b>Location</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Location</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Location</em>' attribute.
-   * @see #setLocation(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_Location()
-   * @model required="true"
-   * @generated
-   */
-  String getLocation();
-
-  /**
-   * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getLocation <em>Location</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Location</em>' attribute.
-   * @see #getLocation()
-   * @generated
-   */
-  void setLocation(String value);
-
-  /**
    * Returns the value of the '<em><b>Profile Path</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
@@ -139,59 +81,6 @@ public interface WebsphereServerTask extends SetupTask
    * @generated
    */
   void setProfilePath(String value);
-
-  /**
-   * Returns the value of the '<em><b>Runtime Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Runtime Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Runtime Name</em>' attribute.
-   * @see #setRuntimeName(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_RuntimeName()
-   * @model required="true"
-   * @generated
-   */
-  String getRuntimeName();
-
-  /**
-   * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getRuntimeName <em>Runtime Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Runtime Name</em>' attribute.
-   * @see #getRuntimeName()
-   * @generated
-   */
-  void setRuntimeName(String value);
-
-  /**
-   * Returns the value of the '<em><b>Hostname</b></em>' attribute.
-   * The default value is <code>"localhost"</code>.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Hostname</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Hostname</em>' attribute.
-   * @see #setHostname(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_Hostname()
-   * @model default="localhost" required="true"
-   * @generated
-   */
-  String getHostname();
-
-  /**
-   * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getHostname <em>Hostname</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Hostname</em>' attribute.
-   * @see #getHostname()
-   * @generated
-   */
-  void setHostname(String value);
 
   /**
    * Returns the value of the '<em><b>Bootstrap Port</b></em>' attribute.
