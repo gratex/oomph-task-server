@@ -14,6 +14,7 @@ import org.eclipse.wst.server.core.IRuntimeType;
 import org.eclipse.wst.server.core.IRuntimeWorkingCopy;
 import org.eclipse.wst.server.core.IServerType;
 import org.eclipse.wst.server.core.IServerWorkingCopy;
+import org.eclipse.wst.server.core.ServerCore;
 import org.eclipse.wst.server.core.internal.Server;
 import org.eclipse.wst.server.core.internal.ServerWorkingCopy;
 
@@ -21,7 +22,6 @@ import com.gratex.oomph.task.server.WeblogicServerTask;
 import com.gratex.oomph.task.server.creator.ServerCreator;
 import com.gratex.oomph.task.server.exception.ServerTaskException;
 
-import oracle.eclipse.tools.weblogic.WebLogicServerVersion;
 import oracle.eclipse.tools.weblogic.server.IWeblogicServerRuntimeWorkingCopy;
 import oracle.eclipse.tools.weblogic.server.internal.WeblogicServer;
 
@@ -31,6 +31,10 @@ import oracle.eclipse.tools.weblogic.server.internal.WeblogicServer;
  */
 public class Weblogic12c13ServerCreator extends ServerCreator
 {
+
+  private static final String WEBLOGIC_RUNTIME_TYPE_ID = "weblogic";
+
+  private static final String WEBLOGIC_SERVER_TYPE_ID = "weblogic.server";
 
   private WeblogicServerTask serverTask;
 
@@ -56,9 +60,7 @@ public class Weblogic12c13ServerCreator extends ServerCreator
       cleanPreviousRuntime(serverTask.getRuntimeName());
     }
 
-    WebLogicServerVersion version1213 = WebLogicServerVersion.VERSION_12_1_3;
-
-    IRuntimeType runtimeType = version1213.getRuntimeType();
+    IRuntimeType runtimeType = ServerCore.findRuntimeType(WEBLOGIC_RUNTIME_TYPE_ID);
     IRuntimeWorkingCopy rwc = runtimeType.createRuntime(serverTask.getRuntimeName(), monitor);
 
     rwc.setLocation(Path.fromOSString(serverTask.getLocation()));
@@ -84,7 +86,7 @@ public class Weblogic12c13ServerCreator extends ServerCreator
       cleanPreviousServer(serverTask.getServerName());
     }
 
-    IServerType serverType = version1213.getServerType();
+    IServerType serverType = ServerCore.findServerType(WEBLOGIC_SERVER_TYPE_ID);
 
     IServerWorkingCopy swc = serverType.createServer(serverTask.getServerName(), null, runtime, monitor);
     swc.setHost(serverTask.getHostname());
