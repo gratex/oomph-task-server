@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 import com.gratex.oomph.task.server.ServerFactory;
 import com.gratex.oomph.task.server.ServerPackage;
-import com.gratex.oomph.task.server.ServerTaskContainer;
 import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.TomcatServerVersion;
 import com.gratex.oomph.task.server.WeblogicServerTask;
@@ -75,8 +74,6 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
       return createWeblogicServerTask();
     case ServerPackage.WEBSPHERE_SERVER_TASK:
       return createWebsphereServerTask();
-    case ServerPackage.SERVER_TASK_CONTAINER:
-      return createServerTaskContainer();
     default:
       throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -150,18 +147,6 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
   {
     WebsphereServerTaskImpl websphereServerTask = new WebsphereServerTaskImpl();
     return websphereServerTask;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public ServerTaskContainer createServerTaskContainer()
-  {
-    ServerTaskContainerImpl serverTaskContainer = new ServerTaskContainerImpl();
-    return serverTaskContainer;
   }
 
   /**

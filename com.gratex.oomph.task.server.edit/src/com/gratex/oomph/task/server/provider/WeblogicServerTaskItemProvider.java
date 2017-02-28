@@ -170,7 +170,6 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public String getTextGen(Object object)
   {
     String label = ((WeblogicServerTask)object).getID();

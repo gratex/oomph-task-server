@@ -173,31 +173,6 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link com.gratex.oomph.task.server.ServerTaskContainer} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected ServerTaskContainerItemProvider serverTaskContainerItemProvider;
-
-  /**
-   * This creates an adapter for a {@link com.gratex.oomph.task.server.ServerTaskContainer}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createServerTaskContainerAdapter()
-  {
-    if (serverTaskContainerItemProvider == null)
-    {
-      serverTaskContainerItemProvider = new ServerTaskContainerItemProvider(this);
-    }
-
-    return serverTaskContainerItemProvider;
-  }
-
-  /**
    * This returns the root adapter factory that contains this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -358,10 +333,6 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
     {
       websphereServerTaskItemProvider.dispose();
     }
-    if (serverTaskContainerItemProvider != null)
-    {
-      serverTaskContainerItemProvider.dispose();
-    }
   }
 
   /**
@@ -416,8 +387,6 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
       @Override
       public Object caseAnnotation(Annotation object)
       {
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createServerTaskContainer()));
-
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createTomcatServerTask()));
 
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createWeblogicServerTask()));
@@ -516,9 +485,6 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
       @Override
       public Object caseSetupTaskContainer(SetupTaskContainer object)
       {
-        newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createServerTaskContainer()));
-
         newChildDescriptors
             .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createTomcatServerTask()));
 

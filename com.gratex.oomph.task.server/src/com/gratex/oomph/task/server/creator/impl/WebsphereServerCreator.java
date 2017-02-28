@@ -67,8 +67,14 @@ public class WebsphereServerCreator extends ServerCreator
   @Override
   public void createServerInstanceInternal(IProgressMonitor monitor) throws Exception
   {
-
-    cleanPreviousRuntime(serverTask.getRuntimeName());
+    if (serverTask.isCleanPreviousRuntimes())
+    {
+      cleanAllRuntimes();
+    }
+    else
+    {
+      cleanPreviousRuntime(serverTask.getRuntimeName());
+    }
 
     IRuntimeType runtimeType = ServerCore.findRuntimeType(WAS_V7_SERVER_RUNTIME_ID);
     IRuntimeWorkingCopy rwc = runtimeType.createRuntime(serverTask.getRuntimeName(), monitor);
@@ -83,7 +89,14 @@ public class WebsphereServerCreator extends ServerCreator
     }
     IRuntime runtime = rwc.save(false, monitor);
 
-    cleanPreviousServer(serverTask.getServerName());
+    if (serverTask.isCleanPreviousRuntimes())
+    {
+      cleanAllServers();
+    }
+    else
+    {
+      cleanPreviousServer(serverTask.getServerName());
+    }
 
     IServerType serverType = ServerCore.findServerType(WAS_V7_SERVER_ID);
     IServerWorkingCopy swc = serverType.createServer(serverTask.getServerName(), null, runtime, monitor);

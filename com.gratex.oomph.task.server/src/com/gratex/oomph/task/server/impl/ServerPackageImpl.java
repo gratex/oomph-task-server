@@ -8,13 +8,11 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import com.gratex.oomph.task.server.Server;
 import com.gratex.oomph.task.server.ServerFactory;
 import com.gratex.oomph.task.server.ServerPackage;
-import com.gratex.oomph.task.server.ServerTaskContainer;
 import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.TomcatServerVersion;
 import com.gratex.oomph.task.server.WeblogicServerTask;
@@ -55,13 +53,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   private EClass serverEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass serverTaskContainerEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -442,42 +433,9 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
-  public EReference getServer_ServerContainer()
+  public EAttribute getServer_CleanPreviousRuntimes()
   {
-    return (EReference)serverEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getServerTaskContainer()
-  {
-    return serverTaskContainerEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getServerTaskContainer_Servers()
-  {
-    return (EReference)serverTaskContainerEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EAttribute getServerTaskContainer_CleanPreviousRuntimes()
-  {
-    return (EAttribute)serverTaskContainerEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)serverEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -555,11 +513,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     createEAttribute(serverEClass, SERVER__LOCATION);
     createEAttribute(serverEClass, SERVER__RUNTIME_NAME);
     createEAttribute(serverEClass, SERVER__HOSTNAME);
-    createEReference(serverEClass, SERVER__SERVER_CONTAINER);
-
-    serverTaskContainerEClass = createEClass(SERVER_TASK_CONTAINER);
-    createEReference(serverTaskContainerEClass, SERVER_TASK_CONTAINER__SERVERS);
-    createEAttribute(serverTaskContainerEClass, SERVER_TASK_CONTAINER__CLEAN_PREVIOUS_RUNTIMES);
+    createEAttribute(serverEClass, SERVER__CLEAN_PREVIOUS_RUNTIMES);
 
     // Create enums
     tomcatServerVersionEEnum = createEEnum(TOMCAT_SERVER_VERSION);
@@ -603,8 +557,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     tomcatServerTaskEClass.getESuperTypes().add(getServer());
     weblogicServerTaskEClass.getESuperTypes().add(getServer());
     websphereServerTaskEClass.getESuperTypes().add(getServer());
-    serverEClass.getESuperTypes().add(getServerTaskContainer());
-    serverTaskContainerEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
+    serverEClass.getESuperTypes().add(theSetupPackage.getSetupTask());
 
     // Initialize classes and features; add operations and parameters
     initEClass(tomcatServerTaskEClass, TomcatServerTask.class, "TomcatServerTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -660,16 +613,8 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getServer_Hostname(), ecorePackage.getEString(), "hostname", "localhost", 1, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
         !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getServer_ServerContainer(), getServerTaskContainer(), getServerTaskContainer_Servers(), "serverContainer", null, 0, 1, Server.class,
-        IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(serverTaskContainerEClass, ServerTaskContainer.class, "ServerTaskContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getServerTaskContainer_Servers(), getServer(), getServer_ServerContainer(), "servers", null, 0, -1, ServerTaskContainer.class, !IS_TRANSIENT,
-        !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    getServerTaskContainer_Servers().getEKeys().add(theSetupPackage.getSetupTask_ID());
-    getServerTaskContainer_Servers().getEKeys().add(getServer_ServerName());
-    initEAttribute(getServerTaskContainer_CleanPreviousRuntimes(), ecorePackage.getEBoolean(), "cleanPreviousRuntimes", "false", 0, 1,
-        ServerTaskContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getServer_CleanPreviousRuntimes(), ecorePackage.getEBoolean(), "cleanPreviousRuntimes", "false", 0, 1, Server.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(tomcatServerVersionEEnum, TomcatServerVersion.class, "TomcatServerVersion");
@@ -687,8 +632,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     createEnablementAnnotations();
     // http://www.eclipse.org/oomph/setup/ValidTriggers
     createValidTriggersAnnotations();
-    // http:///org/eclipse/emf/ecore/util/ExtendedMetaData
-    createExtendedMetaDataAnnotations();
   }
 
   /**
@@ -719,8 +662,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         "https://gratex.github.io/oomph-task-server/repository/", "installableUnits", "com.gratex.oomph.task.server.feature.feature.group" });
     addAnnotation(websphereServerTaskEClass, source, new String[] { "variableName", "p2.server", "repository",
         "https://gratex.github.io/oomph-task-server/repository/", "installableUnits", "com.gratex.oomph.task.server.feature.feature.group" });
-    addAnnotation(serverTaskContainerEClass, source, new String[] { "variableName", "p2.server", "repository",
-        "https://gratex.github.io/oomph-task-server/repository/", "installableUnits", "com.gratex.oomph.task.server.feature.feature.group" });
   }
 
   /**
@@ -735,18 +676,6 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     addAnnotation(tomcatServerTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
     addAnnotation(weblogicServerTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
     addAnnotation(websphereServerTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
-  }
-
-  /**
-   * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected void createExtendedMetaDataAnnotations()
-  {
-    String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
-    addAnnotation(getServerTaskContainer_Servers(), source, new String[] { "name", "server" });
   }
 
 } // ServerPackageImpl

@@ -2,16 +2,14 @@
  */
 package com.gratex.oomph.task.server.impl;
 
+import org.eclipse.oomph.setup.impl.SetupTaskImpl;
+
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import com.gratex.oomph.task.server.Server;
 import com.gratex.oomph.task.server.ServerPackage;
-import com.gratex.oomph.task.server.ServerTaskContainer;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,12 +23,12 @@ import com.gratex.oomph.task.server.ServerTaskContainer;
  *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#getLocation <em>Location</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#getRuntimeName <em>Runtime Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#getHostname <em>Hostname</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#getServerContainer <em>Server Container</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#isCleanPreviousRuntimes <em>Clean Previous Runtimes</em>}</li>
  * </ul>
  *
  * @generated
  */
-public abstract class ServerImpl extends ServerTaskContainerImpl implements Server
+public abstract class ServerImpl extends SetupTaskImpl implements Server
 {
   /**
    * The default value of the '{@link #getServerName() <em>Server Name</em>}' attribute.
@@ -111,6 +109,26 @@ public abstract class ServerImpl extends ServerTaskContainerImpl implements Serv
    * @ordered
    */
   protected String hostname = HOSTNAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isCleanPreviousRuntimes() <em>Clean Previous Runtimes</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isCleanPreviousRuntimes()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean CLEAN_PREVIOUS_RUNTIMES_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isCleanPreviousRuntimes() <em>Clean Previous Runtimes</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isCleanPreviousRuntimes()
+   * @generated
+   * @ordered
+   */
+  protected boolean cleanPreviousRuntimes = CLEAN_PREVIOUS_RUNTIMES_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -247,24 +265,9 @@ public abstract class ServerImpl extends ServerTaskContainerImpl implements Serv
    * @generated
    */
   @Override
-  public ServerTaskContainer getServerContainer()
+  public boolean isCleanPreviousRuntimes()
   {
-    if (eContainerFeatureID() != ServerPackage.SERVER__SERVER_CONTAINER)
-    {
-      return null;
-    }
-    return (ServerTaskContainer)eInternalContainer();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetServerContainer(ServerTaskContainer newServerContainer, NotificationChain msgs)
-  {
-    msgs = eBasicSetContainer((InternalEObject)newServerContainer, ServerPackage.SERVER__SERVER_CONTAINER, msgs);
-    return msgs;
+    return cleanPreviousRuntimes;
   }
 
   /**
@@ -273,85 +276,14 @@ public abstract class ServerImpl extends ServerTaskContainerImpl implements Serv
    * @generated
    */
   @Override
-  public void setServerContainer(ServerTaskContainer newServerContainer)
+  public void setCleanPreviousRuntimes(boolean newCleanPreviousRuntimes)
   {
-    if (newServerContainer != eInternalContainer() || eContainerFeatureID() != ServerPackage.SERVER__SERVER_CONTAINER && newServerContainer != null)
+    boolean oldCleanPreviousRuntimes = cleanPreviousRuntimes;
+    cleanPreviousRuntimes = newCleanPreviousRuntimes;
+    if (eNotificationRequired())
     {
-      if (EcoreUtil.isAncestor(this, newServerContainer))
-      {
-        throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
-      }
-      NotificationChain msgs = null;
-      if (eInternalContainer() != null)
-      {
-        msgs = eBasicRemoveFromContainer(msgs);
-      }
-      if (newServerContainer != null)
-      {
-        msgs = ((InternalEObject)newServerContainer).eInverseAdd(this, ServerPackage.SERVER_TASK_CONTAINER__SERVERS, ServerTaskContainer.class, msgs);
-      }
-      msgs = basicSetServerContainer(newServerContainer, msgs);
-      if (msgs != null)
-      {
-        msgs.dispatch();
-      }
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES, oldCleanPreviousRuntimes, cleanPreviousRuntimes));
     }
-    else if (eNotificationRequired())
-    {
-      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.SERVER__SERVER_CONTAINER, newServerContainer, newServerContainer));
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-    case ServerPackage.SERVER__SERVER_CONTAINER:
-      if (eInternalContainer() != null)
-      {
-        msgs = eBasicRemoveFromContainer(msgs);
-      }
-      return basicSetServerContainer((ServerTaskContainer)otherEnd, msgs);
-    }
-    return super.eInverseAdd(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-    case ServerPackage.SERVER__SERVER_CONTAINER:
-      return basicSetServerContainer(null, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs)
-  {
-    switch (eContainerFeatureID())
-    {
-    case ServerPackage.SERVER__SERVER_CONTAINER:
-      return eInternalContainer().eInverseRemove(this, ServerPackage.SERVER_TASK_CONTAINER__SERVERS, ServerTaskContainer.class, msgs);
-    }
-    return super.eBasicRemoveFromContainerFeature(msgs);
   }
 
   /**
@@ -372,8 +304,8 @@ public abstract class ServerImpl extends ServerTaskContainerImpl implements Serv
       return getRuntimeName();
     case ServerPackage.SERVER__HOSTNAME:
       return getHostname();
-    case ServerPackage.SERVER__SERVER_CONTAINER:
-      return getServerContainer();
+    case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
+      return isCleanPreviousRuntimes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -400,8 +332,8 @@ public abstract class ServerImpl extends ServerTaskContainerImpl implements Serv
     case ServerPackage.SERVER__HOSTNAME:
       setHostname((String)newValue);
       return;
-    case ServerPackage.SERVER__SERVER_CONTAINER:
-      setServerContainer((ServerTaskContainer)newValue);
+    case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
+      setCleanPreviousRuntimes((Boolean)newValue);
       return;
     }
     super.eSet(featureID, newValue);
@@ -429,8 +361,8 @@ public abstract class ServerImpl extends ServerTaskContainerImpl implements Serv
     case ServerPackage.SERVER__HOSTNAME:
       setHostname(HOSTNAME_EDEFAULT);
       return;
-    case ServerPackage.SERVER__SERVER_CONTAINER:
-      setServerContainer((ServerTaskContainer)null);
+    case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
+      setCleanPreviousRuntimes(CLEAN_PREVIOUS_RUNTIMES_EDEFAULT);
       return;
     }
     super.eUnset(featureID);
@@ -454,8 +386,8 @@ public abstract class ServerImpl extends ServerTaskContainerImpl implements Serv
       return RUNTIME_NAME_EDEFAULT == null ? runtimeName != null : !RUNTIME_NAME_EDEFAULT.equals(runtimeName);
     case ServerPackage.SERVER__HOSTNAME:
       return HOSTNAME_EDEFAULT == null ? hostname != null : !HOSTNAME_EDEFAULT.equals(hostname);
-    case ServerPackage.SERVER__SERVER_CONTAINER:
-      return getServerContainer() != null;
+    case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
+      return cleanPreviousRuntimes != CLEAN_PREVIOUS_RUNTIMES_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -482,6 +414,8 @@ public abstract class ServerImpl extends ServerTaskContainerImpl implements Serv
     result.append(runtimeName);
     result.append(", hostname: ");
     result.append(hostname);
+    result.append(", cleanPreviousRuntimes: ");
+    result.append(cleanPreviousRuntimes);
     result.append(')');
     return result.toString();
   }

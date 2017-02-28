@@ -29,6 +29,7 @@ import org.eclipse.wst.server.core.internal.ServerWorkingCopy;
 import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.creator.ServerCreator;
 import com.gratex.oomph.task.server.exception.ServerTaskException;
+import com.gratex.oomph.task.utils.VMArgs;
 
 /**
  * @author jkovalux
@@ -96,8 +97,14 @@ public class TomcatServerCreator extends ServerCreator
   @Override
   public void createServerInstanceInternal(IProgressMonitor monitor) throws Exception
   {
-
-    cleanPreviousRuntime(serverTask.getRuntimeName());
+    if (serverTask.isCleanPreviousRuntimes())
+    {
+      cleanAllRuntimes();
+    }
+    else
+    {
+      cleanPreviousRuntime(serverTask.getRuntimeName());
+    }
 
     IRuntimeType runtimeType = ServerCore.findRuntimeType(serverRuntimeId());
     IRuntimeWorkingCopy rwc = runtimeType.createRuntime(serverTask.getRuntimeName(), monitor);
@@ -116,7 +123,14 @@ public class TomcatServerCreator extends ServerCreator
     }
     IRuntime runtime = rwc.save(false, monitor);
 
-    cleanPreviousServer(serverTask.getServerName());
+    if (serverTask.isCleanPreviousRuntimes())
+    {
+      cleanAllServers();
+    }
+    else
+    {
+      cleanPreviousServer(serverTask.getServerName());
+    }
 
     IServerType serverType = ServerCore.findServerType(serverId());
     IServerWorkingCopy swc = serverType.createServer(serverTask.getServerName(), null, runtime, monitor);
@@ -134,17 +148,11 @@ public class TomcatServerCreator extends ServerCreator
 
       ILaunchConfiguration lc = server.getLaunchConfiguration(true, monitor);
       String vmArgs = lc.getAttribute(IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS, (String)null);
-      StringBuilder newVmArgsSb = new StringBuilder();
-      if (vmArgs != null)
-      {
-        newVmArgsSb.append(vmArgs);
-        newVmArgsSb.append(" ");
-      }
-
-      newVmArgsSb.append(confVmArgs);
+      VMArgs vmArgsMap = new VMArgs(vmArgs);
+      vmArgsMap.put(confVmArgs);
 
       ILaunchConfigurationWorkingCopy lcw = lc.getWorkingCopy();
-      lcw.setAttribute(IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS, newVmArgsSb.toString());
+      lcw.setAttribute(IJavaLaunchConfigurationConstants.ATTR_VM_ARGUMENTS, vmArgsMap.toString());
       lcw.doSave();
     }
 

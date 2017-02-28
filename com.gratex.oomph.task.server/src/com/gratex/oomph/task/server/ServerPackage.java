@@ -8,7 +8,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
-import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -101,23 +100,13 @@ public interface ServerPackage extends EPackage
   int WEBSPHERE_SERVER_TASK = 2;
 
   /**
-   * The meta object id for the '{@link com.gratex.oomph.task.server.impl.ServerTaskContainerImpl <em>Task Container</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.gratex.oomph.task.server.impl.ServerTaskContainerImpl
-   * @see com.gratex.oomph.task.server.impl.ServerPackageImpl#getServerTaskContainer()
-   * @generated
-   */
-  int SERVER_TASK_CONTAINER = 4;
-
-  /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__ANNOTATIONS = SetupPackage.SETUP_TASK__ANNOTATIONS;
+  int SERVER__ANNOTATIONS = SetupPackage.SETUP_TASK__ANNOTATIONS;
 
   /**
    * The feature id for the '<em><b>ID</b></em>' attribute.
@@ -126,7 +115,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__ID = SetupPackage.SETUP_TASK__ID;
+  int SERVER__ID = SetupPackage.SETUP_TASK__ID;
 
   /**
    * The feature id for the '<em><b>Description</b></em>' attribute.
@@ -135,7 +124,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__DESCRIPTION = SetupPackage.SETUP_TASK__DESCRIPTION;
+  int SERVER__DESCRIPTION = SetupPackage.SETUP_TASK__DESCRIPTION;
 
   /**
    * The feature id for the '<em><b>Scope Type</b></em>' attribute.
@@ -144,7 +133,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__SCOPE_TYPE = SetupPackage.SETUP_TASK__SCOPE_TYPE;
+  int SERVER__SCOPE_TYPE = SetupPackage.SETUP_TASK__SCOPE_TYPE;
 
   /**
    * The feature id for the '<em><b>Excluded Triggers</b></em>' attribute.
@@ -153,7 +142,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__EXCLUDED_TRIGGERS = SetupPackage.SETUP_TASK__EXCLUDED_TRIGGERS;
+  int SERVER__EXCLUDED_TRIGGERS = SetupPackage.SETUP_TASK__EXCLUDED_TRIGGERS;
 
   /**
    * The feature id for the '<em><b>Disabled</b></em>' attribute.
@@ -162,7 +151,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__DISABLED = SetupPackage.SETUP_TASK__DISABLED;
+  int SERVER__DISABLED = SetupPackage.SETUP_TASK__DISABLED;
 
   /**
    * The feature id for the '<em><b>Predecessors</b></em>' reference list.
@@ -171,7 +160,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__PREDECESSORS = SetupPackage.SETUP_TASK__PREDECESSORS;
+  int SERVER__PREDECESSORS = SetupPackage.SETUP_TASK__PREDECESSORS;
 
   /**
    * The feature id for the '<em><b>Successors</b></em>' reference list.
@@ -180,7 +169,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__SUCCESSORS = SetupPackage.SETUP_TASK__SUCCESSORS;
+  int SERVER__SUCCESSORS = SetupPackage.SETUP_TASK__SUCCESSORS;
 
   /**
    * The feature id for the '<em><b>Restrictions</b></em>' reference list.
@@ -189,7 +178,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__RESTRICTIONS = SetupPackage.SETUP_TASK__RESTRICTIONS;
+  int SERVER__RESTRICTIONS = SetupPackage.SETUP_TASK__RESTRICTIONS;
 
   /**
    * The feature id for the '<em><b>Filter</b></em>' attribute.
@@ -198,142 +187,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_TASK_CONTAINER__FILTER = SetupPackage.SETUP_TASK__FILTER;
-
-  /**
-   * The feature id for the '<em><b>Servers</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER_TASK_CONTAINER__SERVERS = SetupPackage.SETUP_TASK_FEATURE_COUNT + 0;
-
-  /**
-   * The feature id for the '<em><b>Clean Previous Runtimes</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER_TASK_CONTAINER__CLEAN_PREVIOUS_RUNTIMES = SetupPackage.SETUP_TASK_FEATURE_COUNT + 1;
-
-  /**
-   * The number of structural features of the '<em>Task Container</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER_TASK_CONTAINER_FEATURE_COUNT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 2;
-
-  /**
-   * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__ANNOTATIONS = SERVER_TASK_CONTAINER__ANNOTATIONS;
-
-  /**
-   * The feature id for the '<em><b>ID</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__ID = SERVER_TASK_CONTAINER__ID;
-
-  /**
-   * The feature id for the '<em><b>Description</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__DESCRIPTION = SERVER_TASK_CONTAINER__DESCRIPTION;
-
-  /**
-   * The feature id for the '<em><b>Scope Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__SCOPE_TYPE = SERVER_TASK_CONTAINER__SCOPE_TYPE;
-
-  /**
-   * The feature id for the '<em><b>Excluded Triggers</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__EXCLUDED_TRIGGERS = SERVER_TASK_CONTAINER__EXCLUDED_TRIGGERS;
-
-  /**
-   * The feature id for the '<em><b>Disabled</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__DISABLED = SERVER_TASK_CONTAINER__DISABLED;
-
-  /**
-   * The feature id for the '<em><b>Predecessors</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__PREDECESSORS = SERVER_TASK_CONTAINER__PREDECESSORS;
-
-  /**
-   * The feature id for the '<em><b>Successors</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__SUCCESSORS = SERVER_TASK_CONTAINER__SUCCESSORS;
-
-  /**
-   * The feature id for the '<em><b>Restrictions</b></em>' reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__RESTRICTIONS = SERVER_TASK_CONTAINER__RESTRICTIONS;
-
-  /**
-   * The feature id for the '<em><b>Filter</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__FILTER = SERVER_TASK_CONTAINER__FILTER;
-
-  /**
-   * The feature id for the '<em><b>Servers</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__SERVERS = SERVER_TASK_CONTAINER__SERVERS;
-
-  /**
-   * The feature id for the '<em><b>Clean Previous Runtimes</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVER__CLEAN_PREVIOUS_RUNTIMES = SERVER_TASK_CONTAINER__CLEAN_PREVIOUS_RUNTIMES;
+  int SERVER__FILTER = SetupPackage.SETUP_TASK__FILTER;
 
   /**
    * The feature id for the '<em><b>Server Name</b></em>' attribute.
@@ -342,7 +196,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER__SERVER_NAME = SERVER_TASK_CONTAINER_FEATURE_COUNT + 0;
+  int SERVER__SERVER_NAME = SetupPackage.SETUP_TASK_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Location</b></em>' attribute.
@@ -351,7 +205,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER__LOCATION = SERVER_TASK_CONTAINER_FEATURE_COUNT + 1;
+  int SERVER__LOCATION = SetupPackage.SETUP_TASK_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Runtime Name</b></em>' attribute.
@@ -360,7 +214,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER__RUNTIME_NAME = SERVER_TASK_CONTAINER_FEATURE_COUNT + 2;
+  int SERVER__RUNTIME_NAME = SetupPackage.SETUP_TASK_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Hostname</b></em>' attribute.
@@ -369,16 +223,16 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER__HOSTNAME = SERVER_TASK_CONTAINER_FEATURE_COUNT + 3;
+  int SERVER__HOSTNAME = SetupPackage.SETUP_TASK_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Server Container</b></em>' container reference.
+   * The feature id for the '<em><b>Clean Previous Runtimes</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SERVER__SERVER_CONTAINER = SERVER_TASK_CONTAINER_FEATURE_COUNT + 4;
+  int SERVER__CLEAN_PREVIOUS_RUNTIMES = SetupPackage.SETUP_TASK_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Server</em>' class.
@@ -387,7 +241,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVER_FEATURE_COUNT = SERVER_TASK_CONTAINER_FEATURE_COUNT + 5;
+  int SERVER_FEATURE_COUNT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -480,24 +334,6 @@ public interface ServerPackage extends EPackage
   int TOMCAT_SERVER_TASK__FILTER = SERVER__FILTER;
 
   /**
-   * The feature id for the '<em><b>Servers</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TOMCAT_SERVER_TASK__SERVERS = SERVER__SERVERS;
-
-  /**
-   * The feature id for the '<em><b>Clean Previous Runtimes</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int TOMCAT_SERVER_TASK__CLEAN_PREVIOUS_RUNTIMES = SERVER__CLEAN_PREVIOUS_RUNTIMES;
-
-  /**
    * The feature id for the '<em><b>Server Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -534,13 +370,13 @@ public interface ServerPackage extends EPackage
   int TOMCAT_SERVER_TASK__HOSTNAME = SERVER__HOSTNAME;
 
   /**
-   * The feature id for the '<em><b>Server Container</b></em>' container reference.
+   * The feature id for the '<em><b>Clean Previous Runtimes</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TOMCAT_SERVER_TASK__SERVER_CONTAINER = SERVER__SERVER_CONTAINER;
+  int TOMCAT_SERVER_TASK__CLEAN_PREVIOUS_RUNTIMES = SERVER__CLEAN_PREVIOUS_RUNTIMES;
 
   /**
    * The feature id for the '<em><b>Jre Version</b></em>' attribute.
@@ -696,24 +532,6 @@ public interface ServerPackage extends EPackage
   int WEBLOGIC_SERVER_TASK__FILTER = SERVER__FILTER;
 
   /**
-   * The feature id for the '<em><b>Servers</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WEBLOGIC_SERVER_TASK__SERVERS = SERVER__SERVERS;
-
-  /**
-   * The feature id for the '<em><b>Clean Previous Runtimes</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WEBLOGIC_SERVER_TASK__CLEAN_PREVIOUS_RUNTIMES = SERVER__CLEAN_PREVIOUS_RUNTIMES;
-
-  /**
    * The feature id for the '<em><b>Server Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -750,13 +568,13 @@ public interface ServerPackage extends EPackage
   int WEBLOGIC_SERVER_TASK__HOSTNAME = SERVER__HOSTNAME;
 
   /**
-   * The feature id for the '<em><b>Server Container</b></em>' container reference.
+   * The feature id for the '<em><b>Clean Previous Runtimes</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WEBLOGIC_SERVER_TASK__SERVER_CONTAINER = SERVER__SERVER_CONTAINER;
+  int WEBLOGIC_SERVER_TASK__CLEAN_PREVIOUS_RUNTIMES = SERVER__CLEAN_PREVIOUS_RUNTIMES;
 
   /**
    * The feature id for the '<em><b>Jre Version</b></em>' attribute.
@@ -912,24 +730,6 @@ public interface ServerPackage extends EPackage
   int WEBSPHERE_SERVER_TASK__FILTER = SERVER__FILTER;
 
   /**
-   * The feature id for the '<em><b>Servers</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WEBSPHERE_SERVER_TASK__SERVERS = SERVER__SERVERS;
-
-  /**
-   * The feature id for the '<em><b>Clean Previous Runtimes</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int WEBSPHERE_SERVER_TASK__CLEAN_PREVIOUS_RUNTIMES = SERVER__CLEAN_PREVIOUS_RUNTIMES;
-
-  /**
    * The feature id for the '<em><b>Server Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -966,13 +766,13 @@ public interface ServerPackage extends EPackage
   int WEBSPHERE_SERVER_TASK__HOSTNAME = SERVER__HOSTNAME;
 
   /**
-   * The feature id for the '<em><b>Server Container</b></em>' container reference.
+   * The feature id for the '<em><b>Clean Previous Runtimes</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WEBSPHERE_SERVER_TASK__SERVER_CONTAINER = SERVER__SERVER_CONTAINER;
+  int WEBSPHERE_SERVER_TASK__CLEAN_PREVIOUS_RUNTIMES = SERVER__CLEAN_PREVIOUS_RUNTIMES;
 
   /**
    * The feature id for the '<em><b>Base Server Name</b></em>' attribute.
@@ -1054,7 +854,7 @@ public interface ServerPackage extends EPackage
    * @see com.gratex.oomph.task.server.impl.ServerPackageImpl#getTomcatServerVersion()
    * @generated
    */
-  int TOMCAT_SERVER_VERSION = 5;
+  int TOMCAT_SERVER_VERSION = 4;
 
   /**
    * Returns the meta object for class '{@link com.gratex.oomph.task.server.TomcatServerTask <em>Tomcat Server Task</em>}'.
@@ -1350,47 +1150,15 @@ public interface ServerPackage extends EPackage
   EAttribute getServer_Hostname();
 
   /**
-   * Returns the meta object for the container reference '{@link com.gratex.oomph.task.server.Server#getServerContainer <em>Server Container</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the container reference '<em>Server Container</em>'.
-   * @see com.gratex.oomph.task.server.Server#getServerContainer()
-   * @see #getServer()
-   * @generated
-   */
-  EReference getServer_ServerContainer();
-
-  /**
-   * Returns the meta object for class '{@link com.gratex.oomph.task.server.ServerTaskContainer <em>Task Container</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Task Container</em>'.
-   * @see com.gratex.oomph.task.server.ServerTaskContainer
-   * @generated
-   */
-  EClass getServerTaskContainer();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link com.gratex.oomph.task.server.ServerTaskContainer#getServers <em>Servers</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Servers</em>'.
-   * @see com.gratex.oomph.task.server.ServerTaskContainer#getServers()
-   * @see #getServerTaskContainer()
-   * @generated
-   */
-  EReference getServerTaskContainer_Servers();
-
-  /**
-   * Returns the meta object for the attribute '{@link com.gratex.oomph.task.server.ServerTaskContainer#isCleanPreviousRuntimes <em>Clean Previous Runtimes</em>}'.
+   * Returns the meta object for the attribute '{@link com.gratex.oomph.task.server.Server#isCleanPreviousRuntimes <em>Clean Previous Runtimes</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the attribute '<em>Clean Previous Runtimes</em>'.
-   * @see com.gratex.oomph.task.server.ServerTaskContainer#isCleanPreviousRuntimes()
-   * @see #getServerTaskContainer()
+   * @see com.gratex.oomph.task.server.Server#isCleanPreviousRuntimes()
+   * @see #getServer()
    * @generated
    */
-  EAttribute getServerTaskContainer_CleanPreviousRuntimes();
+  EAttribute getServer_CleanPreviousRuntimes();
 
   /**
    * Returns the meta object for enum '{@link com.gratex.oomph.task.server.TomcatServerVersion <em>Tomcat Server Version</em>}'.
@@ -1650,38 +1418,12 @@ public interface ServerPackage extends EPackage
     EAttribute SERVER__HOSTNAME = eINSTANCE.getServer_Hostname();
 
     /**
-     * The meta object literal for the '<em><b>Server Container</b></em>' container reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SERVER__SERVER_CONTAINER = eINSTANCE.getServer_ServerContainer();
-
-    /**
-     * The meta object literal for the '{@link com.gratex.oomph.task.server.impl.ServerTaskContainerImpl <em>Task Container</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.gratex.oomph.task.server.impl.ServerTaskContainerImpl
-     * @see com.gratex.oomph.task.server.impl.ServerPackageImpl#getServerTaskContainer()
-     * @generated
-     */
-    EClass SERVER_TASK_CONTAINER = eINSTANCE.getServerTaskContainer();
-
-    /**
-     * The meta object literal for the '<em><b>Servers</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SERVER_TASK_CONTAINER__SERVERS = eINSTANCE.getServerTaskContainer_Servers();
-
-    /**
      * The meta object literal for the '<em><b>Clean Previous Runtimes</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute SERVER_TASK_CONTAINER__CLEAN_PREVIOUS_RUNTIMES = eINSTANCE.getServerTaskContainer_CleanPreviousRuntimes();
+    EAttribute SERVER__CLEAN_PREVIOUS_RUNTIMES = eINSTANCE.getServer_CleanPreviousRuntimes();
 
     /**
      * The meta object literal for the '{@link com.gratex.oomph.task.server.TomcatServerVersion <em>Tomcat Server Version</em>}' enum.

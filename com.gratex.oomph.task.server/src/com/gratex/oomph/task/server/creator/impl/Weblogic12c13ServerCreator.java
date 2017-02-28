@@ -47,8 +47,14 @@ public class Weblogic12c13ServerCreator extends ServerCreator
   @Override
   public void createServerInstanceInternal(IProgressMonitor monitor) throws Exception
   {
-
-    cleanPreviousRuntime(serverTask.getRuntimeName());
+    if (serverTask.isCleanPreviousRuntimes())
+    {
+      cleanAllRuntimes();
+    }
+    else
+    {
+      cleanPreviousRuntime(serverTask.getRuntimeName());
+    }
 
     WebLogicServerVersion version1213 = WebLogicServerVersion.VERSION_12_1_3;
 
@@ -69,7 +75,14 @@ public class Weblogic12c13ServerCreator extends ServerCreator
     }
     IRuntime runtime = rwc.save(false, monitor);
 
-    cleanPreviousServer(serverTask.getServerName());
+    if (serverTask.isCleanPreviousRuntimes())
+    {
+      cleanAllServers();
+    }
+    else
+    {
+      cleanPreviousServer(serverTask.getServerName());
+    }
 
     IServerType serverType = version1213.getServerType();
 

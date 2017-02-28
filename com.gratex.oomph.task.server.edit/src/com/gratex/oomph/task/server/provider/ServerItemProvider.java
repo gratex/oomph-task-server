@@ -2,6 +2,8 @@
  */
 package com.gratex.oomph.task.server.provider;
 
+import org.eclipse.oomph.setup.provider.SetupTaskItemProvider;
+
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
@@ -21,7 +23,7 @@ import java.util.List;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ServerItemProvider extends ServerTaskContainerItemProvider
+public class ServerItemProvider extends SetupTaskItemProvider
 {
   /**
    * This constructs an instance from a factory and a notifier.
@@ -51,6 +53,7 @@ public class ServerItemProvider extends ServerTaskContainerItemProvider
       addLocationPropertyDescriptor(object);
       addRuntimeNamePropertyDescriptor(object);
       addHostnamePropertyDescriptor(object);
+      addCleanPreviousRuntimesPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -108,6 +111,20 @@ public class ServerItemProvider extends ServerTaskContainerItemProvider
   }
 
   /**
+   * This adds a property descriptor for the Clean Previous Runtimes feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addCleanPreviousRuntimesPropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+        getString("_UI_Server_cleanPreviousRuntimes_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_Server_cleanPreviousRuntimes_feature", "_UI_Server_type"),
+        ServerPackage.Literals.SERVER__CLEAN_PREVIOUS_RUNTIMES, true, false, false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+  }
+
+  /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -149,6 +166,7 @@ public class ServerItemProvider extends ServerTaskContainerItemProvider
     case ServerPackage.SERVER__LOCATION:
     case ServerPackage.SERVER__RUNTIME_NAME:
     case ServerPackage.SERVER__HOSTNAME:
+    case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
       fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
       return;
     }

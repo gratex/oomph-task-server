@@ -128,4 +128,31 @@ public abstract class ServerCreator
     }
   }
 
+  protected void cleanAllRuntimes() throws CoreException
+  {
+    IRuntime[] runtimeList = ServerCore.getRuntimes();
+    if (runtimeList != null && runtimeList.length > 0)
+    {
+      for (IRuntime runtime : runtimeList)
+      {
+        context.log("Removing existing runtime " + runtime.getName(), Severity.INFO);
+        runtime.delete();
+      }
+    }
+
+  }
+
+  protected void cleanAllServers() throws CoreException
+  {
+    IServer[] serverList = ServerCore.getServers();
+    if (serverList != null && serverList.length > 0)
+    {
+      for (IServer server : serverList)
+      {
+        context.log("Removing existing server " + server.getName(), Severity.INFO);
+        server.delete();
+      }
+    }
+  }
+
 }

@@ -2,6 +2,8 @@
  */
 package com.gratex.oomph.task.server;
 
+import org.eclipse.oomph.setup.SetupTask;
+
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Server</b></em>'.
@@ -15,14 +17,14 @@ package com.gratex.oomph.task.server;
  *   <li>{@link com.gratex.oomph.task.server.Server#getLocation <em>Location</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.Server#getRuntimeName <em>Runtime Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.Server#getHostname <em>Hostname</em>}</li>
- *   <li>{@link com.gratex.oomph.task.server.Server#getServerContainer <em>Server Container</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.Server#isCleanPreviousRuntimes <em>Clean Previous Runtimes</em>}</li>
  * </ul>
  *
  * @see com.gratex.oomph.task.server.ServerPackage#getServer()
  * @model abstract="true"
  * @generated
  */
-public interface Server extends ServerTaskContainer
+public interface Server extends SetupTask
 {
   /**
    * Returns the value of the '<em><b>Server Name</b></em>' attribute.
@@ -130,31 +132,30 @@ public interface Server extends ServerTaskContainer
   void setHostname(String value);
 
   /**
-   * Returns the value of the '<em><b>Server Container</b></em>' container reference.
-   * It is bidirectional and its opposite is '{@link com.gratex.oomph.task.server.ServerTaskContainer#getServers <em>Servers</em>}'.
+   * Returns the value of the '<em><b>Clean Previous Runtimes</b></em>' attribute.
+   * The default value is <code>"false"</code>.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Server Container</em>' container reference isn't clear,
+   * If the meaning of the '<em>Clean Previous Runtimes</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Server Container</em>' container reference.
-   * @see #setServerContainer(ServerTaskContainer)
-   * @see com.gratex.oomph.task.server.ServerPackage#getServer_ServerContainer()
-   * @see com.gratex.oomph.task.server.ServerTaskContainer#getServers
-   * @model opposite="servers"
+   * @return the value of the '<em>Clean Previous Runtimes</em>' attribute.
+   * @see #setCleanPreviousRuntimes(boolean)
+   * @see com.gratex.oomph.task.server.ServerPackage#getServer_CleanPreviousRuntimes()
+   * @model default="false"
    * @generated
    */
-  ServerTaskContainer getServerContainer();
+  boolean isCleanPreviousRuntimes();
 
   /**
-   * Sets the value of the '{@link com.gratex.oomph.task.server.Server#getServerContainer <em>Server Container</em>}' container reference.
+   * Sets the value of the '{@link com.gratex.oomph.task.server.Server#isCleanPreviousRuntimes <em>Clean Previous Runtimes</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Server Container</em>' container reference.
-   * @see #getServerContainer()
+   * @param value the new value of the '<em>Clean Previous Runtimes</em>' attribute.
+   * @see #isCleanPreviousRuntimes()
    * @generated
    */
-  void setServerContainer(ServerTaskContainer value);
+  void setCleanPreviousRuntimes(boolean value);
 
 } // Server

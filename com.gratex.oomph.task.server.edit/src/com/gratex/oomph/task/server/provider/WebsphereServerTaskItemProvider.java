@@ -185,7 +185,6 @@ public class WebsphereServerTaskItemProvider extends ServerItemProvider
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
   public String getTextGen(Object object)
   {
     String label = ((WebsphereServerTask)object).getID();

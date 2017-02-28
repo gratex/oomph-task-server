@@ -71,7 +71,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteOsPassword" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Server" abstract="true" eSuperTypes="#//ServerTaskContainer">
+  <eClassifiers xsi:type="ecore:EClass" name="Server" abstract="true" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" lowerBound="1"
@@ -80,28 +80,12 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostname" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="localhost"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="serverContainer" eType="#//ServerTaskContainer"
-        transient="true" eOpposite="#//ServerTaskContainer/servers"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cleanPreviousRuntimes"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="TomcatServerVersion">
     <eLiterals name="TOMCAT70" literal="Tomcat 7.0"/>
     <eLiterals name="TOMCAT80" value="1" literal="Tomcat 8.0"/>
     <eLiterals name="TOMCAT85" value="2" literal="Tomcat 8.5"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ServerTaskContainer" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
-    <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
-      <details key="variableName" value="p2.server"/>
-      <details key="repository" value="https://gratex.github.io/oomph-task-server/repository/"/>
-      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.feature.group"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="servers" upperBound="-1"
-        eType="#//Server" containment="true" eOpposite="#//Server/serverContainer"
-        eKeys="http://www.eclipse.org/oomph/setup/1.0#//SetupTask/iD #//Server/serverName">
-      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
-        <details key="name" value="server"/>
-      </eAnnotations>
-    </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cleanPreviousRuntimes"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
   </eClassifiers>
 </ecore:EPackage>
