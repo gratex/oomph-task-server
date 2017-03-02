@@ -24,7 +24,12 @@ public class VMArgs
 
   public void put(String vmargs)
   {
-    String[] split = vmargs.split("\\s*-");
+    vmargs = vmargs.trim();
+    if (vmargs.startsWith("-"))
+    {
+      vmargs = vmargs.substring(1);
+    }
+    String[] split = vmargs.split("\\s+-");
     Map<String, String> argsMap = Arrays.asList(split).stream().filter(e -> e.trim().length() > 0).map(e -> e.split("=", 2)).collect(LinkedHashMap::new,
         (m, v) -> m.put(v[0], v.length > 1 ? v[1] : null), LinkedHashMap::putAll);
     args.putAll(argsMap);
@@ -47,19 +52,27 @@ public class VMArgs
       }
       return sb.toString();
     }).collect(Collectors.joining(" \n-"));
+
     return "-" + result;
   }
 
   public static void main(String[] args)
   {
-    VMArgs vmArgs = new VMArgs("-Dasdas=asd=as -asda          -Dasdasdasd asdasd -asdadadasdas -XMMs=5Gb");
+    VMArgs vmArgs = new VMArgs("  -Dasdas=asd=as -asda          -Dasdasdasd asdasd -asdadadasdas -XMMs=5Gb");
 
-    vmArgs.put("x=ads");
+    vmArgs.put("  -x=ads");
     System.out.println(vmArgs.toString());
 
-    vmArgs = new VMArgs("X=Y");
+    vmArgs = new VMArgs("  -x=ads");
+    System.out.println(vmArgs.toString());
 
-    vmArgs.put("X=X");
+    vmArgs = new VMArgs("-X=Y");
+
+    vmArgs.put("-X=X");
+    System.out.println(vmArgs.toString());
+
+    vmArgs = new VMArgs("");
+    vmArgs.put("    -X=-X -Dasd=-asd  ");
     System.out.println(vmArgs.toString());
   }
 }
