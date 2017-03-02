@@ -12,7 +12,6 @@ import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.TomcatServerVersion;
 import com.gratex.oomph.task.server.creator.impl.TomcatServerCreator;
-import com.gratex.oomph.task.server.exception.ServerTaskException;
 
 /**
  * <!-- begin-user-doc -->
@@ -62,7 +61,7 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
    * @generated
    * @ordered
    */
-  protected static final String PORT_EDEFAULT = "8080";
+  protected static final Integer PORT_EDEFAULT = new Integer(8080);
 
   /**
    * The cached value of the '{@link #getPort() <em>Port</em>}' attribute.
@@ -72,7 +71,7 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
    * @generated
    * @ordered
    */
-  protected String port = PORT_EDEFAULT;
+  protected Integer port = PORT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getHttpsPort() <em>Https Port</em>}' attribute.
@@ -82,7 +81,7 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
    * @generated
    * @ordered
    */
-  protected static final String HTTPS_PORT_EDEFAULT = "8443";
+  protected static final Integer HTTPS_PORT_EDEFAULT = new Integer(8443);
 
   /**
    * The cached value of the '{@link #getHttpsPort() <em>Https Port</em>}' attribute.
@@ -92,7 +91,7 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
    * @generated
    * @ordered
    */
-  protected String httpsPort = HTTPS_PORT_EDEFAULT;
+  protected Integer httpsPort = HTTPS_PORT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getServerVersion() <em>Server Version</em>}' attribute.
@@ -210,26 +209,9 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
    * @generated
    */
   @Override
-  public String getPort()
+  public Integer getPort()
   {
     return port;
-  }
-
-  /*
-   * (non-Javadoc)
-   * @see com.gratex.oomph.task.server.WeblogicServerTask#port()
-   */
-  @Override
-  public Integer port() throws ServerTaskException
-  {
-    try
-    {
-      return Integer.parseInt(port);
-    }
-    catch (NumberFormatException e)
-    {
-      throw new ServerTaskException("Unable to parse port number.", e);
-    }
   }
 
   /**
@@ -238,9 +220,9 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
    * @generated
    */
   @Override
-  public void setPort(String newPort)
+  public void setPort(Integer newPort)
   {
-    String oldPort = port;
+    Integer oldPort = port;
     port = newPort;
     if (eNotificationRequired())
     {
@@ -254,26 +236,9 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
    * @generated
    */
   @Override
-  public String getHttpsPort()
+  public Integer getHttpsPort()
   {
     return httpsPort;
-  }
-
-  /*
-   * (non-Javadoc)
-   * @see com.gratex.oomph.task.server.WeblogicServerTask#port()
-   */
-  @Override
-  public Integer httpsPort() throws ServerTaskException
-  {
-    try
-    {
-      return Integer.parseInt(httpsPort);
-    }
-    catch (NumberFormatException e)
-    {
-      throw new ServerTaskException("Unable to parse httpsPort number.", e);
-    }
   }
 
   /**
@@ -282,9 +247,9 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
    * @generated
    */
   @Override
-  public void setHttpsPort(String newHttpsPort)
+  public void setHttpsPort(Integer newHttpsPort)
   {
-    String oldHttpsPort = httpsPort;
+    Integer oldHttpsPort = httpsPort;
     httpsPort = newHttpsPort;
     if (eNotificationRequired())
     {
@@ -413,10 +378,10 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
       setJreVersion((String)newValue);
       return;
     case ServerPackage.TOMCAT_SERVER_TASK__PORT:
-      setPort((String)newValue);
+      setPort((Integer)newValue);
       return;
     case ServerPackage.TOMCAT_SERVER_TASK__HTTPS_PORT:
-      setHttpsPort((String)newValue);
+      setHttpsPort((Integer)newValue);
       return;
     case ServerPackage.TOMCAT_SERVER_TASK__SERVER_VERSION:
       setServerVersion((TomcatServerVersion)newValue);

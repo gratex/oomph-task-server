@@ -2,8 +2,6 @@
  */
 package com.gratex.oomph.task.server;
 
-import com.gratex.oomph.task.server.exception.ServerTaskException;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Websphere Server Task</b></em>'.
@@ -92,14 +90,12 @@ public interface WebsphereServerTask extends Server
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Bootstrap Port</em>' attribute.
-   * @see #setBootstrapPort(String)
+   * @see #setBootstrapPort(Integer)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_BootstrapPort()
    * @model default="2806" required="true"
    * @generated
    */
-  String getBootstrapPort();
-
-  Integer bootstrapPort() throws ServerTaskException;
+  Integer getBootstrapPort();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getBootstrapPort <em>Bootstrap Port</em>}' attribute.
@@ -109,26 +105,24 @@ public interface WebsphereServerTask extends Server
    * @see #getBootstrapPort()
    * @generated
    */
-  void setBootstrapPort(String value);
+  void setBootstrapPort(Integer value);
 
   /**
-   * Returns the value of the '<em><b>Icp Port</b></em>' attribute.
-   * The default value is <code>"9633"</code>.
-   * <!-- begin-user-doc -->
+  	 * Returns the value of the '<em><b>Icp Port</b></em>' attribute.
+  	 * The default value is <code>"9633"</code>.
+  	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Icp Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Icp Port</em>' attribute.
-   * @see #setIcpPort(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_IcpPort()
-   * @model default="9633" required="true"
-   * @generated
-   */
-  String getIcpPort();
-
-  Integer icpPort() throws ServerTaskException;
+  	 * @return the value of the '<em>Icp Port</em>' attribute.
+  	 * @see #setIcpPort(Integer)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_IcpPort()
+  	 * @model default="9633" required="true"
+  	 * @generated
+  	 */
+  Integer getIcpPort();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getIcpPort <em>Icp Port</em>}' attribute.
@@ -138,26 +132,24 @@ public interface WebsphereServerTask extends Server
    * @see #getIcpPort()
    * @generated
    */
-  void setIcpPort(String value);
+  void setIcpPort(Integer value);
 
   /**
-   * Returns the value of the '<em><b>Soap Port</b></em>' attribute.
-   * The default value is <code>"8880"</code>.
-   * <!-- begin-user-doc -->
+  	 * Returns the value of the '<em><b>Soap Port</b></em>' attribute.
+  	 * The default value is <code>"8880"</code>.
+  	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Soap Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Soap Port</em>' attribute.
-   * @see #setSoapPort(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SoapPort()
-   * @model default="8880" required="true"
-   * @generated
-   */
-  String getSoapPort();
-
-  Integer soapPort() throws ServerTaskException;
+  	 * @return the value of the '<em>Soap Port</em>' attribute.
+  	 * @see #setSoapPort(Integer)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SoapPort()
+  	 * @model default="8880" required="true"
+  	 * @generated
+  	 */
+  Integer getSoapPort();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getSoapPort <em>Soap Port</em>}' attribute.
@@ -167,22 +159,22 @@ public interface WebsphereServerTask extends Server
    * @see #getSoapPort()
    * @generated
    */
-  void setSoapPort(String value);
+  void setSoapPort(Integer value);
 
   /**
-   * Returns the value of the '<em><b>Remote Os User</b></em>' attribute.
-   * <!-- begin-user-doc -->
+  	 * Returns the value of the '<em><b>Remote Os User</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Remote Os User</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Remote Os User</em>' attribute.
-   * @see #setRemoteOsUser(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_RemoteOsUser()
-   * @model required="true"
-   * @generated
-   */
+  	 * @return the value of the '<em>Remote Os User</em>' attribute.
+  	 * @see #setRemoteOsUser(String)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_RemoteOsUser()
+  	 * @model required="true"
+  	 * @generated
+  	 */
   String getRemoteOsUser();
 
   /**

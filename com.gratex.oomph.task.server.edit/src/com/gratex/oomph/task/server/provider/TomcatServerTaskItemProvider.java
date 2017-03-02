@@ -164,25 +164,11 @@ public class TomcatServerTaskItemProvider extends ServerItemProvider
     return true;
   }
 
-  /**
-   * This returns the label text for the adapted class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getTextGen(Object object)
-  {
-    String label = ((TomcatServerTask)object).getID();
-    return label == null || label.length() == 0 ? getString("_UI_TomcatServerTask_type") : getString("_UI_TomcatServerTask_type") + " " + label;
-  }
-
   @Override
   public String getText(Object object)
   {
-    String label = getTextGen(object);
-
-    String type = getString("_UI_TomcatServerTask_type");
-    return label.startsWith(type + " ") && !label.equals(type) ? label.substring(type.length()).trim() : label;
+    String serverName = ((TomcatServerTask)object).getServerName();
+    return serverName == null || serverName.length() == 0 ? getString("_UI_TomcatServerTask_type") : serverName;
   }
 
   /**

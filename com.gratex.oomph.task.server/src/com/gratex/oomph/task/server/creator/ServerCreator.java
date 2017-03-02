@@ -169,7 +169,7 @@ public abstract class ServerCreator
     Integer stopTimeout = serverTask.getStopTimeout();
     if (stopTimeout != null)
     {
-      cswc.setStopTimeout(startTimeout);
+      cswc.setStopTimeout(stopTimeout);
     }
   }
 

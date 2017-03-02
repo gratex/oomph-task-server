@@ -16,10 +16,11 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="jreVersion" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         defaultValueLiteral="8080"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="httpsPort" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="8443"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        defaultValueLiteral="8443"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverVersion" lowerBound="1"
         eType="#//TomcatServerVersion"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="launchProgramArgs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
@@ -38,11 +39,12 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="jreVersion" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         defaultValueLiteral="7001"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="httpsPort" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="7002"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="debugPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        defaultValueLiteral="7002"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="debugPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
         defaultValueLiteral="8453"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -61,11 +63,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="profilePath" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bootstrapPort" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="2806"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        defaultValueLiteral="2806"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="icpPort" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="9633"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        defaultValueLiteral="9633"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="soapPort" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="8880"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
+        defaultValueLiteral="8880"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteOsUser" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteOsPassword" lowerBound="1"

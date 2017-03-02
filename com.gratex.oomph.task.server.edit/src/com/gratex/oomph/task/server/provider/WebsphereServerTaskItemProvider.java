@@ -10,6 +10,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import com.gratex.oomph.task.server.ServerPackage;
+import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.WebsphereServerTask;
 
 import java.util.Collection;
@@ -179,25 +180,11 @@ public class WebsphereServerTaskItemProvider extends ServerItemProvider
     return true;
   }
 
-  /**
-   * This returns the label text for the adapted class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getTextGen(Object object)
-  {
-    String label = ((WebsphereServerTask)object).getID();
-    return label == null || label.length() == 0 ? getString("_UI_WebsphereServerTask_type") : getString("_UI_WebsphereServerTask_type") + " " + label;
-  }
-
   @Override
   public String getText(Object object)
   {
-    String label = getTextGen(object);
-
-    String type = getString("_UI_WebsphereServerTask_type");
-    return label.startsWith(type + " ") && !label.equals(type) ? label.substring(type.length()).trim() : label;
+    String serverName = ((TomcatServerTask)object).getServerName();
+    return serverName == null || serverName.length() == 0 ? getString("_UI_WebsphereServerTask_type") : serverName;
   }
 
   /**

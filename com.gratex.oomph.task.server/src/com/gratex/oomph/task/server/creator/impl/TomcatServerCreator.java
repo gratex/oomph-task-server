@@ -157,13 +157,13 @@ public class TomcatServerCreator extends ServerCreator
     TomcatConfiguration tConfig = tServer.getTomcatConfiguration();
     for (ServerPort port : swc.getServerPorts(monitor))
     {
-      if (port.getProtocol().toLowerCase().equals("http") && port.getId().indexOf('/') < 0)
+      if (port.getProtocol().equalsIgnoreCase("http") && port.getId().indexOf('/') < 0)
       {
-        tConfig.modifyServerPort(port.getId(), serverTask.port());
+        tConfig.modifyServerPort(port.getId(), serverTask.getPort());
       }
-      if (port.getProtocol().toLowerCase().equals("ssl") && port.getId().indexOf('/') < 0)
+      if (port.getProtocol().equalsIgnoreCase("ssl") && port.getId().indexOf('/') < 0)
       {
-        tConfig.modifyServerPort(port.getId(), serverTask.httpsPort());
+        tConfig.modifyServerPort(port.getId(), serverTask.getHttpsPort());
       }
     }
     tServer.saveConfiguration(monitor);

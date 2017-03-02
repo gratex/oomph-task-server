@@ -450,10 +450,10 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
   	 * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public EAttribute getServer_StopTimeout()
   {
@@ -461,10 +461,10 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public EEnum getTomcatServerVersion()
   {
@@ -587,10 +587,10 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     initEClass(tomcatServerTaskEClass, TomcatServerTask.class, "TomcatServerTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTomcatServerTask_JreVersion(), ecorePackage.getEString(), "jreVersion", null, 1, 1, TomcatServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTomcatServerTask_Port(), ecorePackage.getEString(), "port", "8080", 1, 1, TomcatServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+    initEAttribute(getTomcatServerTask_Port(), ecorePackage.getEIntegerObject(), "port", "8080", 1, 1, TomcatServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTomcatServerTask_HttpsPort(), ecorePackage.getEString(), "httpsPort", "8443", 1, 1, TomcatServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
-        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTomcatServerTask_HttpsPort(), ecorePackage.getEIntegerObject(), "httpsPort", "8443", 1, 1, TomcatServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTomcatServerTask_ServerVersion(), getTomcatServerVersion(), "serverVersion", null, 1, 1, TomcatServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTomcatServerTask_LaunchProgramArgs(), ecorePackage.getEString(), "launchProgramArgs", "", 0, 1, TomcatServerTask.class, !IS_TRANSIENT,
@@ -601,11 +601,11 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     initEClass(weblogicServerTaskEClass, WeblogicServerTask.class, "WeblogicServerTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWeblogicServerTask_JreVersion(), ecorePackage.getEString(), "jreVersion", null, 1, 1, WeblogicServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWeblogicServerTask_Port(), ecorePackage.getEString(), "port", "7001", 1, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
+    initEAttribute(getWeblogicServerTask_Port(), ecorePackage.getEIntegerObject(), "port", "7001", 1, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWeblogicServerTask_HttpsPort(), ecorePackage.getEString(), "httpsPort", "7002", 1, 1, WeblogicServerTask.class, !IS_TRANSIENT,
+    initEAttribute(getWeblogicServerTask_HttpsPort(), ecorePackage.getEIntegerObject(), "httpsPort", "7002", 1, 1, WeblogicServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWeblogicServerTask_DebugPort(), ecorePackage.getEString(), "debugPort", "8453", 0, 1, WeblogicServerTask.class, !IS_TRANSIENT,
+    initEAttribute(getWeblogicServerTask_DebugPort(), ecorePackage.getEIntegerObject(), "debugPort", "8453", 0, 1, WeblogicServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWeblogicServerTask_Username(), ecorePackage.getEString(), "username", null, 0, 1, WeblogicServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -617,11 +617,11 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWebsphereServerTask_ProfilePath(), ecorePackage.getEString(), "profilePath", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_BootstrapPort(), ecorePackage.getEString(), "bootstrapPort", "2806", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+    initEAttribute(getWebsphereServerTask_BootstrapPort(), ecorePackage.getEIntegerObject(), "bootstrapPort", "2806", 1, 1, WebsphereServerTask.class,
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_IcpPort(), ecorePackage.getEIntegerObject(), "icpPort", "9633", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_IcpPort(), ecorePackage.getEString(), "icpPort", "9633", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT, !IS_VOLATILE,
-        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_SoapPort(), ecorePackage.getEString(), "soapPort", "8880", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+    initEAttribute(getWebsphereServerTask_SoapPort(), ecorePackage.getEIntegerObject(), "soapPort", "8880", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWebsphereServerTask_RemoteOsUser(), ecorePackage.getEString(), "remoteOsUser", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

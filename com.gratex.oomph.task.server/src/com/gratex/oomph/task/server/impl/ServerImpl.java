@@ -143,40 +143,40 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
   protected static final Integer START_TIMEOUT_EDEFAULT = null;
 
   /**
-  	 * The cached value of the '{@link #getStartTimeout() <em>Start Timeout</em>}' attribute.
-  	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getStartTimeout() <em>Start Timeout</em>}' attribute.
+   * <!-- begin-user-doc -->
   	 * <!-- end-user-doc -->
-  	 * @see #getStartTimeout()
-  	 * @generated
-  	 * @ordered
-  	 */
+   * @see #getStartTimeout()
+   * @generated
+   * @ordered
+   */
   protected Integer startTimeout = START_TIMEOUT_EDEFAULT;
 
   /**
-  	 * The default value of the '{@link #getStopTimeout() <em>Stop Timeout</em>}' attribute.
-  	 * <!-- begin-user-doc -->
+   * The default value of the '{@link #getStopTimeout() <em>Stop Timeout</em>}' attribute.
+   * <!-- begin-user-doc -->
   	 * <!-- end-user-doc -->
-  	 * @see #getStopTimeout()
-  	 * @generated
-  	 * @ordered
-  	 */
+   * @see #getStopTimeout()
+   * @generated
+   * @ordered
+   */
   protected static final Integer STOP_TIMEOUT_EDEFAULT = null;
 
   /**
-  	 * The cached value of the '{@link #getStopTimeout() <em>Stop Timeout</em>}' attribute.
-  	 * <!-- begin-user-doc -->
+   * The cached value of the '{@link #getStopTimeout() <em>Stop Timeout</em>}' attribute.
+   * <!-- begin-user-doc -->
   	 * <!-- end-user-doc -->
-  	 * @see #getStopTimeout()
-  	 * @generated
-  	 * @ordered
-  	 */
+   * @see #getStopTimeout()
+   * @generated
+   * @ordered
+   */
   protected Integer stopTimeout = STOP_TIMEOUT_EDEFAULT;
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   protected ServerImpl()
   {
     super();
@@ -340,10 +340,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
   	 * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public void setStartTimeout(Integer newStartTimeout)
   {
@@ -356,10 +356,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
   	 * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public Integer getStopTimeout()
   {
@@ -367,10 +367,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
   	 * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public void setStopTimeout(Integer newStopTimeout)
   {
@@ -383,10 +383,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {

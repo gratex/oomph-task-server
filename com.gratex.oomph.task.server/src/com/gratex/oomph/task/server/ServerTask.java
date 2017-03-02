@@ -12,8 +12,6 @@ package com.gratex.oomph.task.server;
 
 import org.eclipse.oomph.setup.SetupTask;
 
-import com.gratex.oomph.task.server.exception.ServerTaskException;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Server Task</b></em>'.
@@ -161,8 +159,6 @@ public interface ServerTask extends SetupTask
    */
   String getPort();
 
-  Integer port() throws ServerTaskException;
-
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.ServerTask#getPort <em>Port</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -189,8 +185,6 @@ public interface ServerTask extends SetupTask
    * @generated
    */
   String getHttpsPort();
-
-  Integer httpsPort() throws ServerTaskException;
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.ServerTask#getHttpsPort <em>Https Port</em>}' attribute.

@@ -2,8 +2,6 @@
  */
 package com.gratex.oomph.task.server;
 
-import com.gratex.oomph.task.server.exception.ServerTaskException;
-
 /**
  * <!-- begin-user-doc -->
  * A representation of the model object '<em><b>Tomcat Server Task</b></em>'.
@@ -64,14 +62,12 @@ public interface TomcatServerTask extends Server
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Port</em>' attribute.
-   * @see #setPort(String)
+   * @see #setPort(Integer)
    * @see com.gratex.oomph.task.server.ServerPackage#getTomcatServerTask_Port()
    * @model default="8080" required="true"
    * @generated
    */
-  String getPort();
-
-  Integer port() throws ServerTaskException;
+  Integer getPort();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.TomcatServerTask#getPort <em>Port</em>}' attribute.
@@ -81,26 +77,24 @@ public interface TomcatServerTask extends Server
    * @see #getPort()
    * @generated
    */
-  void setPort(String value);
+  void setPort(Integer value);
 
   /**
-   * Returns the value of the '<em><b>Https Port</b></em>' attribute.
-   * The default value is <code>"8443"</code>.
-   * <!-- begin-user-doc -->
+  	 * Returns the value of the '<em><b>Https Port</b></em>' attribute.
+  	 * The default value is <code>"8443"</code>.
+  	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Https Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Https Port</em>' attribute.
-   * @see #setHttpsPort(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getTomcatServerTask_HttpsPort()
-   * @model default="8443" required="true"
-   * @generated
-   */
-  String getHttpsPort();
-
-  Integer httpsPort() throws ServerTaskException;
+  	 * @return the value of the '<em>Https Port</em>' attribute.
+  	 * @see #setHttpsPort(Integer)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getTomcatServerTask_HttpsPort()
+  	 * @model default="8443" required="true"
+  	 * @generated
+  	 */
+  Integer getHttpsPort();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.TomcatServerTask#getHttpsPort <em>Https Port</em>}' attribute.
@@ -110,24 +104,24 @@ public interface TomcatServerTask extends Server
    * @see #getHttpsPort()
    * @generated
    */
-  void setHttpsPort(String value);
+  void setHttpsPort(Integer value);
 
   /**
-   * Returns the value of the '<em><b>Server Version</b></em>' attribute.
-   * The literals are from the enumeration {@link com.gratex.oomph.task.server.TomcatServerVersion}.
-   * <!-- begin-user-doc -->
+  	 * Returns the value of the '<em><b>Server Version</b></em>' attribute.
+  	 * The literals are from the enumeration {@link com.gratex.oomph.task.server.TomcatServerVersion}.
+  	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Server Version</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Server Version</em>' attribute.
-   * @see com.gratex.oomph.task.server.TomcatServerVersion
-   * @see #setServerVersion(TomcatServerVersion)
-   * @see com.gratex.oomph.task.server.ServerPackage#getTomcatServerTask_ServerVersion()
-   * @model required="true"
-   * @generated
-   */
+  	 * @return the value of the '<em>Server Version</em>' attribute.
+  	 * @see com.gratex.oomph.task.server.TomcatServerVersion
+  	 * @see #setServerVersion(TomcatServerVersion)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getTomcatServerTask_ServerVersion()
+  	 * @model required="true"
+  	 * @generated
+  	 */
   TomcatServerVersion getServerVersion();
 
   /**

@@ -140,11 +140,11 @@ public class ServerItemProvider extends SetupTaskItemProvider
   }
 
   /**
-  	 * This adds a property descriptor for the Stop Timeout feature.
-  	 * <!-- begin-user-doc -->
+   * This adds a property descriptor for the Stop Timeout feature.
+   * <!-- begin-user-doc -->
   	 * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   protected void addStopTimeoutPropertyDescriptor(Object object)
   {
     itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
@@ -153,10 +153,10 @@ public class ServerItemProvider extends SetupTaskItemProvider
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   protected boolean shouldComposeCreationImage()
   {
