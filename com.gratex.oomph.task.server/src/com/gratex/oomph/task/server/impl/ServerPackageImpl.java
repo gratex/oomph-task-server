@@ -444,6 +444,28 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
+  public EAttribute getServer_StartTimeout()
+  {
+    return (EAttribute)serverEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  @Override
+  public EAttribute getServer_StopTimeout()
+  {
+    return (EAttribute)serverEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  @Override
   public EEnum getTomcatServerVersion()
   {
     return tomcatServerVersionEEnum;
@@ -514,6 +536,8 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     createEAttribute(serverEClass, SERVER__RUNTIME_NAME);
     createEAttribute(serverEClass, SERVER__HOSTNAME);
     createEAttribute(serverEClass, SERVER__CLEAN_PREVIOUS_RUNTIMES);
+    createEAttribute(serverEClass, SERVER__START_TIMEOUT);
+    createEAttribute(serverEClass, SERVER__STOP_TIMEOUT);
 
     // Create enums
     tomcatServerVersionEEnum = createEEnum(TOMCAT_SERVER_VERSION);
@@ -615,6 +639,10 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getServer_CleanPreviousRuntimes(), ecorePackage.getEBoolean(), "cleanPreviousRuntimes", "false", 0, 1, Server.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getServer_StartTimeout(), ecorePackage.getEIntegerObject(), "startTimeout", null, 0, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE,
+        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getServer_StopTimeout(), ecorePackage.getEIntegerObject(), "stopTimeout", null, 0, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE,
+        IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Initialize enums and add enum literals
     initEEnum(tomcatServerVersionEEnum, TomcatServerVersion.class, "TomcatServerVersion");

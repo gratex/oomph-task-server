@@ -18,6 +18,8 @@ import org.eclipse.oomph.setup.SetupTask;
  *   <li>{@link com.gratex.oomph.task.server.Server#getRuntimeName <em>Runtime Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.Server#getHostname <em>Hostname</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.Server#isCleanPreviousRuntimes <em>Clean Previous Runtimes</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.Server#getStartTimeout <em>Start Timeout</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.Server#getStopTimeout <em>Stop Timeout</em>}</li>
  * </ul>
  *
  * @see com.gratex.oomph.task.server.ServerPackage#getServer()
@@ -157,5 +159,57 @@ public interface Server extends SetupTask
    * @generated
    */
   void setCleanPreviousRuntimes(boolean value);
+
+  /**
+  	 * Returns the value of the '<em><b>Start Timeout</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <p>
+  	 * If the meaning of the '<em>Start Timeout</em>' attribute isn't clear,
+  	 * there really should be more of a description here...
+  	 * </p>
+  	 * <!-- end-user-doc -->
+  	 * @return the value of the '<em>Start Timeout</em>' attribute.
+  	 * @see #setStartTimeout(Integer)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getServer_StartTimeout()
+  	 * @model
+  	 * @generated
+  	 */
+  Integer getStartTimeout();
+
+  /**
+  	 * Sets the value of the '{@link com.gratex.oomph.task.server.Server#getStartTimeout <em>Start Timeout</em>}' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @param value the new value of the '<em>Start Timeout</em>' attribute.
+  	 * @see #getStartTimeout()
+  	 * @generated
+  	 */
+  void setStartTimeout(Integer value);
+
+  /**
+  	 * Returns the value of the '<em><b>Stop Timeout</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <p>
+  	 * If the meaning of the '<em>Stop Timeout</em>' attribute isn't clear,
+  	 * there really should be more of a description here...
+  	 * </p>
+  	 * <!-- end-user-doc -->
+  	 * @return the value of the '<em>Stop Timeout</em>' attribute.
+  	 * @see #setStopTimeout(Integer)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getServer_StopTimeout()
+  	 * @model
+  	 * @generated
+  	 */
+  Integer getStopTimeout();
+
+  /**
+  	 * Sets the value of the '{@link com.gratex.oomph.task.server.Server#getStopTimeout <em>Stop Timeout</em>}' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @param value the new value of the '<em>Stop Timeout</em>' attribute.
+  	 * @see #getStopTimeout()
+  	 * @generated
+  	 */
+  void setStopTimeout(Integer value);
 
 } // Server

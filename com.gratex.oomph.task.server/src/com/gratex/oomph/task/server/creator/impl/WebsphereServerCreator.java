@@ -14,7 +14,6 @@ import org.eclipse.wst.server.core.IRuntimeWorkingCopy;
 import org.eclipse.wst.server.core.IServerType;
 import org.eclipse.wst.server.core.IServerWorkingCopy;
 import org.eclipse.wst.server.core.ServerCore;
-import org.eclipse.wst.server.core.internal.Server;
 import org.eclipse.wst.server.core.internal.ServerWorkingCopy;
 
 import com.gratex.oomph.task.server.WebsphereServerTask;
@@ -103,8 +102,7 @@ public class WebsphereServerCreator extends ServerCreator
     swc.setHost(serverTask.getHostname());
     swc.setName(serverTask.getServerName());
 
-    ServerWorkingCopy cswc = (ServerWorkingCopy)swc.loadAdapter(ServerWorkingCopy.class, monitor);
-    cswc.setAutoPublishSetting(Server.AUTO_PUBLISH_DISABLE);
+    setCommon((ServerWorkingCopy)swc.loadAdapter(ServerWorkingCopy.class, monitor), serverTask);
 
     WASServer wasServer = (WASServer)swc.loadAdapter(WASServer.class, null);
     wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName

@@ -23,7 +23,6 @@ import org.eclipse.wst.server.core.IServerType;
 import org.eclipse.wst.server.core.IServerWorkingCopy;
 import org.eclipse.wst.server.core.ServerCore;
 import org.eclipse.wst.server.core.ServerPort;
-import org.eclipse.wst.server.core.internal.Server;
 import org.eclipse.wst.server.core.internal.ServerWorkingCopy;
 
 import com.gratex.oomph.task.server.TomcatServerTask;
@@ -137,9 +136,7 @@ public class TomcatServerCreator extends ServerCreator
     swc.setHost(serverTask.getHostname());
     swc.setName(serverTask.getServerName());
 
-    ServerWorkingCopy cswc = (ServerWorkingCopy)swc.loadAdapter(ServerWorkingCopy.class, monitor);
-    cswc.setAutoPublishSetting(Server.AUTO_PUBLISH_DISABLE);
-
+    setCommon((ServerWorkingCopy)swc.loadAdapter(ServerWorkingCopy.class, monitor), serverTask);
     IServer server = swc.save(false, monitor);
 
     String confVmArgs = serverTask.getLaunchVmArgs();

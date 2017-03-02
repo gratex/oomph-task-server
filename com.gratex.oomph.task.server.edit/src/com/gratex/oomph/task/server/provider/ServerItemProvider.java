@@ -54,6 +54,8 @@ public class ServerItemProvider extends SetupTaskItemProvider
       addRuntimeNamePropertyDescriptor(object);
       addHostnamePropertyDescriptor(object);
       addCleanPreviousRuntimesPropertyDescriptor(object);
+      addStartTimeoutPropertyDescriptor(object);
+      addStopTimeoutPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -125,10 +127,36 @@ public class ServerItemProvider extends SetupTaskItemProvider
   }
 
   /**
+   * This adds a property descriptor for the Start Timeout feature.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
+  protected void addStartTimeoutPropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+        getString("_UI_Server_startTimeout_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Server_startTimeout_feature", "_UI_Server_type"),
+        ServerPackage.Literals.SERVER__START_TIMEOUT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+  }
+
+  /**
+  	 * This adds a property descriptor for the Stop Timeout feature.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  protected void addStopTimeoutPropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+        getString("_UI_Server_stopTimeout_feature"), getString("_UI_PropertyDescriptor_description", "_UI_Server_stopTimeout_feature", "_UI_Server_type"),
+        ServerPackage.Literals.SERVER__STOP_TIMEOUT, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 */
   @Override
   protected boolean shouldComposeCreationImage()
   {
@@ -167,6 +195,8 @@ public class ServerItemProvider extends SetupTaskItemProvider
     case ServerPackage.SERVER__RUNTIME_NAME:
     case ServerPackage.SERVER__HOSTNAME:
     case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
+    case ServerPackage.SERVER__START_TIMEOUT:
+    case ServerPackage.SERVER__STOP_TIMEOUT:
       fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
       return;
     }

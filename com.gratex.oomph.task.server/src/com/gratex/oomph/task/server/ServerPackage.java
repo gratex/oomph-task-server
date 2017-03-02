@@ -235,13 +235,31 @@ public interface ServerPackage extends EPackage
   int SERVER__CLEAN_PREVIOUS_RUNTIMES = SetupPackage.SETUP_TASK_FEATURE_COUNT + 4;
 
   /**
-   * The number of structural features of the '<em>Server</em>' class.
+   * The feature id for the '<em><b>Start Timeout</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SERVER_FEATURE_COUNT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 5;
+  int SERVER__START_TIMEOUT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 5;
+
+  /**
+  	 * The feature id for the '<em><b>Stop Timeout</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 * @ordered
+  	 */
+  int SERVER__STOP_TIMEOUT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 6;
+
+  /**
+  	 * The number of structural features of the '<em>Server</em>' class.
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 * @ordered
+  	 */
+  int SERVER_FEATURE_COUNT = SetupPackage.SETUP_TASK_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
@@ -379,12 +397,30 @@ public interface ServerPackage extends EPackage
   int TOMCAT_SERVER_TASK__CLEAN_PREVIOUS_RUNTIMES = SERVER__CLEAN_PREVIOUS_RUNTIMES;
 
   /**
-   * The feature id for the '<em><b>Jre Version</b></em>' attribute.
+   * The feature id for the '<em><b>Start Timeout</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
+  int TOMCAT_SERVER_TASK__START_TIMEOUT = SERVER__START_TIMEOUT;
+
+  /**
+  	 * The feature id for the '<em><b>Stop Timeout</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 * @ordered
+  	 */
+  int TOMCAT_SERVER_TASK__STOP_TIMEOUT = SERVER__STOP_TIMEOUT;
+
+  /**
+  	 * The feature id for the '<em><b>Jre Version</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 * @ordered
+  	 */
   int TOMCAT_SERVER_TASK__JRE_VERSION = SERVER_FEATURE_COUNT + 0;
 
   /**
@@ -577,12 +613,30 @@ public interface ServerPackage extends EPackage
   int WEBLOGIC_SERVER_TASK__CLEAN_PREVIOUS_RUNTIMES = SERVER__CLEAN_PREVIOUS_RUNTIMES;
 
   /**
-   * The feature id for the '<em><b>Jre Version</b></em>' attribute.
+   * The feature id for the '<em><b>Start Timeout</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
+  int WEBLOGIC_SERVER_TASK__START_TIMEOUT = SERVER__START_TIMEOUT;
+
+  /**
+  	 * The feature id for the '<em><b>Stop Timeout</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 * @ordered
+  	 */
+  int WEBLOGIC_SERVER_TASK__STOP_TIMEOUT = SERVER__STOP_TIMEOUT;
+
+  /**
+  	 * The feature id for the '<em><b>Jre Version</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 * @ordered
+  	 */
   int WEBLOGIC_SERVER_TASK__JRE_VERSION = SERVER_FEATURE_COUNT + 0;
 
   /**
@@ -775,12 +829,30 @@ public interface ServerPackage extends EPackage
   int WEBSPHERE_SERVER_TASK__CLEAN_PREVIOUS_RUNTIMES = SERVER__CLEAN_PREVIOUS_RUNTIMES;
 
   /**
-   * The feature id for the '<em><b>Base Server Name</b></em>' attribute.
+   * The feature id for the '<em><b>Start Timeout</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
+  int WEBSPHERE_SERVER_TASK__START_TIMEOUT = SERVER__START_TIMEOUT;
+
+  /**
+  	 * The feature id for the '<em><b>Stop Timeout</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 * @ordered
+  	 */
+  int WEBSPHERE_SERVER_TASK__STOP_TIMEOUT = SERVER__STOP_TIMEOUT;
+
+  /**
+  	 * The feature id for the '<em><b>Base Server Name</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 * @ordered
+  	 */
   int WEBSPHERE_SERVER_TASK__BASE_SERVER_NAME = SERVER_FEATURE_COUNT + 0;
 
   /**
@@ -1161,13 +1233,35 @@ public interface ServerPackage extends EPackage
   EAttribute getServer_CleanPreviousRuntimes();
 
   /**
-   * Returns the meta object for enum '{@link com.gratex.oomph.task.server.TomcatServerVersion <em>Tomcat Server Version</em>}'.
+   * Returns the meta object for the attribute '{@link com.gratex.oomph.task.server.Server#getStartTimeout <em>Start Timeout</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Tomcat Server Version</em>'.
-   * @see com.gratex.oomph.task.server.TomcatServerVersion
+   * @return the meta object for the attribute '<em>Start Timeout</em>'.
+   * @see com.gratex.oomph.task.server.Server#getStartTimeout()
+   * @see #getServer()
    * @generated
    */
+  EAttribute getServer_StartTimeout();
+
+  /**
+  	 * Returns the meta object for the attribute '{@link com.gratex.oomph.task.server.Server#getStopTimeout <em>Stop Timeout</em>}'.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @return the meta object for the attribute '<em>Stop Timeout</em>'.
+  	 * @see com.gratex.oomph.task.server.Server#getStopTimeout()
+  	 * @see #getServer()
+  	 * @generated
+  	 */
+  EAttribute getServer_StopTimeout();
+
+  /**
+  	 * Returns the meta object for enum '{@link com.gratex.oomph.task.server.TomcatServerVersion <em>Tomcat Server Version</em>}'.
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @return the meta object for enum '<em>Tomcat Server Version</em>'.
+  	 * @see com.gratex.oomph.task.server.TomcatServerVersion
+  	 * @generated
+  	 */
   EEnum getTomcatServerVersion();
 
   /**
@@ -1424,6 +1518,22 @@ public interface ServerPackage extends EPackage
      * @generated
      */
     EAttribute SERVER__CLEAN_PREVIOUS_RUNTIMES = eINSTANCE.getServer_CleanPreviousRuntimes();
+
+    /**
+     * The meta object literal for the '<em><b>Start Timeout</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SERVER__START_TIMEOUT = eINSTANCE.getServer_StartTimeout();
+
+    /**
+     * The meta object literal for the '<em><b>Stop Timeout</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SERVER__STOP_TIMEOUT = eINSTANCE.getServer_StopTimeout();
 
     /**
      * The meta object literal for the '{@link com.gratex.oomph.task.server.TomcatServerVersion <em>Tomcat Server Version</em>}' enum.

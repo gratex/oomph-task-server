@@ -24,6 +24,8 @@ import com.gratex.oomph.task.server.ServerPackage;
  *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#getRuntimeName <em>Runtime Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#getHostname <em>Hostname</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#isCleanPreviousRuntimes <em>Clean Previous Runtimes</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#getStartTimeout <em>Start Timeout</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.ServerImpl#getStopTimeout <em>Stop Timeout</em>}</li>
  * </ul>
  *
  * @generated
@@ -131,10 +133,50 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
   protected boolean cleanPreviousRuntimes = CLEAN_PREVIOUS_RUNTIMES_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getStartTimeout() <em>Start Timeout</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
+   * @see #getStartTimeout()
    * @generated
+   * @ordered
    */
+  protected static final Integer START_TIMEOUT_EDEFAULT = null;
+
+  /**
+  	 * The cached value of the '{@link #getStartTimeout() <em>Start Timeout</em>}' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @see #getStartTimeout()
+  	 * @generated
+  	 * @ordered
+  	 */
+  protected Integer startTimeout = START_TIMEOUT_EDEFAULT;
+
+  /**
+  	 * The default value of the '{@link #getStopTimeout() <em>Stop Timeout</em>}' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @see #getStopTimeout()
+  	 * @generated
+  	 * @ordered
+  	 */
+  protected static final Integer STOP_TIMEOUT_EDEFAULT = null;
+
+  /**
+  	 * The cached value of the '{@link #getStopTimeout() <em>Stop Timeout</em>}' attribute.
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @see #getStopTimeout()
+  	 * @generated
+  	 * @ordered
+  	 */
+  protected Integer stopTimeout = STOP_TIMEOUT_EDEFAULT;
+
+  /**
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 */
   protected ServerImpl()
   {
     super();
@@ -292,6 +334,60 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
    * @generated
    */
   @Override
+  public Integer getStartTimeout()
+  {
+    return startTimeout;
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  @Override
+  public void setStartTimeout(Integer newStartTimeout)
+  {
+    Integer oldStartTimeout = startTimeout;
+    startTimeout = newStartTimeout;
+    if (eNotificationRequired())
+    {
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.SERVER__START_TIMEOUT, oldStartTimeout, startTimeout));
+    }
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  @Override
+  public Integer getStopTimeout()
+  {
+    return stopTimeout;
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  @Override
+  public void setStopTimeout(Integer newStopTimeout)
+  {
+    Integer oldStopTimeout = stopTimeout;
+    stopTimeout = newStopTimeout;
+    if (eNotificationRequired())
+    {
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.SERVER__STOP_TIMEOUT, oldStopTimeout, stopTimeout));
+    }
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -306,6 +402,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
       return getHostname();
     case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
       return isCleanPreviousRuntimes();
+    case ServerPackage.SERVER__START_TIMEOUT:
+      return getStartTimeout();
+    case ServerPackage.SERVER__STOP_TIMEOUT:
+      return getStopTimeout();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -334,6 +434,12 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
       return;
     case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
       setCleanPreviousRuntimes((Boolean)newValue);
+      return;
+    case ServerPackage.SERVER__START_TIMEOUT:
+      setStartTimeout((Integer)newValue);
+      return;
+    case ServerPackage.SERVER__STOP_TIMEOUT:
+      setStopTimeout((Integer)newValue);
       return;
     }
     super.eSet(featureID, newValue);
@@ -364,6 +470,12 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
     case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
       setCleanPreviousRuntimes(CLEAN_PREVIOUS_RUNTIMES_EDEFAULT);
       return;
+    case ServerPackage.SERVER__START_TIMEOUT:
+      setStartTimeout(START_TIMEOUT_EDEFAULT);
+      return;
+    case ServerPackage.SERVER__STOP_TIMEOUT:
+      setStopTimeout(STOP_TIMEOUT_EDEFAULT);
+      return;
     }
     super.eUnset(featureID);
   }
@@ -388,6 +500,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
       return HOSTNAME_EDEFAULT == null ? hostname != null : !HOSTNAME_EDEFAULT.equals(hostname);
     case ServerPackage.SERVER__CLEAN_PREVIOUS_RUNTIMES:
       return cleanPreviousRuntimes != CLEAN_PREVIOUS_RUNTIMES_EDEFAULT;
+    case ServerPackage.SERVER__START_TIMEOUT:
+      return START_TIMEOUT_EDEFAULT == null ? startTimeout != null : !START_TIMEOUT_EDEFAULT.equals(startTimeout);
+    case ServerPackage.SERVER__STOP_TIMEOUT:
+      return STOP_TIMEOUT_EDEFAULT == null ? stopTimeout != null : !STOP_TIMEOUT_EDEFAULT.equals(stopTimeout);
     }
     return super.eIsSet(featureID);
   }
@@ -416,6 +532,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
     result.append(hostname);
     result.append(", cleanPreviousRuntimes: ");
     result.append(cleanPreviousRuntimes);
+    result.append(", startTimeout: ");
+    result.append(startTimeout);
+    result.append(", stopTimeout: ");
+    result.append(stopTimeout);
     result.append(')');
     return result.toString();
   }

@@ -16,7 +16,9 @@ import org.eclipse.jdt.launching.JavaRuntime;
 import org.eclipse.wst.server.core.IRuntime;
 import org.eclipse.wst.server.core.IServer;
 import org.eclipse.wst.server.core.ServerCore;
+import org.eclipse.wst.server.core.internal.ServerWorkingCopy;
 
+import com.gratex.oomph.task.server.Server;
 import com.gratex.oomph.task.server.exception.ServerTaskException;
 
 /**
@@ -152,6 +154,22 @@ public abstract class ServerCreator
         context.log("Removing existing server " + server.getName(), Severity.INFO);
         server.delete();
       }
+    }
+  }
+
+  protected void setCommon(ServerWorkingCopy cswc, Server serverTask)
+  {
+    cswc.setAutoPublishSetting(org.eclipse.wst.server.core.internal.Server.AUTO_PUBLISH_DISABLE);
+
+    Integer startTimeout = serverTask.getStartTimeout();
+    if (startTimeout != null)
+    {
+      cswc.setStartTimeout(startTimeout);
+    }
+    Integer stopTimeout = serverTask.getStopTimeout();
+    if (stopTimeout != null)
+    {
+      cswc.setStopTimeout(startTimeout);
     }
   }
 
