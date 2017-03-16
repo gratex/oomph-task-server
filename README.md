@@ -1,5 +1,5 @@
 # oomph-task-server
-[Eclipse Oomph](https://projects.eclipse.org/projects/tools.oomph) extension tasks for creating Weblogic 12.1.3, Websphere 7.0 and Tomcat 7 servers during setup.
+[Eclipse Oomph](https://projects.eclipse.org/projects/tools.oomph) extension tasks for creating Weblogic 12.1.3, Websphere 7.0 and Tomcat (7.0, 8.0, 8.5) servers during setup.
 
 ## Installation
 Update site: https://gratex.github.io/oomph-task-server/repository/
@@ -14,15 +14,16 @@ Execute the `./run` script which mounts hosts $HOME/.m2 folder and builds whole 
 To use the server task in your oomph setup file define a namespace `xmlns:server="http://www.gratex.com/oomph/task/server/1.0"` and add a schema location for the namespace (`xsi:schemaLocation`) pointing to `http://www.gratex.com/oomph/task/server/1.0 https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore`.  
 
 ### Tomcat server
-Sample Tomcat 7 server definition
+Sample Tomcat (7.0, 8.0, 8.5) server definition
 
 ```xml
 <setupTask
-    xsi:type="server:ServerTask"
+    xsi:type="server:TomcatServerTask"
     id="tomcat7"
     serverName="Tomcat v7.0 Server at localhost"
     location="/opt/apache-tomcat-7.0.53"
     runtimeName="Tomcat v7.0 Server"
+    serverVersion="Tomcat 7.0"
     jreVersion="${jdk1.8.0.version}"
     port="9080"
     httpsPort="9443"/>
@@ -30,6 +31,7 @@ Sample Tomcat 7 server definition
 
  * serverName - tomcat server instance name
  * runtimeName - eclipse runtime name for tomcat server
+ * serverVersion - tomcat server version to create
  * location - tomcat server installation location
  * jreVersion - eclipse java runtime version identifier
  * hostname - server host name
