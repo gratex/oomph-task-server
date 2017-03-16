@@ -10,7 +10,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import com.gratex.oomph.task.server.ServerPackage;
-import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.WeblogicServerTask;
 
 import java.util.Collection;
@@ -168,7 +167,7 @@ public class WeblogicServerTaskItemProvider extends ServerItemProvider
   @Override
   public String getText(Object object)
   {
-    String serverName = ((TomcatServerTask)object).getServerName();
+    String serverName = ((WeblogicServerTask)object).getServerName();
     return serverName == null || serverName.length() == 0 ? getString("_UI_WeblogicServerTask_type") : serverName;
   }
 
