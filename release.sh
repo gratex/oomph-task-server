@@ -24,6 +24,7 @@ $DIR/run
 
 git tag $VERSION
 git push --tags
+git push
 
 pushd $DIR/../oomph-task-server-gh-pages
 {
