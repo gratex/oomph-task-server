@@ -25,13 +25,15 @@ docker run \
        --privileged=true \
        --userns=host \
        -v "$HOME/.m2:/root/.m2" \
-       -v "$(pwd):/root/project" \
-       -w "/root/project" \
-       -u "$(id -u)":"$(id -g)" \
-       maven:3.3.9-jdk-8 \
+       -v "$(pwd):/project" \
+       -w "/project" \
+       maven:3.5.0-jdk-8 \
        mvn -f com.gratex.oomph.task.server.parent clean package
 
 
+#       -u "$(id -u)":"$(id -g)" \
+#       /bin/bash
+#       --userns=host \
 #       --rm \
 #       -v "/tmp/.m2:/root/.m2" \
 
