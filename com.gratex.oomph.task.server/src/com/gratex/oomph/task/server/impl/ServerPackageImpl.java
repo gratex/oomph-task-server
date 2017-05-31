@@ -17,6 +17,7 @@ import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.TomcatServerVersion;
 import com.gratex.oomph.task.server.WeblogicServerTask;
 import com.gratex.oomph.task.server.WebsphereServerTask;
+import com.gratex.oomph.task.server.WebsphereServerVersion;
 
 /**
  * <!-- begin-user-doc -->
@@ -60,6 +61,13 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   private EEnum tomcatServerVersionEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum websphereServerVersionEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -378,6 +386,17 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
+  public EAttribute getWebsphereServerTask_ServerVersion()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getServer()
   {
     return serverEClass;
@@ -477,6 +496,17 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
+  public EEnum getWebsphereServerVersion()
+  {
+    return websphereServerVersionEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public ServerFactory getServerFactory()
   {
     return (ServerFactory)getEFactoryInstance();
@@ -529,6 +559,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__SOAP_PORT);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__REMOTE_OS_USER);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__SERVER_VERSION);
 
     serverEClass = createEClass(SERVER);
     createEAttribute(serverEClass, SERVER__SERVER_NAME);
@@ -541,6 +572,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
 
     // Create enums
     tomcatServerVersionEEnum = createEEnum(TOMCAT_SERVER_VERSION);
+    websphereServerVersionEEnum = createEEnum(WEBSPHERE_SERVER_VERSION);
   }
 
   /**
@@ -627,6 +659,8 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWebsphereServerTask_RemoteOsPassword(), ecorePackage.getEString(), "remoteOsPassword", null, 1, 1, WebsphereServerTask.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_ServerVersion(), getWebsphereServerVersion(), "serverVersion", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(serverEClass, Server.class, "Server", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getServer_ServerName(), ecorePackage.getEString(), "serverName", null, 1, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
@@ -649,6 +683,11 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     addEEnumLiteral(tomcatServerVersionEEnum, TomcatServerVersion.TOMCAT70);
     addEEnumLiteral(tomcatServerVersionEEnum, TomcatServerVersion.TOMCAT80);
     addEEnumLiteral(tomcatServerVersionEEnum, TomcatServerVersion.TOMCAT85);
+
+    initEEnum(websphereServerVersionEEnum, WebsphereServerVersion.class, "WebsphereServerVersion");
+    addEEnumLiteral(websphereServerVersionEEnum, WebsphereServerVersion.WAS70);
+    addEEnumLiteral(websphereServerVersionEEnum, WebsphereServerVersion.WAS80);
+    addEEnumLiteral(websphereServerVersionEEnum, WebsphereServerVersion.WAS85);
 
     // Create resource
     createResource("https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore");
@@ -701,9 +740,9 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
   protected void createValidTriggersAnnotations()
   {
     String source = "http://www.eclipse.org/oomph/setup/ValidTriggers";
-    addAnnotation(tomcatServerTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
-    addAnnotation(weblogicServerTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
-    addAnnotation(websphereServerTaskEClass, source, new String[] { "triggers", "BOOTSTRAP STARTUP MANUAL" });
+    addAnnotation(tomcatServerTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
+    addAnnotation(weblogicServerTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
+    addAnnotation(websphereServerTaskEClass, source, new String[] { "triggers", "STARTUP MANUAL" });
   }
 
 } // ServerPackageImpl

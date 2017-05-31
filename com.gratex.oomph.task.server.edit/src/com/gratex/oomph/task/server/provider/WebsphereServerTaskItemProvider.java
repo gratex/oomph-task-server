@@ -54,6 +54,7 @@ public class WebsphereServerTaskItemProvider extends ServerItemProvider
       addSoapPortPropertyDescriptor(object);
       addRemoteOsUserPropertyDescriptor(object);
       addRemoteOsPasswordPropertyDescriptor(object);
+      addServerVersionPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -157,6 +158,20 @@ public class WebsphereServerTaskItemProvider extends ServerItemProvider
   }
 
   /**
+   * This adds a property descriptor for the Server Version feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addServerVersionPropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+        getString("_UI_WebsphereServerTask_serverVersion_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_serverVersion_feature", "_UI_WebsphereServerTask_type"),
+        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__SERVER_VERSION, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+  }
+
+  /**
    * This returns WebsphereServerTask.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -207,6 +222,7 @@ public class WebsphereServerTaskItemProvider extends ServerItemProvider
     case ServerPackage.WEBSPHERE_SERVER_TASK__SOAP_PORT:
     case ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_USER:
     case ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD:
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
       fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
       return;
     }

@@ -910,13 +910,22 @@ public interface ServerPackage extends EPackage
   int WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD = SERVER_FEATURE_COUNT + 6;
 
   /**
+   * The feature id for the '<em><b>Server Version</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEBSPHERE_SERVER_TASK__SERVER_VERSION = SERVER_FEATURE_COUNT + 7;
+
+  /**
    * The number of structural features of the '<em>Websphere Server Task</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WEBSPHERE_SERVER_TASK_FEATURE_COUNT = SERVER_FEATURE_COUNT + 7;
+  int WEBSPHERE_SERVER_TASK_FEATURE_COUNT = SERVER_FEATURE_COUNT + 8;
 
   /**
    * The meta object id for the '{@link com.gratex.oomph.task.server.TomcatServerVersion <em>Tomcat Server Version</em>}' enum.
@@ -927,6 +936,16 @@ public interface ServerPackage extends EPackage
    * @generated
    */
   int TOMCAT_SERVER_VERSION = 4;
+
+  /**
+   * The meta object id for the '{@link com.gratex.oomph.task.server.WebsphereServerVersion <em>Websphere Server Version</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.gratex.oomph.task.server.WebsphereServerVersion
+   * @see com.gratex.oomph.task.server.impl.ServerPackageImpl#getWebsphereServerVersion()
+   * @generated
+   */
+  int WEBSPHERE_SERVER_VERSION = 5;
 
   /**
    * Returns the meta object for class '{@link com.gratex.oomph.task.server.TomcatServerTask <em>Tomcat Server Task</em>}'.
@@ -1168,6 +1187,17 @@ public interface ServerPackage extends EPackage
   EAttribute getWebsphereServerTask_RemoteOsPassword();
 
   /**
+   * Returns the meta object for the attribute '{@link com.gratex.oomph.task.server.WebsphereServerTask#getServerVersion <em>Server Version</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Server Version</em>'.
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#getServerVersion()
+   * @see #getWebsphereServerTask()
+   * @generated
+   */
+  EAttribute getWebsphereServerTask_ServerVersion();
+
+  /**
    * Returns the meta object for class '{@link com.gratex.oomph.task.server.Server <em>Server</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1263,6 +1293,16 @@ public interface ServerPackage extends EPackage
    * @generated
    */
   EEnum getTomcatServerVersion();
+
+  /**
+   * Returns the meta object for enum '{@link com.gratex.oomph.task.server.WebsphereServerVersion <em>Websphere Server Version</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Websphere Server Version</em>'.
+   * @see com.gratex.oomph.task.server.WebsphereServerVersion
+   * @generated
+   */
+  EEnum getWebsphereServerVersion();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1470,6 +1510,14 @@ public interface ServerPackage extends EPackage
     EAttribute WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD = eINSTANCE.getWebsphereServerTask_RemoteOsPassword();
 
     /**
+     * The meta object literal for the '<em><b>Server Version</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEBSPHERE_SERVER_TASK__SERVER_VERSION = eINSTANCE.getWebsphereServerTask_ServerVersion();
+
+    /**
      * The meta object literal for the '{@link com.gratex.oomph.task.server.impl.ServerImpl <em>Server</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1544,6 +1592,16 @@ public interface ServerPackage extends EPackage
      * @generated
      */
     EEnum TOMCAT_SERVER_VERSION = eINSTANCE.getTomcatServerVersion();
+
+    /**
+     * The meta object literal for the '{@link com.gratex.oomph.task.server.WebsphereServerVersion <em>Websphere Server Version</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see com.gratex.oomph.task.server.WebsphereServerVersion
+     * @see com.gratex.oomph.task.server.impl.ServerPackageImpl#getWebsphereServerVersion()
+     * @generated
+     */
+    EEnum WEBSPHERE_SERVER_VERSION = eINSTANCE.getWebsphereServerVersion();
 
   }
 

@@ -21,7 +21,7 @@ package com.gratex.oomph.task.server;
  *
  * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask()
  * @model annotation="http://www.eclipse.org/oomph/setup/Enablement variableName='p2.server' repository='https://gratex.github.io/oomph-task-server/repository/' installableUnits='com.gratex.oomph.task.server.feature.feature.group'"
- *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='BOOTSTRAP STARTUP MANUAL'"
+ *        annotation="http://www.eclipse.org/oomph/setup/ValidTriggers triggers='STARTUP MANUAL'"
  * @generated
  */
 public interface WeblogicServerTask extends Server
@@ -80,20 +80,20 @@ public interface WeblogicServerTask extends Server
   void setPort(Integer value);
 
   /**
-  	 * Returns the value of the '<em><b>Https Port</b></em>' attribute.
-  	 * The default value is <code>"7002"</code>.
-  	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Https Port</b></em>' attribute.
+   * The default value is <code>"7002"</code>.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Https Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-  	 * @return the value of the '<em>Https Port</em>' attribute.
-  	 * @see #setHttpsPort(Integer)
-  	 * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_HttpsPort()
-  	 * @model default="7002" required="true"
-  	 * @generated
-  	 */
+   * @return the value of the '<em>Https Port</em>' attribute.
+   * @see #setHttpsPort(Integer)
+   * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_HttpsPort()
+   * @model default="7002" required="true"
+   * @generated
+   */
   Integer getHttpsPort();
 
   /**
@@ -107,20 +107,20 @@ public interface WeblogicServerTask extends Server
   void setHttpsPort(Integer value);
 
   /**
-  	 * Returns the value of the '<em><b>Debug Port</b></em>' attribute.
-  	 * The default value is <code>"8453"</code>.
-  	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Debug Port</b></em>' attribute.
+   * The default value is <code>"8453"</code>.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Debug Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-  	 * @return the value of the '<em>Debug Port</em>' attribute.
-  	 * @see #setDebugPort(Integer)
-  	 * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_DebugPort()
-  	 * @model default="8453"
-  	 * @generated
-  	 */
+   * @return the value of the '<em>Debug Port</em>' attribute.
+   * @see #setDebugPort(Integer)
+   * @see com.gratex.oomph.task.server.ServerPackage#getWeblogicServerTask_DebugPort()
+   * @model default="8453"
+   * @generated
+   */
   Integer getDebugPort();
 
   /**

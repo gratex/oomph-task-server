@@ -14,7 +14,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
-		<tycho-version>0.25.0</tycho-version>
+		<tycho-version>1.0.0</tycho-version>
 		<neon-repo.url>http://download.eclipse.org/releases/neon/</neon-repo.url>
 		<neon-updates-repo.url>http://download.eclipse.org/eclipse/updates/4.6/</neon-updates-repo.url>
 		<oepe-neon-repo.url>http://download.oracle.com/otn_software/oepe/neon/</oepe-neon-repo.url>

@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.WebsphereServerTask;
+import com.gratex.oomph.task.server.WebsphereServerVersion;
 import com.gratex.oomph.task.server.creator.impl.WebsphereServerCreator;
 
 /**
@@ -27,6 +28,7 @@ import com.gratex.oomph.task.server.creator.impl.WebsphereServerCreator;
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getSoapPort <em>Soap Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getRemoteOsUser <em>Remote Os User</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getRemoteOsPassword <em>Remote Os Password</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getServerVersion <em>Server Version</em>}</li>
  * </ul>
  *
  * @generated
@@ -173,6 +175,26 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    */
   protected String remoteOsPassword = REMOTE_OS_PASSWORD_EDEFAULT;
 
+  /**
+   * The default value of the '{@link #getServerVersion() <em>Server Version</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getServerVersion()
+   * @generated
+   * @ordered
+   */
+  protected static final WebsphereServerVersion SERVER_VERSION_EDEFAULT = WebsphereServerVersion.WAS70;
+
+  /**
+   * The cached value of the '{@link #getServerVersion() <em>Server Version</em>}' attribute.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @see #getServerVersion()
+   * @generated
+   * @ordered
+   */
+  protected WebsphereServerVersion serverVersion = SERVER_VERSION_EDEFAULT;
+
   private WebsphereServerCreator serverCreator;
 
   /**
@@ -278,10 +300,10 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public Integer getIcpPort()
   {
@@ -305,10 +327,10 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public Integer getSoapPort()
   {
@@ -332,10 +354,10 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getRemoteOsUser()
   {
@@ -391,6 +413,33 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    */
   @Override
+  public WebsphereServerVersion getServerVersion()
+  {
+    return serverVersion;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setServerVersion(WebsphereServerVersion newServerVersion)
+  {
+    WebsphereServerVersion oldServerVersion = serverVersion;
+    serverVersion = newServerVersion == null ? SERVER_VERSION_EDEFAULT : newServerVersion;
+    if (eNotificationRequired())
+    {
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION, oldServerVersion, serverVersion));
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -409,6 +458,8 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return getRemoteOsUser();
     case ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD:
       return getRemoteOsPassword();
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
+      return getServerVersion();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -443,6 +494,9 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return;
     case ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD:
       setRemoteOsPassword((String)newValue);
+      return;
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
+      setServerVersion((WebsphereServerVersion)newValue);
       return;
     }
     super.eSet(featureID, newValue);
@@ -479,6 +533,9 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     case ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD:
       setRemoteOsPassword(REMOTE_OS_PASSWORD_EDEFAULT);
       return;
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
+      setServerVersion(SERVER_VERSION_EDEFAULT);
+      return;
     }
     super.eUnset(featureID);
   }
@@ -507,6 +564,8 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return REMOTE_OS_USER_EDEFAULT == null ? remoteOsUser != null : !REMOTE_OS_USER_EDEFAULT.equals(remoteOsUser);
     case ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD:
       return REMOTE_OS_PASSWORD_EDEFAULT == null ? remoteOsPassword != null : !REMOTE_OS_PASSWORD_EDEFAULT.equals(remoteOsPassword);
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
+      return serverVersion != SERVER_VERSION_EDEFAULT;
     }
     return super.eIsSet(featureID);
   }
@@ -539,6 +598,8 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     result.append(remoteOsUser);
     result.append(", remoteOsPassword: ");
     result.append(remoteOsPassword);
+    result.append(", serverVersion: ");
+    result.append(serverVersion);
     result.append(')');
     return result.toString();
   }

@@ -230,10 +230,10 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public Integer getHttpsPort()
   {
@@ -257,10 +257,10 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public Integer getDebugPort()
   {
@@ -284,10 +284,10 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getUsername()
   {

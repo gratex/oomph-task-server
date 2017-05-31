@@ -2,20 +2,34 @@
 
 #mkdir /tmp/.m2
 
+#docker run \
+#       -it \
+#       --rm \
+#       --name my-maven-project \
+#       --privileged=true \
+#       --userns=host \
+#       -e "HOME=$HOME" \
+#       -e "MAVEN_CONFIG=$HOME/.m2" \
+#       -v "$HOME/.m2:$HOME/.m2" \
+#       -v "$(pwd):$HOME/project" \
+#       -w "$HOME/project" \
+#       -u "$(id -u)":"$(id -g)" \
+#       maven:3.3.9-jdk-8 \
+#       mvn -Duser.home="$HOME"  --settings "$HOME/.m2/settings.xml" -f com.gratex.oomph.task.server.parent clean package
+
+
 docker run \
        -it \
        --rm \
        --name my-maven-project \
        --privileged=true \
        --userns=host \
-       -e "HOME=$HOME" \
-       -e "MAVEN_CONFIG=$HOME/.m2" \
-       -v "$HOME/.m2:$HOME/.m2" \
-       -v "$(pwd):$HOME/project" \
-       -w "$HOME/project" \
+       -v "$HOME/.m2:/root/.m2" \
+       -v "$(pwd):/root/project" \
+       -w "/root/project" \
        -u "$(id -u)":"$(id -g)" \
        maven:3.3.9-jdk-8 \
-       mvn -Duser.home="$HOME"  --settings "$HOME/.m2/settings.xml" -f com.gratex.oomph.task.server.parent clean package
+       mvn -f com.gratex.oomph.task.server.parent clean package
 
 
 #       --rm \
