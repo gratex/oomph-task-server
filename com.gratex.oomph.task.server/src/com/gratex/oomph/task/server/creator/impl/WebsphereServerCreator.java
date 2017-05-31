@@ -193,7 +193,7 @@ public class WebsphereServerCreator extends ServerCreator
 
   private void configureWas80(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
-    com.ibm.ws.ast.st.v8.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v8.core.internal.WASServer)swc.loadAdapter(WASServer.class, null);
+    com.ibm.ws.ast.st.v8.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v8.core.internal.WASServer)swc.loadAdapter(com.ibm.ws.ast.st.v8.core.internal.WASServer.class, null);
     wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName
     wasServer.setIsRemoteServerStartEnabled(true);
     wasServer.setRemoteServerStartPlatform(ServerOs.Linux.id);
@@ -220,7 +220,7 @@ public class WebsphereServerCreator extends ServerCreator
 
   private void configureWas85(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
-    com.ibm.ws.ast.st.v85.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v85.core.internal.WASServer)swc.loadAdapter(WASServer.class, null);
+    com.ibm.ws.ast.st.v85.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v85.core.internal.WASServer)swc.loadAdapter(com.ibm.ws.ast.st.v85.core.internal.WASServer.class, null);
     wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName
     wasServer.setIsRemoteServerStartEnabled(true);
     wasServer.setRemoteServerStartPlatform(ServerOs.Linux.id);

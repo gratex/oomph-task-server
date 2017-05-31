@@ -39,13 +39,13 @@ public enum WebsphereServerVersion implements Enumerator
    */
   WAS80(1, "WAS80", "Websphere 8.0"),
   /**
-  * The '<em><b>WAS85</b></em>' literal object.
-  * <!-- begin-user-doc -->
+   * The '<em><b>WAS85</b></em>' literal object.
+   * <!-- begin-user-doc -->
   * <!-- end-user-doc -->
-  * @see #WAS85_VALUE
-  * @generated
-  * @ordered
-  */
+   * @see #WAS85_VALUE
+   * @generated
+   * @ordered
+   */
   WAS85(2, "WAS85", "Websphere 8.5");
 
   /**
@@ -79,18 +79,18 @@ public enum WebsphereServerVersion implements Enumerator
   public static final int WAS80_VALUE = 1;
 
   /**
-  	 * The '<em><b>WAS85</b></em>' literal value.
-  	 * <!-- begin-user-doc -->
+   * The '<em><b>WAS85</b></em>' literal value.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of '<em><b>WAS85</b></em>' literal object isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-  	 * @see #WAS85
-  	 * @model literal="Websphere 8.5"
-  	 * @generated
-  	 * @ordered
-  	 */
+   * @see #WAS85
+   * @model literal="Websphere 8.5"
+   * @generated
+   * @ordered
+   */
   public static final int WAS85_VALUE = 2;
 
   /**

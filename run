@@ -17,6 +17,8 @@
 #       maven:3.3.9-jdk-8 \
 #       mvn -Duser.home="$HOME"  --settings "$HOME/.m2/settings.xml" -f com.gratex.oomph.task.server.parent clean package
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 
 docker run \
        -it \
@@ -25,10 +27,11 @@ docker run \
        --privileged=true \
        --userns=host \
        -v "$HOME/.m2:/root/.m2" \
-       -v "$(pwd):/project" \
+       -v "$DIR:/project" \
        -w "/project" \
        maven:3.5.0-jdk-8 \
-       mvn -f com.gratex.oomph.task.server.parent clean package
+       /bin/bash -c "mvn -f com.gratex.oomph.task.server.parent/pom.xml clean package && chown -R ""$(id -u):$(id -g)"" /project"
+
 
 
 #       -u "$(id -u)":"$(id -g)" \
