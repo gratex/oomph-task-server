@@ -1,5 +1,5 @@
 # oomph-task-server
-[Eclipse Oomph](https://projects.eclipse.org/projects/tools.oomph) extension tasks for creating Weblogic 12.1.3, Websphere 7.0 and Tomcat (7.0, 8.0, 8.5) servers during setup.
+[Eclipse Oomph](https://projects.eclipse.org/projects/tools.oomph) extension tasks for creating Weblogic 12.1.3, WebSphere (7.0, 8.0, 8.5) and Tomcat (7.0, 8.0, 8.5) servers during setup.
 
 ## Installation
 Update site: https://gratex.github.io/oomph-task-server/repository/
@@ -68,13 +68,14 @@ Sample Oracle Weblogic remote server definition
  * username - username to access server
  * password - username password
 
-### Websphere
-Sample IBM Websphere remote server instance
+### WebSphere
+Sample IBM WebSphere (7.0, 8.0, 8.5) remote server definition
 
 ```xml
 <setupTask
           xsi:type="server:WebsphereServerTask"
           id="websphere70"
+          serverVersion="Websphere 7.0"
           serverName="WebSphere Application Server traditional V7.0 at waslxc"
           location="/home/was/IBM/WebSphere/AppServer"
           profilePath="/home/was/profiles/conv/"
@@ -84,9 +85,10 @@ Sample IBM Websphere remote server instance
           remoteOsPassword="waslxc."/>
 ```
 
-* serverName - webspher server instance name
+* serverName - websphere server instance name
 * runtimeName - eclipse runtime name for websphere server
-* baseServerName - server bas name (server1)
+* serverVersion - server version to create
+* baseServerName - server base name (server1)
 * location - websphere server installation location
 * hostname - server host name
 * bootstrapPort - bootstrap port
