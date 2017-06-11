@@ -197,11 +197,18 @@ public class WebsphereServerCreator extends ServerCreator
   private void setCommonWasConfig(AbstractWASServer wasServer)
   {
       wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName
-      wasServer.setIsRemoteServerStartEnabled(true);
-      wasServer.setRemoteServerStartPlatform(ServerOs.Linux.id);
-      wasServer.setRemoteServerStartProfilePath(serverTask.getProfilePath()); // profilePath
-      wasServer.setRemoteServerStartOSId(serverTask.getRemoteOsUser()); // remoteUser
-      wasServer.setRemoteServerStartOSPassword(serverTask.getRemoteOsPassword()); // remotePassword
+      if (serverTask.getRemoteOsUser() != null || serverTask.getRemoteOsPassword() != null)
+      {
+          wasServer.setIsRemoteServerStartEnabled(true);
+          wasServer.setRemoteServerStartPlatform(ServerOs.Linux.id);
+          wasServer.setRemoteServerStartProfilePath(serverTask.getProfilePath()); // profilePath
+          wasServer.setRemoteServerStartOSId(serverTask.getRemoteOsUser()); // remoteUser
+          wasServer.setRemoteServerStartOSPassword(serverTask.getRemoteOsPassword()); // remotePassword
+      }
+      else
+      {
+          wasServer.setIsRemoteServerStartEnabled(false);
+      }
       wasServer.setIsQuickBatchServerStart(true);
       wasServer.setOrbBootstrapPortNum(serverTask.getBootstrapPort()); // bootstrapPort
       wasServer.setIPCConnectorPortNum(serverTask.getIcpPort()); // icpPort
