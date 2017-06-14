@@ -69,30 +69,34 @@ Sample Oracle Weblogic remote server definition
  * password - username password
 
 ### WebSphere
-Sample IBM WebSphere (7.0, 8.0, 8.5) remote server definition
+Sample IBM WebSphere (7.0, 8.0, 8.5) server definition
 
 ```xml
 <setupTask
           xsi:type="server:WebsphereServerTask"
           id="websphere70"
-          serverVersion="Websphere 7.0"
+          serverVersion="WebSphere 7.0"
+          runtimeName="WebSphere Application Server traditional V7.0"
           serverName="WebSphere Application Server traditional V7.0 at waslxc"
           location="/home/was/IBM/WebSphere/AppServer"
-          profilePath="/home/was/profiles/conv/"
-          runtimeName="WebSphere Application Server traditional V7.0"
           hostname="waslxc"
+          profilePath="/home/was/profiles/conv/"
           remoteOsUser="was"
           remoteOsPassword="waslxc."/>
 ```
 
-* serverName - websphere server instance name
+* serverVersion - websphere version to create ("WebSphere 7.0", "WebSphere 8.0", or "WebSphere 8.5")
 * runtimeName - eclipse runtime name for websphere server
-* serverVersion - server version to create
-* baseServerName - server base name (server1)
+* serverName - websphere server instance name
 * location - websphere server installation location
-* hostname - server host name
+* hostname - server host name (default: "localhost")
+* profileName - name of profile to use
+* baseServerName - application server name (default: "server1")
 * bootstrapPort - bootstrap port
 * icpPort - ICP port
 * soapPort - SOAP port
-* remoteOsUsername - username to access server os
-* remoteOsPassword - username password
+* securityUserId - user id for server connection (enables security)
+* securityUserPassword - password for server connection (enables security)
+* profilePath - remote server profile path (only if remote)
+* remoteOsUser - user name to access remote host (only if remote)
+* remoteOsPassword - password to access remote host (only if remote)
