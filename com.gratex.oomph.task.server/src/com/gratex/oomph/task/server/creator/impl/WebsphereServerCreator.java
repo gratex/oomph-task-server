@@ -24,6 +24,8 @@ import com.gratex.oomph.task.server.exception.ServerTaskException;
 import com.ibm.ws.ast.st.common.core.internal.AbstractWASServer;
 import com.ibm.ws.ast.st.common.core.internal.config.IWASConfigModelHelper;
 
+import java.util.Iterator;
+
 /**
  * @author jkovalux
  *
@@ -262,27 +264,37 @@ public class WebsphereServerCreator extends ServerCreator
     }
 
     wasServer.setIsQuickBatchServerStart(true);
+
+    // ports
+    Iterator<?> iterator = wasServer.getSupportedConnectionTypes().iterator();
+    while (iterator.hasNext())
+    {
+      String connType = (String)iterator.next();
+      wasServer.updateServerSelectedConnectionTypes(connType, true);
+    }
+    wasServer.setIsAutoConnectionTypeEnabled(true);
+
     if (serverTask.getBootstrapPort() != null)
     {
       wasServer.setOrbBootstrapPortNum(serverTask.getBootstrapPort()); // bootstrapPort
+      wasServer.setIsAutoConnectionTypeEnabled(false);
     }
     if (serverTask.getIcpPort() != null)
     {
       wasServer.setIPCConnectorPortNum(serverTask.getIcpPort()); // icpPort
+      wasServer.setIsAutoConnectionTypeEnabled(false);
     }
     if (serverTask.getSoapPort() != null)
     {
       wasServer.setSoapConnectorPortNum(serverTask.getSoapPort()); // soapPort
+      wasServer.setIsAutoConnectionTypeEnabled(false);
     }
     wasServer.setServerConnectionType(ConnectionType.SOAP.name());
     wasServer.setIsRunServerWithWorkspaceResources(false);
-    wasServer.setIsAutoConnectionTypeEnabled(false);
     wasServer.setIsUTCEnabled(true);
     wasServer.setIsOptimizedForDevelopmentEnv(true);
     wasServer.setIsHotMethodReplace(true);
     wasServer.setIsZeroBinaryEnabled(false);
-    wasServer.updateServerSelectedConnectionTypes(ConnectionType.SOAP.name(), true);
-    wasServer.updateServerSelectedConnectionTypes(ConnectionType.JSR160RMI.name(), true);
-    wasServer.updateServerSelectedConnectionTypes(ConnectionType.RMI.name(), true);
+
   }
 }

@@ -21,6 +21,20 @@
         remoteOsUser=""
         securityUserId="was"
         securityUserPassword="was"/>
+    <setupTask
+        xsi:type="server:WebsphereServerTask"
+        serverName="websphere7-2"
+        location="/var/lib/lxc/waslxc/rootfs/home/was/IBM/WebSphere/AppServer"
+        runtimeName="websphere7-2"
+        baseServerName="server2"
+        profilePath=""
+        profileName="clk"
+        bootstrapPort="3333"
+        icpPort="2222"
+        soapPort="1111"
+        remoteOsUser=""
+        securityUserId="was"
+        securityUserPassword="was"/>
   </stream>
   <description>Sample websphere</description>
 </setup:Project>
