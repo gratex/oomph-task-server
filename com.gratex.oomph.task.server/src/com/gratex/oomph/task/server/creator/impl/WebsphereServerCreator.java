@@ -3,12 +3,11 @@
  */
 package com.gratex.oomph.task.server.creator.impl;
 
-import org.eclipse.oomph.setup.SetupTaskContext;
-
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Path;
+import org.eclipse.oomph.setup.SetupTaskContext;
 import org.eclipse.wst.server.core.IRuntime;
 import org.eclipse.wst.server.core.IRuntimeType;
 import org.eclipse.wst.server.core.IRuntimeWorkingCopy;
@@ -163,65 +162,65 @@ public class WebsphereServerCreator extends ServerCreator
 
   private void configureWas70(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
-    com.ibm.ws.ast.st.v7.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v7.core.internal.WASServer)swc.loadAdapter(com.ibm.ws.ast.st.v7.core.internal.WASServer.class, null);
+    AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v7.core.internal.WASServer.class, null);
     
     setCommonWasConfig(wasServer);
     
     // No WAS 7.0 specific config as of yet
 
-    wasServer.saveConfiguration(monitor);
+    ((com.ibm.ws.ast.st.v7.core.internal.WASServer)wasServer).saveConfiguration(monitor);
   }
 
   private void configureWas80(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
-    com.ibm.ws.ast.st.v8.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v8.core.internal.WASServer)swc.loadAdapter(com.ibm.ws.ast.st.v8.core.internal.WASServer.class, null);
+    AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v8.core.internal.WASServer.class, null);
     
     setCommonWasConfig(wasServer);
     
     // No WAS 8.0 specific config as of yet
 
-    wasServer.saveConfiguration(monitor);
+    ((com.ibm.ws.ast.st.v8.core.internal.WASServer)wasServer).saveConfiguration(monitor);
   }
 
   private void configureWas85(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
-    com.ibm.ws.ast.st.v85.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v85.core.internal.WASServer)swc.loadAdapter(com.ibm.ws.ast.st.v85.core.internal.WASServer.class, null);
+    AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v85.core.internal.WASServer.class, null);
     
     setCommonWasConfig(wasServer);
     
     // No WAS 8.5 specific config as of yet
     
-    wasServer.saveConfiguration(monitor);
+    ((com.ibm.ws.ast.st.v85.core.internal.WASServer)wasServer).saveConfiguration(monitor);
   }
 
   private void setCommonWasConfig(AbstractWASServer wasServer)
   {
-      wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName
-      if (serverTask.getRemoteOsUser() != null || serverTask.getRemoteOsPassword() != null)
-      {
-          wasServer.setIsRemoteServerStartEnabled(true);
-          wasServer.setRemoteServerStartPlatform(ServerOs.Linux.id);
-          wasServer.setRemoteServerStartProfilePath(serverTask.getProfilePath()); // profilePath
-          wasServer.setRemoteServerStartOSId(serverTask.getRemoteOsUser()); // remoteUser
-          wasServer.setRemoteServerStartOSPassword(serverTask.getRemoteOsPassword()); // remotePassword
-      }
-      else
-      {
-          wasServer.setIsRemoteServerStartEnabled(false);
-      }
-      wasServer.setIsQuickBatchServerStart(true);
-      wasServer.setOrbBootstrapPortNum(serverTask.getBootstrapPort()); // bootstrapPort
-      wasServer.setIPCConnectorPortNum(serverTask.getIcpPort()); // icpPort
-      wasServer.setSoapConnectorPortNum(serverTask.getSoapPort()); // soapPort
-      wasServer.setServerConnectionType(ConnectionType.SOAP.name());
-      wasServer.setIsRunServerWithWorkspaceResources(false);
-      wasServer.setIsAutoConnectionTypeEnabled(false);
-      wasServer.setIsUTCEnabled(true);
-      wasServer.setIsOptimizedForDevelopmentEnv(true);
-      wasServer.setIsHotMethodReplace(true);
-      wasServer.setIsZeroBinaryEnabled(false);
-      wasServer.updateServerSelectedConnectionTypes(ConnectionType.SOAP.name(), true);
-      wasServer.updateServerSelectedConnectionTypes(ConnectionType.JSR160RMI.name(), true);
-      wasServer.updateServerSelectedConnectionTypes(ConnectionType.RMI.name(), true);
+    wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName
+    if (serverTask.getRemoteOsUser() != null || serverTask.getRemoteOsPassword() != null)
+    {
+      wasServer.setIsRemoteServerStartEnabled(true);
+      wasServer.setRemoteServerStartPlatform(ServerOs.Linux.id);
+      wasServer.setRemoteServerStartProfilePath(serverTask.getProfilePath()); // profilePath
+      wasServer.setRemoteServerStartOSId(serverTask.getRemoteOsUser()); // remoteUser
+      wasServer.setRemoteServerStartOSPassword(serverTask.getRemoteOsPassword()); // remotePassword
+    }
+    else
+    {
+      wasServer.setIsRemoteServerStartEnabled(false);
+    }
+    wasServer.setIsQuickBatchServerStart(true);
+    wasServer.setOrbBootstrapPortNum(serverTask.getBootstrapPort()); // bootstrapPort
+    wasServer.setIPCConnectorPortNum(serverTask.getIcpPort()); // icpPort
+    wasServer.setSoapConnectorPortNum(serverTask.getSoapPort()); // soapPort
+    wasServer.setServerConnectionType(ConnectionType.SOAP.name());
+    wasServer.setIsRunServerWithWorkspaceResources(false);
+    wasServer.setIsAutoConnectionTypeEnabled(false);
+    wasServer.setIsUTCEnabled(true);
+    wasServer.setIsOptimizedForDevelopmentEnv(true);
+    wasServer.setIsHotMethodReplace(true);
+    wasServer.setIsZeroBinaryEnabled(false);
+    wasServer.updateServerSelectedConnectionTypes(ConnectionType.SOAP.name(), true);
+    wasServer.updateServerSelectedConnectionTypes(ConnectionType.JSR160RMI.name(), true);
+    wasServer.updateServerSelectedConnectionTypes(ConnectionType.RMI.name(), true);
   }
 }
