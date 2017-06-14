@@ -163,35 +163,35 @@ public class WebsphereServerCreator extends ServerCreator
 
   private void configureWas70(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
-    com.ibm.ws.ast.st.v7.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v7.core.internal.WASServer)swc.loadAdapter(com.ibm.ws.ast.st.v7.core.internal.WASServer.class, null);
+    AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v7.core.internal.WASServer.class, null);
     
     setCommonWasConfig(wasServer);
     
     // No WAS 7.0 specific config as of yet
 
-    wasServer.saveConfiguration(monitor);
+    ((com.ibm.ws.ast.st.v7.core.internal.WASServer)wasServer).saveConfiguration(monitor);
   }
 
   private void configureWas80(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
-    com.ibm.ws.ast.st.v8.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v8.core.internal.WASServer)swc.loadAdapter(com.ibm.ws.ast.st.v8.core.internal.WASServer.class, null);
+    AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v8.core.internal.WASServer.class, null);
     
     setCommonWasConfig(wasServer);
     
     // No WAS 8.0 specific config as of yet
 
-    wasServer.saveConfiguration(monitor);
+    ((com.ibm.ws.ast.st.v8.core.internal.WASServer)wasServer).saveConfiguration(monitor);
   }
 
   private void configureWas85(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
-    com.ibm.ws.ast.st.v85.core.internal.WASServer wasServer = (com.ibm.ws.ast.st.v85.core.internal.WASServer)swc.loadAdapter(com.ibm.ws.ast.st.v85.core.internal.WASServer.class, null);
+    AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v85.core.internal.WASServer.class, null);
     
     setCommonWasConfig(wasServer);
     
     // No WAS 8.5 specific config as of yet
     
-    wasServer.saveConfiguration(monitor);
+    ((com.ibm.ws.ast.st.v85.core.internal.WASServer)wasServer).saveConfiguration(monitor);
   }
 
   private void setCommonWasConfig(AbstractWASServer wasServer)
