@@ -49,12 +49,15 @@ public class WebsphereServerTaskItemProvider extends ServerItemProvider
 
       addBaseServerNamePropertyDescriptor(object);
       addProfilePathPropertyDescriptor(object);
+      addProfileNamePropertyDescriptor(object);
       addBootstrapPortPropertyDescriptor(object);
       addIcpPortPropertyDescriptor(object);
       addSoapPortPropertyDescriptor(object);
       addRemoteOsUserPropertyDescriptor(object);
       addRemoteOsPasswordPropertyDescriptor(object);
       addServerVersionPropertyDescriptor(object);
+      addSecurityUserIdPropertyDescriptor(object);
+      addSecurityUserPasswordPropertyDescriptor(object);
     }
     return itemPropertyDescriptors;
   }
@@ -85,6 +88,20 @@ public class WebsphereServerTaskItemProvider extends ServerItemProvider
         getString("_UI_WebsphereServerTask_profilePath_feature"),
         getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_profilePath_feature", "_UI_WebsphereServerTask_type"),
         ServerPackage.Literals.WEBSPHERE_SERVER_TASK__PROFILE_PATH, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+  }
+
+  /**
+   * This adds a property descriptor for the Profile Name feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addProfileNamePropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+        getString("_UI_WebsphereServerTask_profileName_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_profileName_feature", "_UI_WebsphereServerTask_type"),
+        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__PROFILE_NAME, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
   }
 
   /**
@@ -172,6 +189,34 @@ public class WebsphereServerTaskItemProvider extends ServerItemProvider
   }
 
   /**
+   * This adds a property descriptor for the Security User Id feature.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addSecurityUserIdPropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+        getString("_UI_WebsphereServerTask_securityUserId_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_securityUserId_feature", "_UI_WebsphereServerTask_type"),
+        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__SECURITY_USER_ID, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+  }
+
+  /**
+   * This adds a property descriptor for the Security User Password feature.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @generated
+   */
+  protected void addSecurityUserPasswordPropertyDescriptor(Object object)
+  {
+    itemPropertyDescriptors.add(createItemPropertyDescriptor(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+        getString("_UI_WebsphereServerTask_securityUserPassword_feature"),
+        getString("_UI_PropertyDescriptor_description", "_UI_WebsphereServerTask_securityUserPassword_feature", "_UI_WebsphereServerTask_type"),
+        ServerPackage.Literals.WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD, true, false, false, ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+  }
+
+  /**
    * This returns WebsphereServerTask.gif.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -217,12 +262,15 @@ public class WebsphereServerTaskItemProvider extends ServerItemProvider
     {
     case ServerPackage.WEBSPHERE_SERVER_TASK__BASE_SERVER_NAME:
     case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_PATH:
+    case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_NAME:
     case ServerPackage.WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT:
     case ServerPackage.WEBSPHERE_SERVER_TASK__ICP_PORT:
     case ServerPackage.WEBSPHERE_SERVER_TASK__SOAP_PORT:
     case ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_USER:
     case ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD:
     case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_ID:
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD:
       fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
       return;
     }

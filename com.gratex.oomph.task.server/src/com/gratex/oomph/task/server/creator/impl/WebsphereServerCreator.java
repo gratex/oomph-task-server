@@ -22,6 +22,7 @@ import com.gratex.oomph.task.server.WebsphereServerVersion;
 import com.gratex.oomph.task.server.creator.ServerCreator;
 import com.gratex.oomph.task.server.exception.ServerTaskException;
 import com.ibm.ws.ast.st.common.core.internal.AbstractWASServer;
+import com.ibm.ws.ast.st.common.core.internal.config.IWASConfigModelHelper;
 
 /**
  * @author jkovalux
@@ -164,9 +165,9 @@ public class WebsphereServerCreator extends ServerCreator
   private void configureWas70(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
     AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v7.core.internal.WASServer.class, null);
-    
+
     setCommonWasConfig(wasServer);
-    
+
     // No WAS 7.0 specific config as of yet
 
     ((com.ibm.ws.ast.st.v7.core.internal.WASServer)wasServer).saveConfiguration(monitor);
@@ -175,9 +176,9 @@ public class WebsphereServerCreator extends ServerCreator
   private void configureWas80(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
     AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v8.core.internal.WASServer.class, null);
-    
+
     setCommonWasConfig(wasServer);
-    
+
     // No WAS 8.0 specific config as of yet
 
     ((com.ibm.ws.ast.st.v8.core.internal.WASServer)wasServer).saveConfiguration(monitor);
@@ -186,42 +187,102 @@ public class WebsphereServerCreator extends ServerCreator
   private void configureWas85(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
   {
     AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v85.core.internal.WASServer.class, null);
-    
+
     setCommonWasConfig(wasServer);
-    
+
     // No WAS 8.5 specific config as of yet
-    
+
     ((com.ibm.ws.ast.st.v85.core.internal.WASServer)wasServer).saveConfiguration(monitor);
   }
 
   private void setCommonWasConfig(AbstractWASServer wasServer)
   {
-      wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName
-      if (serverTask.getRemoteOsUser() != null || serverTask.getRemoteOsPassword() != null)
+    wasServer.setBaseServerName(serverTask.getBaseServerName()); // baseServerName
+    if (serverTask.hasRemoteOsUser())
+    {
+      wasServer.setIsRemoteServerStartEnabled(true);
+      wasServer.setRemoteServerStartPlatform(ServerOs.Linux.id);
+      wasServer.setRemoteServerStartProfilePath(serverTask.getProfilePath()); // profilePath
+      wasServer.setRemoteServerStartOSId(serverTask.getRemoteOsUser()); // remoteUser
+      wasServer.setRemoteServerStartOSPassword(serverTask.getRemoteOsPassword()); // remotePassword
+    }
+    else
+    {
+      wasServer.setIsRemoteServerStartEnabled(false);
+    }
+
+    // set profile and set profile config
+    if (serverTask.hasProfileName() && !wasServer.getIsRemoteServerStartEnabled())
+    {
+      wasServer.setWebSphereProfileName(serverTask.getProfileName());
+      IWASConfigModelHelper configHelper = wasServer.getWASConfigModelHelper(serverTask.getProfileName());
+
+      if (configHelper.getSoapConnectorPort() != null)
       {
-          wasServer.setIsRemoteServerStartEnabled(true);
-          wasServer.setRemoteServerStartPlatform(ServerOs.Linux.id);
-          wasServer.setRemoteServerStartProfilePath(serverTask.getProfilePath()); // profilePath
-          wasServer.setRemoteServerStartOSId(serverTask.getRemoteOsUser()); // remoteUser
-          wasServer.setRemoteServerStartOSPassword(serverTask.getRemoteOsPassword()); // remotePassword
+        wasServer.setSoapConnectorPortNum(configHelper.getSoapConnectorPort().intValue());
       }
-      else
+
+      if (configHelper.getOrbBootstrapPort() != null)
       {
-          wasServer.setIsRemoteServerStartEnabled(false);
+        wasServer.setOrbBootstrapPortNum(configHelper.getOrbBootstrapPort().intValue());
       }
-      wasServer.setIsQuickBatchServerStart(true);
+
+      if (configHelper.getIPCConnectorPort() != null)
+      {
+        wasServer.setIPCConnectorPortNum(configHelper.getIPCConnectorPort().intValue());
+      }
+
+      if (configHelper.isSecurityEnabled() != null)
+      {
+        wasServer.setIsSecurityEnabled(configHelper.isSecurityEnabled().booleanValue());
+
+        wasServer.setSecurityUserId(configHelper.getSecurityUserId());
+        wasServer.setSecurityPasswd(configHelper.getSecurityUserPassword());
+      }
+
+      if (configHelper.getServerName() != null)
+      {
+        wasServer.setBaseServerName(configHelper.getServerName());
+      }
+    }
+
+    // was security user and password
+    if (serverTask.hasSecurityUserId())
+    {
+      wasServer.setSecurityUserId(serverTask.getSecurityUserId());
+    }
+    if (serverTask.hasSecurityUserPassword())
+    {
+      wasServer.setSecurityPasswd(serverTask.getSecurityUserPassword());
+    }
+    if (serverTask.hasSecurityUserId() && serverTask.hasSecurityUserPassword())
+    {
+      wasServer.setIsSecurityEnabled(true);
+      wasServer.setIsAutoAcceptSignerEnabled(true);
+    }
+
+    wasServer.setIsQuickBatchServerStart(true);
+    if (serverTask.getBootstrapPort() != null)
+    {
       wasServer.setOrbBootstrapPortNum(serverTask.getBootstrapPort()); // bootstrapPort
+    }
+    if (serverTask.getIcpPort() != null)
+    {
       wasServer.setIPCConnectorPortNum(serverTask.getIcpPort()); // icpPort
+    }
+    if (serverTask.getSoapPort() != null)
+    {
       wasServer.setSoapConnectorPortNum(serverTask.getSoapPort()); // soapPort
-      wasServer.setServerConnectionType(ConnectionType.SOAP.name());
-      wasServer.setIsRunServerWithWorkspaceResources(false);
-      wasServer.setIsAutoConnectionTypeEnabled(false);
-      wasServer.setIsUTCEnabled(true);
-      wasServer.setIsOptimizedForDevelopmentEnv(true);
-      wasServer.setIsHotMethodReplace(true);
-      wasServer.setIsZeroBinaryEnabled(false);
-      wasServer.updateServerSelectedConnectionTypes(ConnectionType.SOAP.name(), true);
-      wasServer.updateServerSelectedConnectionTypes(ConnectionType.JSR160RMI.name(), true);
-      wasServer.updateServerSelectedConnectionTypes(ConnectionType.RMI.name(), true);
+    }
+    wasServer.setServerConnectionType(ConnectionType.SOAP.name());
+    wasServer.setIsRunServerWithWorkspaceResources(false);
+    wasServer.setIsAutoConnectionTypeEnabled(false);
+    wasServer.setIsUTCEnabled(true);
+    wasServer.setIsOptimizedForDevelopmentEnv(true);
+    wasServer.setIsHotMethodReplace(true);
+    wasServer.setIsZeroBinaryEnabled(false);
+    wasServer.updateServerSelectedConnectionTypes(ConnectionType.SOAP.name(), true);
+    wasServer.updateServerSelectedConnectionTypes(ConnectionType.JSR160RMI.name(), true);
+    wasServer.updateServerSelectedConnectionTypes(ConnectionType.RMI.name(), true);
   }
 }

@@ -5,6 +5,7 @@ target/
 .metadata/
 RemoteSystemsTempFiles/
 Servers/
+runtime-test/
 bin/
 .recommenders/
 .sonarlint/

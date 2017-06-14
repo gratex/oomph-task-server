@@ -27,7 +27,7 @@ public enum WebsphereServerVersion implements Enumerator
    * @generated
    * @ordered
    */
-  WAS70(0, "WAS70", "Websphere 7.0"),
+  WAS70(0, "WAS70", "WebSphere 7.0"),
 
   /**
    * The '<em><b>WAS80</b></em>' literal object.
@@ -37,7 +37,7 @@ public enum WebsphereServerVersion implements Enumerator
    * @generated
    * @ordered
    */
-  WAS80(1, "WAS80", "Websphere 8.0"),
+  WAS80(1, "WAS80", "WebSphere 8.0"),
   /**
    * The '<em><b>WAS85</b></em>' literal object.
    * <!-- begin-user-doc -->
@@ -46,7 +46,7 @@ public enum WebsphereServerVersion implements Enumerator
    * @generated
    * @ordered
    */
-  WAS85(2, "WAS85", "Websphere 8.5");
+  WAS85(2, "WAS85", "WebSphere 8.5");
 
   /**
    * The '<em><b>WAS70</b></em>' literal value.
@@ -57,7 +57,7 @@ public enum WebsphereServerVersion implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #WAS70
-   * @model literal="Websphere 7.0"
+   * @model literal="WebSphere 7.0"
    * @generated
    * @ordered
    */
@@ -72,7 +72,7 @@ public enum WebsphereServerVersion implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #WAS80
-   * @model literal="Websphere 8.0"
+   * @model literal="WebSphere 8.0"
    * @generated
    * @ordered
    */
@@ -87,7 +87,7 @@ public enum WebsphereServerVersion implements Enumerator
    * </p>
    * <!-- end-user-doc -->
    * @see #WAS85
-   * @model literal="Websphere 8.5"
+   * @model literal="WebSphere 8.5"
    * @generated
    * @ordered
    */

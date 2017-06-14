@@ -58,25 +58,19 @@
     <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
       <details key="triggers" value="STARTUP MANUAL"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseServerName" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="server1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="profilePath" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bootstrapPort" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
-        defaultValueLiteral="2806"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icpPort" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
-        defaultValueLiteral="9633"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="soapPort" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"
-        defaultValueLiteral="8880"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteOsUser" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteOsPassword" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseServerName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="server1"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="profilePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="profileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bootstrapPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icpPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="soapPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EIntegerObject"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteOsUser" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteOsPassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverVersion" lowerBound="1"
         eType="#//WebsphereServerVersion"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityUserId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityUserPassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Server" abstract="true" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverName" lowerBound="1"
@@ -98,8 +92,8 @@
     <eLiterals name="TOMCAT85" value="2" literal="Tomcat 8.5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="WebsphereServerVersion">
-    <eLiterals name="WAS70" literal="Websphere 7.0"/>
-    <eLiterals name="WAS80" value="1" literal="Websphere 8.0"/>
-    <eLiterals name="WAS85" value="2" literal="Websphere 8.5"/>
+    <eLiterals name="WAS70" literal="WebSphere 7.0"/>
+    <eLiterals name="WAS80" value="1" literal="WebSphere 8.0"/>
+    <eLiterals name="WAS85" value="2" literal="WebSphere 8.5"/>
   </eClassifiers>
 </ecore:EPackage>

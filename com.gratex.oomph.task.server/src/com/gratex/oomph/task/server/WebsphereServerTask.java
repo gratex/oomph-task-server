@@ -13,12 +13,15 @@ package com.gratex.oomph.task.server;
  * <ul>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getBaseServerName <em>Base Server Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getProfilePath <em>Profile Path</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getProfileName <em>Profile Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getBootstrapPort <em>Bootstrap Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getIcpPort <em>Icp Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getSoapPort <em>Soap Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getRemoteOsUser <em>Remote Os User</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getRemoteOsPassword <em>Remote Os Password</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getServerVersion <em>Server Version</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getSecurityUserId <em>Security User Id</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.WebsphereServerTask#getSecurityUserPassword <em>Security User Password</em>}</li>
  * </ul>
  *
  * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask()
@@ -40,7 +43,7 @@ public interface WebsphereServerTask extends Server
    * @return the value of the '<em>Base Server Name</em>' attribute.
    * @see #setBaseServerName(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_BaseServerName()
-   * @model default="server1" required="true"
+   * @model default="server1"
    * @generated
    */
   String getBaseServerName();
@@ -66,7 +69,7 @@ public interface WebsphereServerTask extends Server
    * @return the value of the '<em>Profile Path</em>' attribute.
    * @see #setProfilePath(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_ProfilePath()
-   * @model required="true"
+   * @model
    * @generated
    */
   String getProfilePath();
@@ -82,8 +85,35 @@ public interface WebsphereServerTask extends Server
   void setProfilePath(String value);
 
   /**
+   * Returns the value of the '<em><b>Profile Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Profile Name</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Profile Name</em>' attribute.
+   * @see #setProfileName(String)
+   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_ProfileName()
+   * @model
+   * @generated
+   */
+  String getProfileName();
+
+  boolean hasProfileName();
+
+  /**
+   * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getProfileName <em>Profile Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Profile Name</em>' attribute.
+   * @see #getProfileName()
+   * @generated
+   */
+  void setProfileName(String value);
+
+  /**
    * Returns the value of the '<em><b>Bootstrap Port</b></em>' attribute.
-   * The default value is <code>"2806"</code>.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Bootstrap Port</em>' attribute isn't clear,
@@ -93,7 +123,7 @@ public interface WebsphereServerTask extends Server
    * @return the value of the '<em>Bootstrap Port</em>' attribute.
    * @see #setBootstrapPort(Integer)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_BootstrapPort()
-   * @model default="2806" required="true"
+   * @model
    * @generated
    */
   Integer getBootstrapPort();
@@ -110,7 +140,6 @@ public interface WebsphereServerTask extends Server
 
   /**
    * Returns the value of the '<em><b>Icp Port</b></em>' attribute.
-   * The default value is <code>"9633"</code>.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Icp Port</em>' attribute isn't clear,
@@ -120,7 +149,7 @@ public interface WebsphereServerTask extends Server
    * @return the value of the '<em>Icp Port</em>' attribute.
    * @see #setIcpPort(Integer)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_IcpPort()
-   * @model default="9633" required="true"
+   * @model
    * @generated
    */
   Integer getIcpPort();
@@ -137,7 +166,6 @@ public interface WebsphereServerTask extends Server
 
   /**
    * Returns the value of the '<em><b>Soap Port</b></em>' attribute.
-   * The default value is <code>"8880"</code>.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Soap Port</em>' attribute isn't clear,
@@ -147,7 +175,7 @@ public interface WebsphereServerTask extends Server
    * @return the value of the '<em>Soap Port</em>' attribute.
    * @see #setSoapPort(Integer)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SoapPort()
-   * @model default="8880" required="true"
+   * @model
    * @generated
    */
   Integer getSoapPort();
@@ -173,10 +201,12 @@ public interface WebsphereServerTask extends Server
    * @return the value of the '<em>Remote Os User</em>' attribute.
    * @see #setRemoteOsUser(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_RemoteOsUser()
-   * @model required="true"
+   * @model
    * @generated
    */
   String getRemoteOsUser();
+
+  boolean hasRemoteOsUser();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getRemoteOsUser <em>Remote Os User</em>}' attribute.
@@ -199,10 +229,12 @@ public interface WebsphereServerTask extends Server
    * @return the value of the '<em>Remote Os Password</em>' attribute.
    * @see #setRemoteOsPassword(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_RemoteOsPassword()
-   * @model required="true"
+   * @model
    * @generated
    */
   String getRemoteOsPassword();
+
+  boolean hasRemoteOsPassword();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getRemoteOsPassword <em>Remote Os Password</em>}' attribute.
@@ -242,5 +274,61 @@ public interface WebsphereServerTask extends Server
    * @generated
    */
   void setServerVersion(WebsphereServerVersion value);
+
+  /**
+   * Returns the value of the '<em><b>Security User Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+  	 * <p>
+  	 * If the meaning of the '<em>Security User Id</em>' attribute isn't clear,
+  	 * there really should be more of a description here...
+  	 * </p>
+  	 * <!-- end-user-doc -->
+   * @return the value of the '<em>Security User Id</em>' attribute.
+   * @see #setSecurityUserId(String)
+   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SecurityUserId()
+   * @model
+   * @generated
+   */
+  String getSecurityUserId();
+
+  boolean hasSecurityUserId();
+
+  /**
+   * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getSecurityUserId <em>Security User Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Security User Id</em>' attribute.
+   * @see #getSecurityUserId()
+   * @generated
+   */
+  void setSecurityUserId(String value);
+
+  /**
+   * Returns the value of the '<em><b>Security User Password</b></em>' attribute.
+   * <!-- begin-user-doc -->
+  	 * <p>
+  	 * If the meaning of the '<em>Security User Password</em>' attribute isn't clear,
+  	 * there really should be more of a description here...
+  	 * </p>
+  	 * <!-- end-user-doc -->
+   * @return the value of the '<em>Security User Password</em>' attribute.
+   * @see #setSecurityUserPassword(String)
+   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SecurityUserPassword()
+   * @model
+   * @generated
+   */
+  String getSecurityUserPassword();
+
+  /**
+   * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getSecurityUserPassword <em>Security User Password</em>}' attribute.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Security User Password</em>' attribute.
+   * @see #getSecurityUserPassword()
+   * @generated
+   */
+  void setSecurityUserPassword(String value);
+
+  boolean hasSecurityUserPassword();
 
 } // WebsphereServerTask

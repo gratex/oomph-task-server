@@ -3,23 +3,24 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
     xmlns:server="http://www.gratex.com/oomph/task/server/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.gratex.com/oomph/task/server/1.0 https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore"
+    xsi:schemaLocation="http://www.gratex.com/oomph/task/server/1.0 https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore"
     name="sample.websphere"
     label="Sample websphere">
-  <setupTask
-      xsi:type="jdt:JRETask"
-      id="jdk1.8.0"
-      version="JavaSE-1.8"
-      location="${user.home}/opt/java/jdk8/jdk8/">
-    <description>jdk1.8.0</description>
-  </setupTask>
   <stream name="master"
       label="Master">
     <setupTask
-        xsi:type="server:WebsphereServerTask"/>
+        xsi:type="server:WebsphereServerTask"
+        serverName="websphere7"
+        location="/var/lib/lxc/waslxc/rootfs/home/was/IBM/WebSphere/AppServer"
+        runtimeName="websphere7"
+        cleanPreviousRuntimes="true"
+        profilePath=""
+        profileName="clk"
+        remoteOsUser=""
+        securityUserId="was"
+        securityUserPassword="was"/>
   </stream>
   <description>Sample websphere</description>
 </setup:Project>

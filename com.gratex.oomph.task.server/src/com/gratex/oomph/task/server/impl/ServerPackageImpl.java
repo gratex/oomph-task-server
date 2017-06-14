@@ -331,7 +331,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
-  public EAttribute getWebsphereServerTask_BootstrapPort()
+  public EAttribute getWebsphereServerTask_ProfileName()
   {
     return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(2);
   }
@@ -342,7 +342,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
-  public EAttribute getWebsphereServerTask_IcpPort()
+  public EAttribute getWebsphereServerTask_BootstrapPort()
   {
     return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(3);
   }
@@ -353,7 +353,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
-  public EAttribute getWebsphereServerTask_SoapPort()
+  public EAttribute getWebsphereServerTask_IcpPort()
   {
     return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(4);
   }
@@ -364,7 +364,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
-  public EAttribute getWebsphereServerTask_RemoteOsUser()
+  public EAttribute getWebsphereServerTask_SoapPort()
   {
     return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(5);
   }
@@ -375,7 +375,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
-  public EAttribute getWebsphereServerTask_RemoteOsPassword()
+  public EAttribute getWebsphereServerTask_RemoteOsUser()
   {
     return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(6);
   }
@@ -386,9 +386,42 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
    * @generated
    */
   @Override
-  public EAttribute getWebsphereServerTask_ServerVersion()
+  public EAttribute getWebsphereServerTask_RemoteOsPassword()
   {
     return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(7);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_ServerVersion()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(8);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_SecurityUserId()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(9);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EAttribute getWebsphereServerTask_SecurityUserPassword()
+  {
+    return (EAttribute)websphereServerTaskEClass.getEStructuralFeatures().get(10);
   }
 
   /**
@@ -554,12 +587,15 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     websphereServerTaskEClass = createEClass(WEBSPHERE_SERVER_TASK);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__BASE_SERVER_NAME);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__PROFILE_PATH);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__PROFILE_NAME);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__ICP_PORT);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__SOAP_PORT);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__REMOTE_OS_USER);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD);
     createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__SERVER_VERSION);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__SECURITY_USER_ID);
+    createEAttribute(websphereServerTaskEClass, WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD);
 
     serverEClass = createEClass(SERVER);
     createEAttribute(serverEClass, SERVER__SERVER_NAME);
@@ -645,22 +681,28 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
         IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(websphereServerTaskEClass, WebsphereServerTask.class, "WebsphereServerTask", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getWebsphereServerTask_BaseServerName(), ecorePackage.getEString(), "baseServerName", "server1", 1, 1, WebsphereServerTask.class,
+    initEAttribute(getWebsphereServerTask_BaseServerName(), ecorePackage.getEString(), "baseServerName", "server1", 0, 1, WebsphereServerTask.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_ProfilePath(), ecorePackage.getEString(), "profilePath", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+    initEAttribute(getWebsphereServerTask_ProfilePath(), ecorePackage.getEString(), "profilePath", null, 0, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_BootstrapPort(), ecorePackage.getEIntegerObject(), "bootstrapPort", "2806", 1, 1, WebsphereServerTask.class,
+    initEAttribute(getWebsphereServerTask_ProfileName(), ecorePackage.getEString(), "profileName", null, 0, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_BootstrapPort(), ecorePackage.getEIntegerObject(), "bootstrapPort", null, 0, 1, WebsphereServerTask.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_IcpPort(), ecorePackage.getEIntegerObject(), "icpPort", "9633", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+    initEAttribute(getWebsphereServerTask_IcpPort(), ecorePackage.getEIntegerObject(), "icpPort", null, 0, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_SoapPort(), ecorePackage.getEIntegerObject(), "soapPort", "8880", 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+    initEAttribute(getWebsphereServerTask_SoapPort(), ecorePackage.getEIntegerObject(), "soapPort", null, 0, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_RemoteOsUser(), ecorePackage.getEString(), "remoteOsUser", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+    initEAttribute(getWebsphereServerTask_RemoteOsUser(), ecorePackage.getEString(), "remoteOsUser", null, 0, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWebsphereServerTask_RemoteOsPassword(), ecorePackage.getEString(), "remoteOsPassword", null, 1, 1, WebsphereServerTask.class,
+    initEAttribute(getWebsphereServerTask_RemoteOsPassword(), ecorePackage.getEString(), "remoteOsPassword", null, 0, 1, WebsphereServerTask.class,
         !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWebsphereServerTask_ServerVersion(), getWebsphereServerVersion(), "serverVersion", null, 1, 1, WebsphereServerTask.class, !IS_TRANSIENT,
         !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_SecurityUserId(), ecorePackage.getEString(), "securityUserId", null, 0, 1, WebsphereServerTask.class, !IS_TRANSIENT,
+        !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWebsphereServerTask_SecurityUserPassword(), ecorePackage.getEString(), "securityUserPassword", null, 0, 1, WebsphereServerTask.class,
+        !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(serverEClass, Server.class, "Server", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getServer_ServerName(), ecorePackage.getEString(), "serverName", null, 1, 1, Server.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,

@@ -8,6 +8,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import com.google.common.base.Strings;
 import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.WebsphereServerTask;
 import com.gratex.oomph.task.server.WebsphereServerVersion;
@@ -23,12 +24,15 @@ import com.gratex.oomph.task.server.creator.impl.WebsphereServerCreator;
  * <ul>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getBaseServerName <em>Base Server Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getProfilePath <em>Profile Path</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getProfileName <em>Profile Name</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getBootstrapPort <em>Bootstrap Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getIcpPort <em>Icp Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getSoapPort <em>Soap Port</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getRemoteOsUser <em>Remote Os User</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getRemoteOsPassword <em>Remote Os Password</em>}</li>
  *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getServerVersion <em>Server Version</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getSecurityUserId <em>Security User Id</em>}</li>
+ *   <li>{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl#getSecurityUserPassword <em>Security User Password</em>}</li>
  * </ul>
  *
  * @generated
@@ -76,6 +80,26 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
   protected String profilePath = PROFILE_PATH_EDEFAULT;
 
   /**
+   * The default value of the '{@link #getProfileName() <em>Profile Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getProfileName()
+   * @generated
+   * @ordered
+   */
+  protected static final String PROFILE_NAME_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getProfileName() <em>Profile Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @see #getProfileName()
+   * @generated
+   * @ordered
+   */
+  protected String profileName = PROFILE_NAME_EDEFAULT;
+
+  /**
    * The default value of the '{@link #getBootstrapPort() <em>Bootstrap Port</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -83,7 +107,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    * @ordered
    */
-  protected static final Integer BOOTSTRAP_PORT_EDEFAULT = new Integer(2806);
+  protected static final Integer BOOTSTRAP_PORT_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getBootstrapPort() <em>Bootstrap Port</em>}' attribute.
@@ -103,7 +127,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    * @ordered
    */
-  protected static final Integer ICP_PORT_EDEFAULT = new Integer(9633);
+  protected static final Integer ICP_PORT_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getIcpPort() <em>Icp Port</em>}' attribute.
@@ -123,7 +147,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    * @ordered
    */
-  protected static final Integer SOAP_PORT_EDEFAULT = new Integer(8880);
+  protected static final Integer SOAP_PORT_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getSoapPort() <em>Soap Port</em>}' attribute.
@@ -194,6 +218,46 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @ordered
    */
   protected WebsphereServerVersion serverVersion = SERVER_VERSION_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSecurityUserId() <em>Security User Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSecurityUserId()
+   * @generated
+   * @ordered
+   */
+  protected static final String SECURITY_USER_ID_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSecurityUserId() <em>Security User Id</em>}' attribute.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @see #getSecurityUserId()
+   * @generated
+   * @ordered
+   */
+  protected String securityUserId = SECURITY_USER_ID_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getSecurityUserPassword() <em>Security User Password</em>}' attribute.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @see #getSecurityUserPassword()
+   * @generated
+   * @ordered
+   */
+  protected static final String SECURITY_USER_PASSWORD_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getSecurityUserPassword() <em>Security User Password</em>}' attribute.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @see #getSecurityUserPassword()
+   * @generated
+   * @ordered
+   */
+  protected String securityUserPassword = SECURITY_USER_PASSWORD_EDEFAULT;
 
   private WebsphereServerCreator serverCreator;
 
@@ -269,6 +333,43 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     if (eNotificationRequired())
     {
       eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_PATH, oldProfilePath, profilePath));
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getProfileName()
+  {
+    return profileName;
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#hasProfileName()
+   */
+  @Override
+  public boolean hasProfileName()
+  {
+    return !Strings.isNullOrEmpty(profileName);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setProfileName(String newProfileName)
+  {
+    String oldProfileName = profileName;
+    profileName = newProfileName;
+    if (eNotificationRequired())
+    {
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_NAME, oldProfileName, profileName));
     }
   }
 
@@ -380,6 +481,16 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     }
   }
 
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#hasRemoteOsUser()
+   */
+  @Override
+  public boolean hasRemoteOsUser()
+  {
+    return !Strings.isNullOrEmpty(remoteOsUser);
+  }
+
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -405,6 +516,16 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     {
       eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD, oldRemoteOsPassword, remoteOsPassword));
     }
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#hasRemoteOsPassword()
+   */
+  @Override
+  public boolean hasRemoteOsPassword()
+  {
+    return !Strings.isNullOrEmpty(remoteOsPassword);
   }
 
   /**
@@ -440,6 +561,81 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    */
   @Override
+  public String getSecurityUserId()
+  {
+    return securityUserId;
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#hasSecurityUserId()
+   */
+  @Override
+  public boolean hasSecurityUserId()
+  {
+    return !Strings.isNullOrEmpty(securityUserId);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSecurityUserId(String newSecurityUserId)
+  {
+    String oldSecurityUserId = securityUserId;
+    securityUserId = newSecurityUserId;
+    if (eNotificationRequired())
+    {
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_ID, oldSecurityUserId, securityUserId));
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String getSecurityUserPassword()
+  {
+    return securityUserPassword;
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#hasSecurityUserPassword()
+   */
+  @Override
+  public boolean hasSecurityUserPassword()
+  {
+    return !Strings.isNullOrEmpty(securityUserPassword);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setSecurityUserPassword(String newSecurityUserPassword)
+  {
+    String oldSecurityUserPassword = securityUserPassword;
+    securityUserPassword = newSecurityUserPassword;
+    if (eNotificationRequired())
+    {
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD, oldSecurityUserPassword,
+          securityUserPassword));
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
@@ -448,6 +644,8 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return getBaseServerName();
     case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_PATH:
       return getProfilePath();
+    case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_NAME:
+      return getProfileName();
     case ServerPackage.WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT:
       return getBootstrapPort();
     case ServerPackage.WEBSPHERE_SERVER_TASK__ICP_PORT:
@@ -460,6 +658,10 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return getRemoteOsPassword();
     case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
       return getServerVersion();
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_ID:
+      return getSecurityUserId();
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD:
+      return getSecurityUserPassword();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -480,6 +682,9 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_PATH:
       setProfilePath((String)newValue);
       return;
+    case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_NAME:
+      setProfileName((String)newValue);
+      return;
     case ServerPackage.WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT:
       setBootstrapPort((Integer)newValue);
       return;
@@ -497,6 +702,12 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return;
     case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
       setServerVersion((WebsphereServerVersion)newValue);
+      return;
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_ID:
+      setSecurityUserId((String)newValue);
+      return;
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD:
+      setSecurityUserPassword((String)newValue);
       return;
     }
     super.eSet(featureID, newValue);
@@ -518,6 +729,9 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_PATH:
       setProfilePath(PROFILE_PATH_EDEFAULT);
       return;
+    case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_NAME:
+      setProfileName(PROFILE_NAME_EDEFAULT);
+      return;
     case ServerPackage.WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT:
       setBootstrapPort(BOOTSTRAP_PORT_EDEFAULT);
       return;
@@ -535,6 +749,12 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return;
     case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
       setServerVersion(SERVER_VERSION_EDEFAULT);
+      return;
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_ID:
+      setSecurityUserId(SECURITY_USER_ID_EDEFAULT);
+      return;
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD:
+      setSecurityUserPassword(SECURITY_USER_PASSWORD_EDEFAULT);
       return;
     }
     super.eUnset(featureID);
@@ -554,6 +774,8 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return BASE_SERVER_NAME_EDEFAULT == null ? baseServerName != null : !BASE_SERVER_NAME_EDEFAULT.equals(baseServerName);
     case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_PATH:
       return PROFILE_PATH_EDEFAULT == null ? profilePath != null : !PROFILE_PATH_EDEFAULT.equals(profilePath);
+    case ServerPackage.WEBSPHERE_SERVER_TASK__PROFILE_NAME:
+      return PROFILE_NAME_EDEFAULT == null ? profileName != null : !PROFILE_NAME_EDEFAULT.equals(profileName);
     case ServerPackage.WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT:
       return BOOTSTRAP_PORT_EDEFAULT == null ? bootstrapPort != null : !BOOTSTRAP_PORT_EDEFAULT.equals(bootstrapPort);
     case ServerPackage.WEBSPHERE_SERVER_TASK__ICP_PORT:
@@ -566,6 +788,10 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return REMOTE_OS_PASSWORD_EDEFAULT == null ? remoteOsPassword != null : !REMOTE_OS_PASSWORD_EDEFAULT.equals(remoteOsPassword);
     case ServerPackage.WEBSPHERE_SERVER_TASK__SERVER_VERSION:
       return serverVersion != SERVER_VERSION_EDEFAULT;
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_ID:
+      return SECURITY_USER_ID_EDEFAULT == null ? securityUserId != null : !SECURITY_USER_ID_EDEFAULT.equals(securityUserId);
+    case ServerPackage.WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD:
+      return SECURITY_USER_PASSWORD_EDEFAULT == null ? securityUserPassword != null : !SECURITY_USER_PASSWORD_EDEFAULT.equals(securityUserPassword);
     }
     return super.eIsSet(featureID);
   }
@@ -588,6 +814,8 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     result.append(baseServerName);
     result.append(", profilePath: ");
     result.append(profilePath);
+    result.append(", profileName: ");
+    result.append(profileName);
     result.append(", bootstrapPort: ");
     result.append(bootstrapPort);
     result.append(", icpPort: ");
@@ -600,6 +828,10 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     result.append(remoteOsPassword);
     result.append(", serverVersion: ");
     result.append(serverVersion);
+    result.append(", securityUserId: ");
+    result.append(securityUserId);
+    result.append(", securityUserPassword: ");
+    result.append(securityUserPassword);
     result.append(')');
     return result.toString();
   }

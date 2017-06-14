@@ -865,13 +865,22 @@ public interface ServerPackage extends EPackage
   int WEBSPHERE_SERVER_TASK__PROFILE_PATH = SERVER_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Profile Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEBSPHERE_SERVER_TASK__PROFILE_NAME = SERVER_FEATURE_COUNT + 2;
+
+  /**
    * The feature id for the '<em><b>Bootstrap Port</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT = SERVER_FEATURE_COUNT + 2;
+  int WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT = SERVER_FEATURE_COUNT + 3;
 
   /**
    * The feature id for the '<em><b>Icp Port</b></em>' attribute.
@@ -880,7 +889,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WEBSPHERE_SERVER_TASK__ICP_PORT = SERVER_FEATURE_COUNT + 3;
+  int WEBSPHERE_SERVER_TASK__ICP_PORT = SERVER_FEATURE_COUNT + 4;
 
   /**
    * The feature id for the '<em><b>Soap Port</b></em>' attribute.
@@ -889,7 +898,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WEBSPHERE_SERVER_TASK__SOAP_PORT = SERVER_FEATURE_COUNT + 4;
+  int WEBSPHERE_SERVER_TASK__SOAP_PORT = SERVER_FEATURE_COUNT + 5;
 
   /**
    * The feature id for the '<em><b>Remote Os User</b></em>' attribute.
@@ -898,7 +907,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WEBSPHERE_SERVER_TASK__REMOTE_OS_USER = SERVER_FEATURE_COUNT + 5;
+  int WEBSPHERE_SERVER_TASK__REMOTE_OS_USER = SERVER_FEATURE_COUNT + 6;
 
   /**
    * The feature id for the '<em><b>Remote Os Password</b></em>' attribute.
@@ -907,7 +916,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD = SERVER_FEATURE_COUNT + 6;
+  int WEBSPHERE_SERVER_TASK__REMOTE_OS_PASSWORD = SERVER_FEATURE_COUNT + 7;
 
   /**
    * The feature id for the '<em><b>Server Version</b></em>' attribute.
@@ -916,7 +925,25 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WEBSPHERE_SERVER_TASK__SERVER_VERSION = SERVER_FEATURE_COUNT + 7;
+  int WEBSPHERE_SERVER_TASK__SERVER_VERSION = SERVER_FEATURE_COUNT + 8;
+
+  /**
+   * The feature id for the '<em><b>Security User Id</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEBSPHERE_SERVER_TASK__SECURITY_USER_ID = SERVER_FEATURE_COUNT + 9;
+
+  /**
+   * The feature id for the '<em><b>Security User Password</b></em>' attribute.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD = SERVER_FEATURE_COUNT + 10;
 
   /**
    * The number of structural features of the '<em>Websphere Server Task</em>' class.
@@ -925,7 +952,7 @@ public interface ServerPackage extends EPackage
    * @generated
    * @ordered
    */
-  int WEBSPHERE_SERVER_TASK_FEATURE_COUNT = SERVER_FEATURE_COUNT + 8;
+  int WEBSPHERE_SERVER_TASK_FEATURE_COUNT = SERVER_FEATURE_COUNT + 11;
 
   /**
    * The meta object id for the '{@link com.gratex.oomph.task.server.TomcatServerVersion <em>Tomcat Server Version</em>}' enum.
@@ -1132,6 +1159,17 @@ public interface ServerPackage extends EPackage
   EAttribute getWebsphereServerTask_ProfilePath();
 
   /**
+   * Returns the meta object for the attribute '{@link com.gratex.oomph.task.server.WebsphereServerTask#getProfileName <em>Profile Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Profile Name</em>'.
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#getProfileName()
+   * @see #getWebsphereServerTask()
+   * @generated
+   */
+  EAttribute getWebsphereServerTask_ProfileName();
+
+  /**
    * Returns the meta object for the attribute '{@link com.gratex.oomph.task.server.WebsphereServerTask#getBootstrapPort <em>Bootstrap Port</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1196,6 +1234,28 @@ public interface ServerPackage extends EPackage
    * @generated
    */
   EAttribute getWebsphereServerTask_ServerVersion();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.gratex.oomph.task.server.WebsphereServerTask#getSecurityUserId <em>Security User Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Security User Id</em>'.
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#getSecurityUserId()
+   * @see #getWebsphereServerTask()
+   * @generated
+   */
+  EAttribute getWebsphereServerTask_SecurityUserId();
+
+  /**
+   * Returns the meta object for the attribute '{@link com.gratex.oomph.task.server.WebsphereServerTask#getSecurityUserPassword <em>Security User Password</em>}'.
+   * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Security User Password</em>'.
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#getSecurityUserPassword()
+   * @see #getWebsphereServerTask()
+   * @generated
+   */
+  EAttribute getWebsphereServerTask_SecurityUserPassword();
 
   /**
    * Returns the meta object for class '{@link com.gratex.oomph.task.server.Server <em>Server</em>}'.
@@ -1470,6 +1530,14 @@ public interface ServerPackage extends EPackage
     EAttribute WEBSPHERE_SERVER_TASK__PROFILE_PATH = eINSTANCE.getWebsphereServerTask_ProfilePath();
 
     /**
+     * The meta object literal for the '<em><b>Profile Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEBSPHERE_SERVER_TASK__PROFILE_NAME = eINSTANCE.getWebsphereServerTask_ProfileName();
+
+    /**
      * The meta object literal for the '<em><b>Bootstrap Port</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1516,6 +1584,22 @@ public interface ServerPackage extends EPackage
      * @generated
      */
     EAttribute WEBSPHERE_SERVER_TASK__SERVER_VERSION = eINSTANCE.getWebsphereServerTask_ServerVersion();
+
+    /**
+     * The meta object literal for the '<em><b>Security User Id</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEBSPHERE_SERVER_TASK__SECURITY_USER_ID = eINSTANCE.getWebsphereServerTask_SecurityUserId();
+
+    /**
+     * The meta object literal for the '<em><b>Security User Password</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEBSPHERE_SERVER_TASK__SECURITY_USER_PASSWORD = eINSTANCE.getWebsphereServerTask_SecurityUserPassword();
 
     /**
      * The meta object literal for the '{@link com.gratex.oomph.task.server.impl.ServerImpl <em>Server</em>}' class.
