@@ -13,11 +13,12 @@ read -p "Release version: " -e -i $NEXT_VERSION VERSION
 #    exit 1
 #fi
 #VERSION=$1
-
 if [[ -n $(git status --porcelain) ]]; then 
     >&2 echo "Repo is dirty, commit your changes before release"
     exit 1
 fi
+
+git pull --rebase
 
 # build
 $DIR/run
