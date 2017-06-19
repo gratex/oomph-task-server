@@ -159,11 +159,11 @@ public class TomcatServerCreator extends ServerCreator
     {
       if (port.getProtocol().equalsIgnoreCase("http") && port.getId().indexOf('/') < 0)
       {
-        tConfig.modifyServerPort(port.getId(), serverTask.getPort());
+        tConfig.modifyServerPort(port.getId(), serverTask.port());
       }
       if (port.getProtocol().equalsIgnoreCase("ssl") && port.getId().indexOf('/') < 0)
       {
-        tConfig.modifyServerPort(port.getId(), serverTask.getHttpsPort());
+        tConfig.modifyServerPort(port.getId(), serverTask.httpsPort());
       }
     }
     tServer.saveConfiguration(monitor);

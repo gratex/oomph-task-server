@@ -169,47 +169,51 @@ public interface Server extends SetupTask
   	 * </p>
   	 * <!-- end-user-doc -->
    * @return the value of the '<em>Start Timeout</em>' attribute.
-   * @see #setStartTimeout(Integer)
+   * @see #setStartTimeout(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getServer_StartTimeout()
    * @model
    * @generated
    */
-  Integer getStartTimeout();
+  String getStartTimeout();
+
+  Integer startTimeout();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.Server#getStartTimeout <em>Start Timeout</em>}' attribute.
    * <!-- begin-user-doc -->
-  	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
    * @param value the new value of the '<em>Start Timeout</em>' attribute.
    * @see #getStartTimeout()
    * @generated
    */
-  void setStartTimeout(Integer value);
+  void setStartTimeout(String value);
 
   /**
-   * Returns the value of the '<em><b>Stop Timeout</b></em>' attribute.
-   * <!-- begin-user-doc -->
+  	 * Returns the value of the '<em><b>Stop Timeout</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
   	 * <p>
   	 * If the meaning of the '<em>Stop Timeout</em>' attribute isn't clear,
   	 * there really should be more of a description here...
   	 * </p>
   	 * <!-- end-user-doc -->
-   * @return the value of the '<em>Stop Timeout</em>' attribute.
-   * @see #setStopTimeout(Integer)
-   * @see com.gratex.oomph.task.server.ServerPackage#getServer_StopTimeout()
-   * @model
-   * @generated
-   */
-  Integer getStopTimeout();
+  	 * @return the value of the '<em>Stop Timeout</em>' attribute.
+  	 * @see #setStopTimeout(String)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getServer_StopTimeout()
+  	 * @model
+  	 * @generated
+  	 */
+  String getStopTimeout();
+
+  Integer stopTimeout();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.Server#getStopTimeout <em>Stop Timeout</em>}' attribute.
    * <!-- begin-user-doc -->
-  	 * <!-- end-user-doc -->
+   * <!-- end-user-doc -->
    * @param value the new value of the '<em>Stop Timeout</em>' attribute.
    * @see #getStopTimeout()
    * @generated
    */
-  void setStopTimeout(Integer value);
+  void setStopTimeout(String value);
 
 } // Server

@@ -13,6 +13,7 @@ import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.WebsphereServerTask;
 import com.gratex.oomph.task.server.WebsphereServerVersion;
 import com.gratex.oomph.task.server.creator.impl.WebsphereServerCreator;
+import com.gratex.oomph.task.utils.Convert;
 
 /**
  * <!-- begin-user-doc -->
@@ -107,7 +108,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    * @ordered
    */
-  protected static final Integer BOOTSTRAP_PORT_EDEFAULT = null;
+  protected static final String BOOTSTRAP_PORT_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getBootstrapPort() <em>Bootstrap Port</em>}' attribute.
@@ -117,7 +118,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    * @ordered
    */
-  protected Integer bootstrapPort = BOOTSTRAP_PORT_EDEFAULT;
+  protected String bootstrapPort = BOOTSTRAP_PORT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getIcpPort() <em>Icp Port</em>}' attribute.
@@ -127,7 +128,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    * @ordered
    */
-  protected static final Integer ICP_PORT_EDEFAULT = null;
+  protected static final String ICP_PORT_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getIcpPort() <em>Icp Port</em>}' attribute.
@@ -137,7 +138,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    * @ordered
    */
-  protected Integer icpPort = ICP_PORT_EDEFAULT;
+  protected String icpPort = ICP_PORT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getSoapPort() <em>Soap Port</em>}' attribute.
@@ -147,7 +148,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    * @ordered
    */
-  protected static final Integer SOAP_PORT_EDEFAULT = null;
+  protected static final String SOAP_PORT_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getSoapPort() <em>Soap Port</em>}' attribute.
@@ -157,7 +158,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    * @ordered
    */
-  protected Integer soapPort = SOAP_PORT_EDEFAULT;
+  protected String soapPort = SOAP_PORT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getRemoteOsUser() <em>Remote Os User</em>}' attribute.
@@ -379,7 +380,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    */
   @Override
-  public Integer getBootstrapPort()
+  public String getBootstrapPort()
   {
     return bootstrapPort;
   }
@@ -390,9 +391,9 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    */
   @Override
-  public void setBootstrapPort(Integer newBootstrapPort)
+  public void setBootstrapPort(String newBootstrapPort)
   {
-    Integer oldBootstrapPort = bootstrapPort;
+    String oldBootstrapPort = bootstrapPort;
     bootstrapPort = newBootstrapPort;
     if (eNotificationRequired())
     {
@@ -400,13 +401,23 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     }
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#bootstrapPort()
    */
   @Override
-  public Integer getIcpPort()
+  public Integer bootstrapPort()
+  {
+    return Convert.toInteger(getBootstrapPort());
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  @Override
+  public String getIcpPort()
   {
     return icpPort;
   }
@@ -417,9 +428,9 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    */
   @Override
-  public void setIcpPort(Integer newIcpPort)
+  public void setIcpPort(String newIcpPort)
   {
-    Integer oldIcpPort = icpPort;
+    String oldIcpPort = icpPort;
     icpPort = newIcpPort;
     if (eNotificationRequired())
     {
@@ -427,13 +438,23 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     }
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#icpPort()
    */
   @Override
-  public Integer getSoapPort()
+  public Integer icpPort()
+  {
+    return Convert.toInteger(getIcpPort());
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  @Override
+  public String getSoapPort()
   {
     return soapPort;
   }
@@ -444,9 +465,9 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
    * @generated
    */
   @Override
-  public void setSoapPort(Integer newSoapPort)
+  public void setSoapPort(String newSoapPort)
   {
-    Integer oldSoapPort = soapPort;
+    String oldSoapPort = soapPort;
     soapPort = newSoapPort;
     if (eNotificationRequired())
     {
@@ -454,11 +475,21 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
     }
   }
 
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.WebsphereServerTask#soapPort()
    */
+  @Override
+  public Integer soapPort()
+  {
+    return Convert.toInteger(getSoapPort());
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 */
   @Override
   public String getRemoteOsUser()
   {
@@ -686,13 +717,13 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       setProfileName((String)newValue);
       return;
     case ServerPackage.WEBSPHERE_SERVER_TASK__BOOTSTRAP_PORT:
-      setBootstrapPort((Integer)newValue);
+      setBootstrapPort((String)newValue);
       return;
     case ServerPackage.WEBSPHERE_SERVER_TASK__ICP_PORT:
-      setIcpPort((Integer)newValue);
+      setIcpPort((String)newValue);
       return;
     case ServerPackage.WEBSPHERE_SERVER_TASK__SOAP_PORT:
-      setSoapPort((Integer)newValue);
+      setSoapPort((String)newValue);
       return;
     case ServerPackage.WEBSPHERE_SERVER_TASK__REMOTE_OS_USER:
       setRemoteOsUser((String)newValue);

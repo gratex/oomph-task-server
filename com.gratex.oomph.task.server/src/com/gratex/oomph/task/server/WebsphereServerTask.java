@@ -121,12 +121,14 @@ public interface WebsphereServerTask extends Server
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Bootstrap Port</em>' attribute.
-   * @see #setBootstrapPort(Integer)
+   * @see #setBootstrapPort(String)
    * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_BootstrapPort()
    * @model
    * @generated
    */
-  Integer getBootstrapPort();
+  String getBootstrapPort();
+
+  Integer bootstrapPort();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getBootstrapPort <em>Bootstrap Port</em>}' attribute.
@@ -136,23 +138,25 @@ public interface WebsphereServerTask extends Server
    * @see #getBootstrapPort()
    * @generated
    */
-  void setBootstrapPort(Integer value);
+  void setBootstrapPort(String value);
 
   /**
-   * Returns the value of the '<em><b>Icp Port</b></em>' attribute.
-   * <!-- begin-user-doc -->
+  	 * Returns the value of the '<em><b>Icp Port</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Icp Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Icp Port</em>' attribute.
-   * @see #setIcpPort(Integer)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_IcpPort()
-   * @model
-   * @generated
-   */
-  Integer getIcpPort();
+  	 * @return the value of the '<em>Icp Port</em>' attribute.
+  	 * @see #setIcpPort(String)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_IcpPort()
+  	 * @model
+  	 * @generated
+  	 */
+  String getIcpPort();
+
+  Integer icpPort();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getIcpPort <em>Icp Port</em>}' attribute.
@@ -162,23 +166,25 @@ public interface WebsphereServerTask extends Server
    * @see #getIcpPort()
    * @generated
    */
-  void setIcpPort(Integer value);
+  void setIcpPort(String value);
 
   /**
-   * Returns the value of the '<em><b>Soap Port</b></em>' attribute.
-   * <!-- begin-user-doc -->
+  	 * Returns the value of the '<em><b>Soap Port</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Soap Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Soap Port</em>' attribute.
-   * @see #setSoapPort(Integer)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SoapPort()
-   * @model
-   * @generated
-   */
-  Integer getSoapPort();
+  	 * @return the value of the '<em>Soap Port</em>' attribute.
+  	 * @see #setSoapPort(String)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SoapPort()
+  	 * @model
+  	 * @generated
+  	 */
+  String getSoapPort();
+
+  Integer soapPort();
 
   /**
    * Sets the value of the '{@link com.gratex.oomph.task.server.WebsphereServerTask#getSoapPort <em>Soap Port</em>}' attribute.
@@ -188,22 +194,22 @@ public interface WebsphereServerTask extends Server
    * @see #getSoapPort()
    * @generated
    */
-  void setSoapPort(Integer value);
+  void setSoapPort(String value);
 
   /**
-   * Returns the value of the '<em><b>Remote Os User</b></em>' attribute.
-   * <!-- begin-user-doc -->
+  	 * Returns the value of the '<em><b>Remote Os User</b></em>' attribute.
+  	 * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Remote Os User</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Remote Os User</em>' attribute.
-   * @see #setRemoteOsUser(String)
-   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_RemoteOsUser()
-   * @model
-   * @generated
-   */
+  	 * @return the value of the '<em>Remote Os User</em>' attribute.
+  	 * @see #setRemoteOsUser(String)
+  	 * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_RemoteOsUser()
+  	 * @model
+  	 * @generated
+  	 */
   String getRemoteOsUser();
 
   boolean hasRemoteOsUser();

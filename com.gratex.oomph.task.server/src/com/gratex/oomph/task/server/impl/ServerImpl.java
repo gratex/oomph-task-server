@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import com.gratex.oomph.task.server.Server;
 import com.gratex.oomph.task.server.ServerPackage;
+import com.gratex.oomph.task.utils.Convert;
 
 /**
  * <!-- begin-user-doc -->
@@ -140,7 +141,7 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
    * @generated
    * @ordered
    */
-  protected static final Integer START_TIMEOUT_EDEFAULT = null;
+  protected static final String START_TIMEOUT_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getStartTimeout() <em>Start Timeout</em>}' attribute.
@@ -150,7 +151,7 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
    * @generated
    * @ordered
    */
-  protected Integer startTimeout = START_TIMEOUT_EDEFAULT;
+  protected String startTimeout = START_TIMEOUT_EDEFAULT;
 
   /**
    * The default value of the '{@link #getStopTimeout() <em>Stop Timeout</em>}' attribute.
@@ -160,7 +161,7 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
    * @generated
    * @ordered
    */
-  protected static final Integer STOP_TIMEOUT_EDEFAULT = null;
+  protected static final String STOP_TIMEOUT_EDEFAULT = null;
 
   /**
    * The cached value of the '{@link #getStopTimeout() <em>Stop Timeout</em>}' attribute.
@@ -170,7 +171,7 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
    * @generated
    * @ordered
    */
-  protected Integer stopTimeout = STOP_TIMEOUT_EDEFAULT;
+  protected String stopTimeout = STOP_TIMEOUT_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -334,52 +335,9 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
    * @generated
    */
   @Override
-  public Integer getStartTimeout()
+  public String getStartTimeout()
   {
     return startTimeout;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-  	 * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setStartTimeout(Integer newStartTimeout)
-  {
-    Integer oldStartTimeout = startTimeout;
-    startTimeout = newStartTimeout;
-    if (eNotificationRequired())
-    {
-      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.SERVER__START_TIMEOUT, oldStartTimeout, startTimeout));
-    }
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-  	 * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Integer getStopTimeout()
-  {
-    return stopTimeout;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-  	 * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public void setStopTimeout(Integer newStopTimeout)
-  {
-    Integer oldStopTimeout = stopTimeout;
-    stopTimeout = newStopTimeout;
-    if (eNotificationRequired())
-    {
-      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.SERVER__STOP_TIMEOUT, oldStopTimeout, stopTimeout));
-    }
   }
 
   /**
@@ -387,6 +345,69 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
    * <!-- end-user-doc -->
    * @generated
    */
+  @Override
+  public void setStartTimeout(String newStartTimeout)
+  {
+    String oldStartTimeout = startTimeout;
+    startTimeout = newStartTimeout;
+    if (eNotificationRequired())
+    {
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.SERVER__START_TIMEOUT, oldStartTimeout, startTimeout));
+    }
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.Server#startTimeout()
+   */
+  @Override
+  public Integer startTimeout()
+  {
+    return Convert.toInteger(getStartTimeout());
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+  	 * <!-- end-user-doc -->
+  	 * @generated
+  	 */
+  @Override
+  public String getStopTimeout()
+  {
+    return stopTimeout;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setStopTimeout(String newStopTimeout)
+  {
+    String oldStopTimeout = stopTimeout;
+    stopTimeout = newStopTimeout;
+    if (eNotificationRequired())
+    {
+      eNotify(new ENotificationImpl(this, Notification.SET, ServerPackage.SERVER__STOP_TIMEOUT, oldStopTimeout, stopTimeout));
+    }
+  }
+
+  /*
+   * (non-Javadoc)
+   * @see com.gratex.oomph.task.server.Server#stopTimeout()
+   */
+  @Override
+  public Integer stopTimeout()
+  {
+    return Convert.toInteger(getStopTimeout());
+  }
+
+  /**
+  	 * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+  	 * @generated
+  	 */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -436,10 +457,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
       setCleanPreviousRuntimes((Boolean)newValue);
       return;
     case ServerPackage.SERVER__START_TIMEOUT:
-      setStartTimeout((Integer)newValue);
+      setStartTimeout((String)newValue);
       return;
     case ServerPackage.SERVER__STOP_TIMEOUT:
-      setStopTimeout((Integer)newValue);
+      setStopTimeout((String)newValue);
       return;
     }
     super.eSet(featureID, newValue);

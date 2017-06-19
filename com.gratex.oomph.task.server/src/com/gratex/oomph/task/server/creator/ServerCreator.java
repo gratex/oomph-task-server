@@ -161,12 +161,12 @@ public abstract class ServerCreator
   {
     cswc.setAutoPublishSetting(org.eclipse.wst.server.core.internal.Server.AUTO_PUBLISH_DISABLE);
 
-    Integer startTimeout = serverTask.getStartTimeout();
+    Integer startTimeout = serverTask.startTimeout();
     if (startTimeout != null)
     {
       cswc.setStartTimeout(startTimeout);
     }
-    Integer stopTimeout = serverTask.getStopTimeout();
+    Integer stopTimeout = serverTask.stopTimeout();
     if (stopTimeout != null)
     {
       cswc.setStopTimeout(stopTimeout);

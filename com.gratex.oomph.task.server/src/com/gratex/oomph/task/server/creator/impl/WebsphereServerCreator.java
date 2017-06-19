@@ -274,19 +274,19 @@ public class WebsphereServerCreator extends ServerCreator
     }
     wasServer.setIsAutoConnectionTypeEnabled(true);
 
-    if (serverTask.getBootstrapPort() != null)
+    if (serverTask.bootstrapPort() != null)
     {
-      wasServer.setOrbBootstrapPortNum(serverTask.getBootstrapPort()); // bootstrapPort
+      wasServer.setOrbBootstrapPortNum(serverTask.bootstrapPort()); // bootstrapPort
       wasServer.setIsAutoConnectionTypeEnabled(false);
     }
-    if (serverTask.getIcpPort() != null)
+    if (serverTask.icpPort() != null)
     {
-      wasServer.setIPCConnectorPortNum(serverTask.getIcpPort()); // icpPort
+      wasServer.setIPCConnectorPortNum(serverTask.icpPort()); // icpPort
       wasServer.setIsAutoConnectionTypeEnabled(false);
     }
-    if (serverTask.getSoapPort() != null)
+    if (serverTask.soapPort() != null)
     {
-      wasServer.setSoapConnectorPortNum(serverTask.getSoapPort()); // soapPort
+      wasServer.setSoapConnectorPortNum(serverTask.soapPort()); // soapPort
       wasServer.setIsAutoConnectionTypeEnabled(false);
     }
     wasServer.setServerConnectionType(ConnectionType.SOAP.name());
