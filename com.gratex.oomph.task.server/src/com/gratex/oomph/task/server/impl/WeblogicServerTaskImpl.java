@@ -241,10 +241,10 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getHttpsPort()
   {
@@ -278,10 +278,10 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getDebugPort()
   {
@@ -315,10 +315,10 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getUsername()
   {
@@ -497,7 +497,7 @@ public class WeblogicServerTaskImpl extends ServerImpl implements WeblogicServer
       return super.toString();
     }
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (jreVersion: ");
     result.append(jreVersion);
     result.append(", port: ");

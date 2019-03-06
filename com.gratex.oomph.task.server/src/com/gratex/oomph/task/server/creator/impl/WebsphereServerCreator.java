@@ -159,6 +159,10 @@ public class WebsphereServerCreator extends ServerCreator
     {
       configureWas85(swc, monitor);
     }
+    else if (serverTask.getServerVersion() == WebsphereServerVersion.WAS9)
+    {
+      configureWas9(swc, monitor);
+    }
 
     swc.save(false, monitor);
     monitor.worked(1);
@@ -195,6 +199,17 @@ public class WebsphereServerCreator extends ServerCreator
     // No WAS 8.5 specific config as of yet
 
     ((com.ibm.ws.ast.st.v85.core.internal.WASServer)wasServer).saveConfiguration(monitor);
+  }
+
+  private void configureWas9(IServerWorkingCopy swc, IProgressMonitor monitor) throws CoreException
+  {
+    AbstractWASServer wasServer = (AbstractWASServer)swc.loadAdapter(com.ibm.ws.ast.st.v9.core.internal.WASServer.class, null);
+
+    setCommonWasConfig(wasServer);
+
+    // No WAS 9 specific config as of yet
+
+    ((com.ibm.ws.ast.st.v9.core.internal.WASServer)wasServer).saveConfiguration(monitor);
   }
 
   private void setCommonWasConfig(AbstractWASServer wasServer)

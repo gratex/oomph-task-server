@@ -412,10 +412,10 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getIcpPort()
   {
@@ -449,10 +449,10 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getSoapPort()
   {
@@ -486,10 +486,10 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getRemoteOsUser()
   {
@@ -840,7 +840,7 @@ public class WebsphereServerTaskImpl extends ServerImpl implements WebsphereServ
       return super.toString();
     }
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (baseServerName: ");
     result.append(baseServerName);
     result.append(", profilePath: ");

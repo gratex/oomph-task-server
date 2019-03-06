@@ -2,6 +2,7 @@
  */
 package com.gratex.oomph.task.server.impl;
 
+import org.eclipse.oomph.base.BasePackage;
 import org.eclipse.oomph.setup.SetupPackage;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -116,12 +117,14 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     }
 
     // Obtain or create and register package
-    ServerPackageImpl theServerPackage = (ServerPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof ServerPackageImpl
-        ? EPackage.Registry.INSTANCE.get(eNS_URI) : new ServerPackageImpl());
+    Object registeredServerPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+    ServerPackageImpl theServerPackage = registeredServerPackage instanceof ServerPackageImpl ? (ServerPackageImpl)registeredServerPackage
+        : new ServerPackageImpl();
 
     isInited = true;
 
     // Initialize simple dependencies
+    BasePackage.eINSTANCE.eClass();
     SetupPackage.eINSTANCE.eClass();
 
     // Create package meta-data objects
@@ -730,6 +733,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     addEEnumLiteral(websphereServerVersionEEnum, WebsphereServerVersion.WAS70);
     addEEnumLiteral(websphereServerVersionEEnum, WebsphereServerVersion.WAS80);
     addEEnumLiteral(websphereServerVersionEEnum, WebsphereServerVersion.WAS85);
+    addEEnumLiteral(websphereServerVersionEEnum, WebsphereServerVersion.WAS9);
 
     // Create resource
     createResource("https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore");

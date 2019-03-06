@@ -367,10 +367,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
   	 * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getStopTimeout()
   {
@@ -404,10 +404,10 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -542,7 +542,7 @@ public abstract class ServerImpl extends SetupTaskImpl implements Server
       return super.toString();
     }
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (serverName: ");
     result.append(serverName);
     result.append(", location: ");

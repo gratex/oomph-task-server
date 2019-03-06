@@ -93,5 +93,6 @@
     <eLiterals name="WAS70" literal="WebSphere 7.0"/>
     <eLiterals name="WAS80" value="1" literal="WebSphere 8.0"/>
     <eLiterals name="WAS85" value="2" literal="WebSphere 8.5"/>
+    <eLiterals name="WAS9" value="3" literal="WebSphere 9"/>
   </eClassifiers>
 </ecore:EPackage>

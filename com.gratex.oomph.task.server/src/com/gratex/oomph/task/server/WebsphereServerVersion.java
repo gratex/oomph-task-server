@@ -46,7 +46,16 @@ public enum WebsphereServerVersion implements Enumerator
    * @generated
    * @ordered
    */
-  WAS85(2, "WAS85", "WebSphere 8.5");
+  WAS85(2, "WAS85", "WebSphere 8.5"),
+  /**
+   * The '<em><b>WAS9</b></em>' literal object.
+   * <!-- begin-user-doc -->
+  * <!-- end-user-doc -->
+   * @see #WAS9_VALUE
+   * @generated
+   * @ordered
+   */
+  WAS9(3, "WAS9", "WebSphere 9");
 
   /**
    * The '<em><b>WAS70</b></em>' literal value.
@@ -94,12 +103,27 @@ public enum WebsphereServerVersion implements Enumerator
   public static final int WAS85_VALUE = 2;
 
   /**
+   * The '<em><b>WAS9</b></em>' literal value.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of '<em><b>WAS9</b></em>' literal object isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @see #WAS9
+   * @model literal="WebSphere 9"
+   * @generated
+   * @ordered
+   */
+  public static final int WAS9_VALUE = 3;
+
+  /**
    * An array of all the '<em><b>Websphere Server Version</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final WebsphereServerVersion[] VALUES_ARRAY = new WebsphereServerVersion[] { WAS70, WAS80, WAS85, };
+  private static final WebsphereServerVersion[] VALUES_ARRAY = new WebsphereServerVersion[] { WAS70, WAS80, WAS85, WAS9, };
 
   /**
    * A public read-only list of all the '<em><b>Websphere Server Version</b></em>' enumerators.
@@ -169,6 +193,8 @@ public enum WebsphereServerVersion implements Enumerator
       return WAS80;
     case WAS85_VALUE:
       return WAS85;
+    case WAS9_VALUE:
+      return WAS9;
     }
     return null;
   }

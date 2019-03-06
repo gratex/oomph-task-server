@@ -242,10 +242,10 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public String getHttpsPort()
   {
@@ -279,10 +279,10 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
   }
 
   /**
-  	 * <!-- begin-user-doc -->
+   * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-  	 * @generated
-  	 */
+   * @generated
+   */
   @Override
   public TomcatServerVersion getServerVersion()
   {
@@ -488,7 +488,7 @@ public class TomcatServerTaskImpl extends ServerImpl implements TomcatServerTask
       return super.toString();
     }
 
-    StringBuffer result = new StringBuffer(super.toString());
+    StringBuilder result = new StringBuilder(super.toString());
     result.append(" (jreVersion: ");
     result.append(jreVersion);
     result.append(", port: ");

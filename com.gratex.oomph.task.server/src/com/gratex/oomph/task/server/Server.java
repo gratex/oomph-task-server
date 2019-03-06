@@ -189,19 +189,19 @@ public interface Server extends SetupTask
   void setStartTimeout(String value);
 
   /**
-  	 * Returns the value of the '<em><b>Stop Timeout</b></em>' attribute.
-  	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Stop Timeout</b></em>' attribute.
+   * <!-- begin-user-doc -->
   	 * <p>
   	 * If the meaning of the '<em>Stop Timeout</em>' attribute isn't clear,
   	 * there really should be more of a description here...
   	 * </p>
   	 * <!-- end-user-doc -->
-  	 * @return the value of the '<em>Stop Timeout</em>' attribute.
-  	 * @see #setStopTimeout(String)
-  	 * @see com.gratex.oomph.task.server.ServerPackage#getServer_StopTimeout()
-  	 * @model
-  	 * @generated
-  	 */
+   * @return the value of the '<em>Stop Timeout</em>' attribute.
+   * @see #setStopTimeout(String)
+   * @see com.gratex.oomph.task.server.ServerPackage#getServer_StopTimeout()
+   * @model
+   * @generated
+   */
   String getStopTimeout();
 
   Integer stopTimeout();

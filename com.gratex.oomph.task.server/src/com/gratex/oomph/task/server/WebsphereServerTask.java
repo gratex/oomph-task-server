@@ -141,19 +141,19 @@ public interface WebsphereServerTask extends Server
   void setBootstrapPort(String value);
 
   /**
-  	 * Returns the value of the '<em><b>Icp Port</b></em>' attribute.
-  	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Icp Port</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Icp Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-  	 * @return the value of the '<em>Icp Port</em>' attribute.
-  	 * @see #setIcpPort(String)
-  	 * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_IcpPort()
-  	 * @model
-  	 * @generated
-  	 */
+   * @return the value of the '<em>Icp Port</em>' attribute.
+   * @see #setIcpPort(String)
+   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_IcpPort()
+   * @model
+   * @generated
+   */
   String getIcpPort();
 
   Integer icpPort();
@@ -169,19 +169,19 @@ public interface WebsphereServerTask extends Server
   void setIcpPort(String value);
 
   /**
-  	 * Returns the value of the '<em><b>Soap Port</b></em>' attribute.
-  	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Soap Port</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Soap Port</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-  	 * @return the value of the '<em>Soap Port</em>' attribute.
-  	 * @see #setSoapPort(String)
-  	 * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SoapPort()
-  	 * @model
-  	 * @generated
-  	 */
+   * @return the value of the '<em>Soap Port</em>' attribute.
+   * @see #setSoapPort(String)
+   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_SoapPort()
+   * @model
+   * @generated
+   */
   String getSoapPort();
 
   Integer soapPort();
@@ -197,19 +197,19 @@ public interface WebsphereServerTask extends Server
   void setSoapPort(String value);
 
   /**
-  	 * Returns the value of the '<em><b>Remote Os User</b></em>' attribute.
-  	 * <!-- begin-user-doc -->
+   * Returns the value of the '<em><b>Remote Os User</b></em>' attribute.
+   * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Remote Os User</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-  	 * @return the value of the '<em>Remote Os User</em>' attribute.
-  	 * @see #setRemoteOsUser(String)
-  	 * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_RemoteOsUser()
-  	 * @model
-  	 * @generated
-  	 */
+   * @return the value of the '<em>Remote Os User</em>' attribute.
+   * @see #setRemoteOsUser(String)
+   * @see com.gratex.oomph.task.server.ServerPackage#getWebsphereServerTask_RemoteOsUser()
+   * @model
+   * @generated
+   */
   String getRemoteOsUser();
 
   boolean hasRemoteOsUser();

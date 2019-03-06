@@ -17,6 +17,12 @@
       <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT80"/>
       <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT85"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="Server.ecore#//WebsphereServerVersion">
+      <genEnumLiterals ecoreEnumLiteral="Server.ecore#//WebsphereServerVersion/WAS70"/>
+      <genEnumLiterals ecoreEnumLiteral="Server.ecore#//WebsphereServerVersion/WAS80"/>
+      <genEnumLiterals ecoreEnumLiteral="Server.ecore#//WebsphereServerVersion/WAS85"/>
+      <genEnumLiterals ecoreEnumLiteral="Server.ecore#//WebsphereServerVersion/WAS9"/>
+    </genEnums>
     <genClasses ecoreClass="Server.ecore#//TomcatServerTask">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//TomcatServerTask/jreVersion"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//TomcatServerTask/port"/>
@@ -37,24 +43,24 @@
     <genClasses ecoreClass="Server.ecore#//WebsphereServerTask">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/baseServerName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/profilePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/profileName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/bootstrapPort"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/icpPort"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/soapPort"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/remoteOsUser"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/remoteOsPassword"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/serverVersion"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/securityUserId"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//WebsphereServerTask/securityUserPassword"/>
     </genClasses>
     <genClasses image="false" ecoreClass="Server.ecore#//Server">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/serverName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/location"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/runtimeName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/hostname"/>
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference Server.ecore#//Server/serverContainer"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/cleanPreviousRuntimes"/>
-    </genClasses>
-    <genClasses ecoreClass="Server.ecore#//ServerTaskContainer">
-      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
-          propertyDescription="" ecoreFeature="ecore:EReference Server.ecore#//ServerTaskContainer/servers"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//ServerTaskContainer/cleanPreviousRuntimes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/startTimeout"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Server.ecore#//Server/stopTimeout"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
