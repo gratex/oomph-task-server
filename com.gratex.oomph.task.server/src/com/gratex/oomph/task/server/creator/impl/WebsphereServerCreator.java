@@ -64,6 +64,10 @@ public class WebsphereServerCreator extends ServerCreator
 
   public static final String WAS_V85_SERVER_ID = "com.ibm.ws.ast.st.v85.server.base";
 
+  private static final String WAS_V9_SERVER_RUNTIME_ID = "com.ibm.ws.ast.st.runtime.v9";
+
+  public static final String WAS_V9_SERVER_ID = "com.ibm.ws.ast.st.v9.server.base";
+
   private WebsphereServerTask serverTask;
 
   public WebsphereServerCreator(SetupTaskContext context, WebsphereServerTask serverTask)
@@ -82,6 +86,8 @@ public class WebsphereServerCreator extends ServerCreator
       return WAS_V8_SERVER_RUNTIME_ID;
     case WAS85:
       return WAS_V85_SERVER_RUNTIME_ID;
+    case WAS9:
+      return WAS_V9_SERVER_RUNTIME_ID;
     default:
       throw new ServerTaskException("Unsupported server type " + serverTask.getServerVersion().getName());
     }
@@ -97,6 +103,8 @@ public class WebsphereServerCreator extends ServerCreator
       return WAS_V8_SERVER_ID;
     case WAS85:
       return WAS_V85_SERVER_ID;
+    case WAS9:
+      return WAS_V9_SERVER_ID;
     default:
       throw new ServerTaskException("Unsupported server type " + serverTask.getServerVersion().getName());
     }
