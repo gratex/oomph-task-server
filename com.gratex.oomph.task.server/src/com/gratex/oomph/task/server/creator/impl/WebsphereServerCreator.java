@@ -64,7 +64,7 @@ public class WebsphereServerCreator extends ServerCreator
 
   public static final String WAS_V85_SERVER_ID = "com.ibm.ws.ast.st.v85.server.base";
 
-  private static final String WAS_V9_SERVER_RUNTIME_ID = "com.ibm.ws.ast.st.runtime.v9";
+  private static final String WAS_V9_SERVER_RUNTIME_ID = "com.ibm.ws.ast.st.runtime.v90";
 
   public static final String WAS_V9_SERVER_ID = "com.ibm.ws.ast.st.v9.server.base";
 
