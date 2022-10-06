@@ -13,9 +13,6 @@ import com.gratex.oomph.task.server.ServerFactory;
 import com.gratex.oomph.task.server.ServerPackage;
 import com.gratex.oomph.task.server.TomcatServerTask;
 import com.gratex.oomph.task.server.TomcatServerVersion;
-import com.gratex.oomph.task.server.WeblogicServerTask;
-import com.gratex.oomph.task.server.WebsphereServerTask;
-import com.gratex.oomph.task.server.WebsphereServerVersion;
 
 /**
  * <!-- begin-user-doc -->
@@ -71,10 +68,6 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
     {
     case ServerPackage.TOMCAT_SERVER_TASK:
       return createTomcatServerTask();
-    case ServerPackage.WEBLOGIC_SERVER_TASK:
-      return createWeblogicServerTask();
-    case ServerPackage.WEBSPHERE_SERVER_TASK:
-      return createWebsphereServerTask();
     default:
       throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -92,8 +85,6 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
     {
     case ServerPackage.TOMCAT_SERVER_VERSION:
       return createTomcatServerVersionFromString(eDataType, initialValue);
-    case ServerPackage.WEBSPHERE_SERVER_VERSION:
-      return createWebsphereServerVersionFromString(eDataType, initialValue);
     default:
       throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -111,8 +102,6 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
     {
     case ServerPackage.TOMCAT_SERVER_VERSION:
       return convertTomcatServerVersionToString(eDataType, instanceValue);
-    case ServerPackage.WEBSPHERE_SERVER_VERSION:
-      return convertWebsphereServerVersionToString(eDataType, instanceValue);
     default:
       throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
@@ -151,31 +140,6 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
    * @generated
    */
   public String convertTomcatServerVersionToString(EDataType eDataType, Object instanceValue)
-  {
-    return instanceValue == null ? null : instanceValue.toString();
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public WebsphereServerVersion createWebsphereServerVersionFromString(EDataType eDataType, String initialValue)
-  {
-    WebsphereServerVersion result = WebsphereServerVersion.get(initialValue);
-    if (result == null)
-    {
-      throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-    }
-    return result;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-  	 * <!-- end-user-doc -->
-   * @generated
-   */
-  public String convertWebsphereServerVersionToString(EDataType eDataType, Object instanceValue)
   {
     return instanceValue == null ? null : instanceValue.toString();
   }

@@ -80,26 +80,6 @@ public interface ServerPackage extends EPackage
   int TOMCAT_SERVER_TASK = 0;
 
   /**
-   * The meta object id for the '{@link com.gratex.oomph.task.server.impl.WeblogicServerTaskImpl <em>Weblogic Server Task</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.gratex.oomph.task.server.impl.WeblogicServerTaskImpl
-   * @see com.gratex.oomph.task.server.impl.ServerPackageImpl#getWeblogicServerTask()
-   * @generated
-   */
-  int WEBLOGIC_SERVER_TASK = 1;
-
-  /**
-   * The meta object id for the '{@link com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl <em>Websphere Server Task</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see com.gratex.oomph.task.server.impl.WebsphereServerTaskImpl
-   * @see com.gratex.oomph.task.server.impl.ServerPackageImpl#getWebsphereServerTask()
-   * @generated
-   */
-  int WEBSPHERE_SERVER_TASK = 2;
-
-  /**
    * The feature id for the '<em><b>Annotations</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -478,6 +458,16 @@ public interface ServerPackage extends EPackage
   int TOMCAT_SERVER_TASK_FEATURE_COUNT = SERVER_FEATURE_COUNT + 6;
 
   /**
+   * The meta object id for the '{@link com.gratex.oomph.task.server.TomcatServerVersion <em>Tomcat Server Version</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see com.gratex.oomph.task.server.TomcatServerVersion
+   * @see com.gratex.oomph.task.server.impl.ServerPackageImpl#getTomcatServerVersion()
+   * @generated
+   */
+  int TOMCAT_SERVER_VERSION = 4;
+
+  /**
    * Returns the meta object for class '{@link com.gratex.oomph.task.server.TomcatServerTask <em>Tomcat Server Task</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -651,16 +641,6 @@ public interface ServerPackage extends EPackage
   EEnum getTomcatServerVersion();
 
   /**
-   * Returns the meta object for enum '{@link com.gratex.oomph.task.server.WebsphereServerVersion <em>Websphere Server Version</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for enum '<em>Websphere Server Version</em>'.
-   * @see com.gratex.oomph.task.server.WebsphereServerVersion
-   * @generated
-   */
-  EEnum getWebsphereServerVersion();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -681,8 +661,7 @@ public interface ServerPackage extends EPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  interface Literals
-  {
+  interface Literals {
     /**
      * The meta object literal for the '{@link com.gratex.oomph.task.server.impl.TomcatServerTaskImpl <em>Tomcat Server Task</em>}' class.
      * <!-- begin-user-doc -->
@@ -816,17 +795,6 @@ public interface ServerPackage extends EPackage
      * @generated
      */
     EEnum TOMCAT_SERVER_VERSION = eINSTANCE.getTomcatServerVersion();
-
-    /**
-     * The meta object literal for the '{@link com.gratex.oomph.task.server.WebsphereServerVersion <em>Websphere Server Version</em>}' enum.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see com.gratex.oomph.task.server.WebsphereServerVersion
-     * @see com.gratex.oomph.task.server.impl.ServerPackageImpl#getWebsphereServerVersion()
-     * @generated
-     */
-    EEnum WEBSPHERE_SERVER_VERSION = eINSTANCE.getWebsphereServerVersion();
-
   }
 
 } // ServerPackage

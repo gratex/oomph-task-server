@@ -123,56 +123,6 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
   }
 
   /**
-   * This keeps track of the one adapter used for all {@link com.gratex.oomph.task.server.WeblogicServerTask} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected WeblogicServerTaskItemProvider weblogicServerTaskItemProvider;
-
-  /**
-   * This creates an adapter for a {@link com.gratex.oomph.task.server.WeblogicServerTask}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createWeblogicServerTaskAdapter()
-  {
-    if (weblogicServerTaskItemProvider == null)
-    {
-      weblogicServerTaskItemProvider = new WeblogicServerTaskItemProvider(this);
-    }
-
-    return weblogicServerTaskItemProvider;
-  }
-
-  /**
-   * This keeps track of the one adapter used for all {@link com.gratex.oomph.task.server.WebsphereServerTask} instances.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  protected WebsphereServerTaskItemProvider websphereServerTaskItemProvider;
-
-  /**
-   * This creates an adapter for a {@link com.gratex.oomph.task.server.WebsphereServerTask}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Adapter createWebsphereServerTaskAdapter()
-  {
-    if (websphereServerTaskItemProvider == null)
-    {
-      websphereServerTaskItemProvider = new WebsphereServerTaskItemProvider(this);
-    }
-
-    return websphereServerTaskItemProvider;
-  }
-
-  /**
    * This returns the root adapter factory that contains this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -325,14 +275,6 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
     {
       tomcatServerTaskItemProvider.dispose();
     }
-    if (weblogicServerTaskItemProvider != null)
-    {
-      weblogicServerTaskItemProvider.dispose();
-    }
-    if (websphereServerTaskItemProvider != null)
-    {
-      websphereServerTaskItemProvider.dispose();
-    }
   }
 
   /**
@@ -388,11 +330,6 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
       public Object caseAnnotation(Annotation object)
       {
         newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createTomcatServerTask()));
-
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createWeblogicServerTask()));
-
-        newChildDescriptors.add(createChildParameter(BasePackage.Literals.ANNOTATION__CONTENTS, ServerFactory.eINSTANCE.createWebsphereServerTask()));
-
         return null;
       }
 
@@ -487,12 +424,6 @@ public class ServerItemProviderAdapterFactory extends ServerAdapterFactory
       {
         newChildDescriptors
             .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createTomcatServerTask()));
-
-        newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createWeblogicServerTask()));
-
-        newChildDescriptors
-            .add(createChildParameter(SetupPackage.Literals.SETUP_TASK_CONTAINER__SETUP_TASKS, ServerFactory.eINSTANCE.createWebsphereServerTask()));
 
         return null;
       }
