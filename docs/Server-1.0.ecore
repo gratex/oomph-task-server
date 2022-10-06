@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="server" nsURI="http://www.gratex.com/oomph/task/server/1.0"
+    nsPrefix="server">
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="schemaLocation" value="https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="TomcatServerTask" eSuperTypes="#//Server">
+    <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
+      <details key="variableName" value="p2.server"/>
+      <details key="repository" value="https://gratex.github.io/oomph-task-server/repository/"/>
+      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.feature.group"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
+      <details key="triggers" value="STARTUP MANUAL"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jreVersion" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="8080"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="httpsPort" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="8443"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverVersion" lowerBound="1"
+        eType="#//TomcatServerVersion"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="launchProgramArgs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="launchVmArgs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral=""/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Server" abstract="true" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="runtimeName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="hostname" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="localhost"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="cleanPreviousRuntimes"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="startTimeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="stopTimeout" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="TomcatServerVersion">
+    <eLiterals name="TOMCAT70" literal="Tomcat 7.0"/>
+    <eLiterals name="TOMCAT80" value="1" literal="Tomcat 8.0"/>
+    <eLiterals name="TOMCAT85" value="2" literal="Tomcat 8.5"/>
+    <eLiterals name="TOMCAT90" value="2" literal="Tomcat 9.0"/>
+  </eClassifiers>
+</ecore:EPackage>
