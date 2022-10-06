@@ -32,24 +32,6 @@ public interface ServerFactory extends EFactory
   TomcatServerTask createTomcatServerTask();
 
   /**
-   * Returns a new object of class '<em>Weblogic Server Task</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Weblogic Server Task</em>'.
-   * @generated
-   */
-  WeblogicServerTask createWeblogicServerTask();
-
-  /**
-   * Returns a new object of class '<em>Websphere Server Task</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Websphere Server Task</em>'.
-   * @generated
-   */
-  WebsphereServerTask createWebsphereServerTask();
-
-  /**
    * Returns the package supported by this factory.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

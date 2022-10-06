@@ -27,7 +27,7 @@ docker run \
        --privileged=true \
        --userns=host \
        -v "$HOME/.m2:/root/.m2" \
-       -v "$DIR:/project" \
+       -v "$PWD:/project" \
        -w "/project" \
        maven:3.5.0-jdk-8 \
        /bin/bash -c "mvn -f com.gratex.oomph.task.server.parent/pom.xml clean package && chown -R ""$(id -u):$(id -g)"" /project"

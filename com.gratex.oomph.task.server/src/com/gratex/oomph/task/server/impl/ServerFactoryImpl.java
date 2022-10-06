@@ -135,30 +135,6 @@ public class ServerFactoryImpl extends EFactoryImpl implements ServerFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public WeblogicServerTask createWeblogicServerTask()
-  {
-    WeblogicServerTaskImpl weblogicServerTask = new WeblogicServerTaskImpl();
-    return weblogicServerTask;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public WebsphereServerTask createWebsphereServerTask()
-  {
-    WebsphereServerTaskImpl websphereServerTask = new WebsphereServerTaskImpl();
-    return websphereServerTask;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public TomcatServerVersion createTomcatServerVersionFromString(EDataType eDataType, String initialValue)
   {
     TomcatServerVersion result = TomcatServerVersion.get(initialValue);

@@ -18,12 +18,6 @@
 		<tycho-version>1.2.0</tycho-version>
 		<neon-repo.url>http://download.eclipse.org/releases/neon/</neon-repo.url>
 		<neon-updates-repo.url>http://download.eclipse.org/eclipse/updates/4.6/</neon-updates-repo.url>
-		<oepe-neon-repo.url>http://download.oracle.com/otn_software/oepe/neon/</oepe-neon-repo.url>
-		<oepe-neon-12.2.1.3.1-repo.url>http://download.oracle.com/otn_software/oepe/12.2.1.3.1/neon/repository/</oepe-neon-12.2.1.3.1-repo.url>
-		<oepe-neon-12.2.1.3.1-deps-repo.url>http://download.oracle.com/otn_software/oepe/12.2.1.3.1/neon/repository/dependencies</oepe-neon-12.2.1.3.1-deps-repo.url>
-		<sapphire-repo.url>http://download.eclipse.org/sapphire/9.0.5/repository/</sapphire-repo.url>
-		<ibm-wasdev-neon-repo.url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/updates/wdt/neon/</ibm-wasdev-neon-repo.url>
-		<ibm-wasdev-photon-repo.url>http://public.dhe.ibm.com/ibmdl/export/pub/software/websphere/wasdev/updates/wdt/photon/</ibm-wasdev-photon-repo.url>
 	</properties>
 
 	<modules>
@@ -42,36 +36,6 @@
 		<repository>
 			<id>neon-updates</id>
 			<url>${neon-updates-repo.url}</url>
-			<layout>p2</layout>
-		</repository>
-		<repository>
-			<id>oepe-neon</id>
-			<url>${oepe-neon-repo.url}</url>
-			<layout>p2</layout>
-		</repository>
-		<repository>
-			<id>oepe-neon-12.2.1.3.1</id>
-			<url>${oepe-neon-12.2.1.3.1-repo.url}</url>
-			<layout>p2</layout>
-		</repository>
-		<repository>
-			<id>oepe-neon-12.2.1.3.1-deps</id>
-			<url>${oepe-neon-12.2.1.3.1-deps-repo.url}</url>
-			<layout>p2</layout>
-		</repository>
-		<repository>
-			<id>sapphire</id>
-			<url>${sapphire-repo.url}</url>
-			<layout>p2</layout>
-		</repository>
-		<repository>
-			<id>ibm-wasdev-neon</id>
-			<url>${ibm-wasdev-neon-repo.url}</url>
-			<layout>p2</layout>
-		</repository>
-		<repository>
-			<id>ibm-wasdev-photon</id>
-			<url>${ibm-wasdev-photon-repo.url}</url>
 			<layout>p2</layout>
 		</repository>
 	</repositories>
