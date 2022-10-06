@@ -47,7 +47,9 @@ public enum TomcatServerVersion implements Enumerator
    * @generated
    * @ordered
    */
-  TOMCAT85(2, "TOMCAT85", "Tomcat 8.5");
+  TOMCAT85(2, "TOMCAT85", "Tomcat 8.5"),
+
+  TOMCAT90(3, "TOMCAT90", "Tomcat 9.0");
 
   /**
    * The '<em><b>TOMCAT70</b></em>' literal value.
@@ -94,13 +96,15 @@ public enum TomcatServerVersion implements Enumerator
    */
   public static final int TOMCAT85_VALUE = 2;
 
+  public static final int TOMCAT90_VALUE = 3;
+
   /**
    * An array of all the '<em><b>Tomcat Server Version</b></em>' enumerators.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  private static final TomcatServerVersion[] VALUES_ARRAY = new TomcatServerVersion[] { TOMCAT70, TOMCAT80, TOMCAT85, };
+  private static final TomcatServerVersion[] VALUES_ARRAY = new TomcatServerVersion[] { TOMCAT70, TOMCAT80, TOMCAT85, TOMCAT90 };
 
   /**
    * A public read-only list of all the '<em><b>Tomcat Server Version</b></em>' enumerators.
@@ -170,6 +174,8 @@ public enum TomcatServerVersion implements Enumerator
       return TOMCAT80;
     case TOMCAT85_VALUE:
       return TOMCAT85;
+    case TOMCAT90_VALUE:
+      return TOMCAT90;
     }
     return null;
   }

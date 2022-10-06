@@ -27,49 +27,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="launchVmArgs" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
         defaultValueLiteral=""/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WeblogicServerTask" eSuperTypes="#//Server">
-    <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
-      <details key="variableName" value="p2.server"/>
-      <details key="repository" value="https://gratex.github.io/oomph-task-server/repository/"/>
-      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.feature.group"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
-      <details key="triggers" value="STARTUP MANUAL"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="jreVersion" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="port" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="7001"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="httpsPort" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="7002"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="debugPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="8453"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="WebsphereServerTask" eSuperTypes="#//Server">
-    <eAnnotations source="http://www.eclipse.org/oomph/setup/Enablement">
-      <details key="variableName" value="p2.server"/>
-      <details key="repository" value="https://gratex.github.io/oomph-task-server/repository/"/>
-      <details key="installableUnits" value="com.gratex.oomph.task.server.feature.feature.group"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/oomph/setup/ValidTriggers">
-      <details key="triggers" value="STARTUP MANUAL"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="baseServerName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="server1"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="profilePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="profileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bootstrapPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="icpPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="soapPort" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteOsUser" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="remoteOsPassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverVersion" lowerBound="1"
-        eType="#//WebsphereServerVersion"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityUserId" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="securityUserPassword" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Server" abstract="true" eSuperTypes="http://www.eclipse.org/oomph/setup/1.0#//SetupTask">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="serverName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -88,11 +45,6 @@
     <eLiterals name="TOMCAT70" literal="Tomcat 7.0"/>
     <eLiterals name="TOMCAT80" value="1" literal="Tomcat 8.0"/>
     <eLiterals name="TOMCAT85" value="2" literal="Tomcat 8.5"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="WebsphereServerVersion">
-    <eLiterals name="WAS70" literal="WebSphere 7.0"/>
-    <eLiterals name="WAS80" value="1" literal="WebSphere 8.0"/>
-    <eLiterals name="WAS85" value="2" literal="WebSphere 8.5"/>
-    <eLiterals name="WAS9" value="3" literal="WebSphere 9"/>
+    <eLiterals name="TOMCAT90" value="2" literal="Tomcat 9.0"/>
   </eClassifiers>
 </ecore:EPackage>

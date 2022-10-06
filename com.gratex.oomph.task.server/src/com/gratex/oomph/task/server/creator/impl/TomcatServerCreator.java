@@ -43,11 +43,15 @@ public class TomcatServerCreator extends ServerCreator
 
   public static final String SERVER_RUNTIME_ID_85 = "org.eclipse.jst.server.tomcat.runtime.85";
 
+  public static final String SERVER_RUNTIME_ID_90 = "org.eclipse.jst.server.tomcat.runtime.90";
+
   public static final String SERVER_ID_70 = "org.eclipse.jst.server.tomcat.70";
 
   public static final String SERVER_ID_80 = "org.eclipse.jst.server.tomcat.80";
 
   public static final String SERVER_ID_85 = "org.eclipse.jst.server.tomcat.85";
+
+  public static final String SERVER_ID_90 = "org.eclipse.jst.server.tomcat.90";
 
   private TomcatServerTask serverTask;
 
@@ -67,6 +71,8 @@ public class TomcatServerCreator extends ServerCreator
       return SERVER_RUNTIME_ID_80;
     case TOMCAT85:
       return SERVER_RUNTIME_ID_85;
+    case TOMCAT90:
+      return SERVER_RUNTIME_ID_90;
     default:
       throw new ServerTaskException("Unsupported tomcat server type" + serverTask.getServerVersion().getName());
 
@@ -83,6 +89,8 @@ public class TomcatServerCreator extends ServerCreator
       return SERVER_ID_80;
     case TOMCAT85:
       return SERVER_ID_85;
+    case TOMCAT90:
+      return SERVER_ID_90;
     default:
       throw new ServerTaskException("Unsupported tomcat server type" + serverTask.getServerVersion().getName());
 

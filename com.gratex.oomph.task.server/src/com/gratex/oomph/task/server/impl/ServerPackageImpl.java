@@ -422,6 +422,7 @@ public class ServerPackageImpl extends EPackageImpl implements ServerPackage
     addEEnumLiteral(tomcatServerVersionEEnum, TomcatServerVersion.TOMCAT70);
     addEEnumLiteral(tomcatServerVersionEEnum, TomcatServerVersion.TOMCAT80);
     addEEnumLiteral(tomcatServerVersionEEnum, TomcatServerVersion.TOMCAT85);
+    addEEnumLiteral(tomcatServerVersionEEnum, TomcatServerVersion.TOMCAT90);
 
     // Create resource
     createResource("https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore");
