@@ -3,13 +3,14 @@
     xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:jdt="http://www.eclipse.org/oomph/setup/jdt/1.0"
     xmlns:server="http://www.gratex.com/oomph/task/server/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
-    xsi:schemaLocation="http://www.gratex.com/oomph/task/server/1.0 https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.gratex.com/oomph/task/server/1.0 https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore"
     name="sample.websphere"
     label="Sample websphere">
-  <stream name="master"
-      label="Master">
+  <stream name="websphere"
+      label="websphere">
     <setupTask
         xsi:type="server:WebsphereServerTask"
         serverName="websphere7"
@@ -35,6 +36,35 @@
         remoteOsUser=""
         securityUserId="was"
         securityUserPassword="was"/>
+  </stream>
+  <stream name="tomcat"
+      label="tomcat">
+    <setupTask
+        xsi:type="jdt:JRETask"
+        id="jre1.8"
+        version="JavaSE-1.8"
+        location="${jre.location-1.8}"/>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        id="jre17"
+        version="JavaSE-17"
+        location="${jre.location-17}"/>
+    <setupTask
+        xsi:type="server:TomcatServerTask"
+        serverName="tomcat9"
+        location="/tmp/tomcat9"
+        runtimeName="tomcat9-runtime"
+        jreVersion="${jre1.8.version}"
+        serverVersion="Tomcat 9.0"/>
+    <setupTask
+        xsi:type="server:TomcatServerTask"
+        serverName="tomcat10"
+        location="/tmp/tomcat10"
+        runtimeName="tomcat10-runtime"
+        jreVersion="${jre17.version}"
+        port="8081"
+        httpsPort="8444"
+        serverVersion="Tomcat 10.0"/>
   </stream>
   <description>Sample websphere</description>
 </setup:Project>
