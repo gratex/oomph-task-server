@@ -88,6 +88,8 @@
     <eLiterals name="TOMCAT70" literal="Tomcat 7.0"/>
     <eLiterals name="TOMCAT80" value="1" literal="Tomcat 8.0"/>
     <eLiterals name="TOMCAT85" value="2" literal="Tomcat 8.5"/>
+    <eLiterals name="TOMCAT90" value="3" literal="Tomcat 9.0"/>
+    <eLiterals name="TOMCAT100" value="4" literal="Tomcat 10.0"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="WebsphereServerVersion">
     <eLiterals name="WAS70" literal="WebSphere 7.0"/>

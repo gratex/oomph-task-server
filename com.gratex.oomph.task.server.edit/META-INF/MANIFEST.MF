@@ -3,6 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-Vendor: %providerName
 Bundle-SymbolicName: com.gratex.oomph.task.server.edit;singleton:=true
+Automatic-Module-Name: com.gratex.oomph.task.server.edit
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: com.gratex.oomph.task.server.provider.ServerEditPlugin$Implementation

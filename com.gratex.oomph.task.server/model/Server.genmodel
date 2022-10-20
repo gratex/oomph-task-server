@@ -16,6 +16,8 @@
       <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT70"/>
       <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT80"/>
       <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT85"/>
+      <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT90"/>
+      <genEnumLiterals ecoreEnumLiteral="Server.ecore#//TomcatServerVersion/TOMCAT100"/>
     </genEnums>
     <genEnums typeSafeEnumCompatible="false" ecoreEnum="Server.ecore#//WebsphereServerVersion">
       <genEnumLiterals ecoreEnumLiteral="Server.ecore#//WebsphereServerVersion/WAS70"/>
