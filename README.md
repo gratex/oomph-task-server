@@ -14,7 +14,7 @@ Execute the `./run` script which mounts hosts $HOME/.m2 folder and builds whole 
 To use the server task in your oomph setup file define a namespace `xmlns:server="http://www.gratex.com/oomph/task/server/1.0"` and add a schema location for the namespace (`xsi:schemaLocation`) pointing to `http://www.gratex.com/oomph/task/server/1.0 https://raw.githubusercontent.com/gratex/oomph-task-server/master/com.gratex.oomph.task.server/model/Server-1.0.ecore`.  
 
 ### Tomcat server
-Sample Tomcat (7.0, 8.0, 8.5) server definition
+Sample Tomcat (7.0, 8.0, 8.5, 9.0, 10.0) server definition
 
 ```xml
 <setupTask
